@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FDBDBEF064FAA94BFCFC06C /* Pods_vocablearnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603ED3FC6EDD6FC093D54BFE /* Pods_vocablearnerTests.framework */; };
+		36453BA2FF8FD0A7888F7397 /* Pods_vocablearner_vocablearnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F72480BACCF4D625710B59 /* Pods_vocablearner_vocablearnerUITests.framework */; };
 		5C11BB63253FF38B00AB4D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB62253FF38B00AB4D3B /* AppDelegate.swift */; };
 		5C11BB65253FF38B00AB4D3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB64253FF38B00AB4D3B /* SceneDelegate.swift */; };
 		5C11BB67253FF38B00AB4D3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB66253FF38B00AB4D3B /* ViewController.swift */; };
@@ -15,6 +17,19 @@
 		5C11BB6F253FF38E00AB4D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C11BB6D253FF38E00AB4D3B /* LaunchScreen.storyboard */; };
 		5C11BB7A253FF38E00AB4D3B /* vocablearnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB79253FF38E00AB4D3B /* vocablearnerTests.swift */; };
 		5C11BB85253FF38E00AB4D3B /* vocablearnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB84253FF38E00AB4D3B /* vocablearnerUITests.swift */; };
+		5C9E4F772540121D00948C49 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F762540121D00948C49 /* BaseUrl.swift */; };
+		5C9E4F7C2540141500948C49 /* StoryboardId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F7B2540141500948C49 /* StoryboardId.swift */; };
+		5C9E4F81254014A400948C49 /* CommonResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F80254014A400948C49 /* CommonResources.swift */; };
+		5C9E4F882540153600948C49 /* ServerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F852540153600948C49 /* ServerKey.swift */; };
+		5C9E4F892540153600948C49 /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F862540153600948C49 /* CommonExtension.swift */; };
+		5C9E4F8A2540153600948C49 /* ListTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F872540153600948C49 /* ListTransform.swift */; };
+		5C9E4FA6254024C400948C49 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4FA5254024C400948C49 /* DataManager.swift */; };
+		5C9E4FAE254024FE00948C49 /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4FAD254024FE00948C49 /* BaseClient.swift */; };
+		5C9E4FB32540256700948C49 /* BaseClient+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4FB22540256700948C49 /* BaseClient+User.swift */; };
+		5C9E4FB82540258B00948C49 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4FB72540258B00948C49 /* BaseResponse.swift */; };
+		5C9E4FBD2540273C00948C49 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4FBC2540273C00948C49 /* UserModel.swift */; };
+		5C9E4FC22540282300948C49 /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4FC12540282300948C49 /* UserInfoResponse.swift */; };
+		74D427AC907F904B65A3B393 /* Pods_vocablearner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCE95A46785E70014F984BA /* Pods_vocablearner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BA6D819B037FC5695745272 /* Pods-vocablearnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearnerTests.debug.xcconfig"; path = "Target Support Files/Pods-vocablearnerTests/Pods-vocablearnerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		59A58AECF02F6547AB67186A /* Pods-vocablearner-vocablearnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearner-vocablearnerUITests.release.xcconfig"; path = "Target Support Files/Pods-vocablearner-vocablearnerUITests/Pods-vocablearner-vocablearnerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5BCE95A46785E70014F984BA /* Pods_vocablearner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vocablearner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C11BB5F253FF38B00AB4D3B /* vocablearner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vocablearner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C11BB62253FF38B00AB4D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C11BB64253FF38B00AB4D3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +67,24 @@
 		5C11BB80253FF38E00AB4D3B /* vocablearnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vocablearnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C11BB84253FF38E00AB4D3B /* vocablearnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vocablearnerUITests.swift; sourceTree = "<group>"; };
 		5C11BB86253FF38E00AB4D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C9E4F762540121D00948C49 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
+		5C9E4F7B2540141500948C49 /* StoryboardId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardId.swift; sourceTree = "<group>"; };
+		5C9E4F80254014A400948C49 /* CommonResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResources.swift; sourceTree = "<group>"; };
+		5C9E4F852540153600948C49 /* ServerKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerKey.swift; sourceTree = "<group>"; };
+		5C9E4F862540153600948C49 /* CommonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
+		5C9E4F872540153600948C49 /* ListTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTransform.swift; sourceTree = "<group>"; };
+		5C9E4FA5254024C400948C49 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5C9E4FAD254024FE00948C49 /* BaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient.swift; sourceTree = "<group>"; };
+		5C9E4FB22540256700948C49 /* BaseClient+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+User.swift"; sourceTree = "<group>"; };
+		5C9E4FB72540258B00948C49 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		5C9E4FBC2540273C00948C49 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5C9E4FC12540282300948C49 /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
+		603ED3FC6EDD6FC093D54BFE /* Pods_vocablearnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vocablearnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65030F4481D9D4ED92B5ADBE /* Pods-vocablearner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearner.debug.xcconfig"; path = "Target Support Files/Pods-vocablearner/Pods-vocablearner.debug.xcconfig"; sourceTree = "<group>"; };
+		75AF153CA17A7B520CB67034 /* Pods-vocablearner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearner.release.xcconfig"; path = "Target Support Files/Pods-vocablearner/Pods-vocablearner.release.xcconfig"; sourceTree = "<group>"; };
+		90952CD423BE073DA7F923B0 /* Pods-vocablearner-vocablearnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearner-vocablearnerUITests.debug.xcconfig"; path = "Target Support Files/Pods-vocablearner-vocablearnerUITests/Pods-vocablearner-vocablearnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C1F72480BACCF4D625710B59 /* Pods_vocablearner_vocablearnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vocablearner_vocablearnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC1735FEC330E15E3CB5EBD8 /* Pods-vocablearnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearnerTests.release.xcconfig"; path = "Target Support Files/Pods-vocablearnerTests/Pods-vocablearnerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D427AC907F904B65A3B393 /* Pods_vocablearner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FDBDBEF064FAA94BFCFC06C /* Pods_vocablearnerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +108,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36453BA2FF8FD0A7888F7397 /* Pods_vocablearner_vocablearnerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1133B8BD9A1CF22C0741ABEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BCE95A46785E70014F984BA /* Pods_vocablearner.framework */,
+				C1F72480BACCF4D625710B59 /* Pods_vocablearner_vocablearnerUITests.framework */,
+				603ED3FC6EDD6FC093D54BFE /* Pods_vocablearnerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5C11BB56253FF38B00AB4D3B = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +132,8 @@
 				5C11BB78253FF38E00AB4D3B /* vocablearnerTests */,
 				5C11BB83253FF38E00AB4D3B /* vocablearnerUITests */,
 				5C11BB60253FF38B00AB4D3B /* Products */,
+				60DA0DA6E9E614246E78358D /* Pods */,
+				1133B8BD9A1CF22C0741ABEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +150,9 @@
 		5C11BB61253FF38B00AB4D3B /* vocablearner */ = {
 			isa = PBXGroup;
 			children = (
+				5C9E4F92254018D800948C49 /* DataDomain */,
+				5C9E4F90254018C600948C49 /* View */,
+				5C9E4F752540120000948C49 /* Config */,
 				5C11BB62253FF38B00AB4D3B /* AppDelegate.swift */,
 				5C11BB64253FF38B00AB4D3B /* SceneDelegate.swift */,
 				5C11BB66253FF38B00AB4D3B /* ViewController.swift */,
@@ -128,6 +182,84 @@
 			path = vocablearnerUITests;
 			sourceTree = "<group>";
 		};
+		5C9E4F752540120000948C49 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5C9E4F862540153600948C49 /* CommonExtension.swift */,
+				5C9E4F872540153600948C49 /* ListTransform.swift */,
+				5C9E4F852540153600948C49 /* ServerKey.swift */,
+				5C9E4F762540121D00948C49 /* BaseUrl.swift */,
+				5C9E4F7B2540141500948C49 /* StoryboardId.swift */,
+				5C9E4F80254014A400948C49 /* CommonResources.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		5C9E4F90254018C600948C49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C9E4F91254018CC00948C49 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C9E4F91254018CC00948C49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5C9E4F92254018D800948C49 /* DataDomain */ = {
+			isa = PBXGroup;
+			children = (
+				5C9E4FA4254024AA00948C49 /* DataManager */,
+				5C9E4FA32540249400948C49 /* BusinessDomain */,
+				5C9E4FA22540244B00948C49 /* Model */,
+			);
+			path = DataDomain;
+			sourceTree = "<group>";
+		};
+		5C9E4FA22540244B00948C49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C9E4FB72540258B00948C49 /* BaseResponse.swift */,
+				5C9E4FC12540282300948C49 /* UserInfoResponse.swift */,
+				5C9E4FBC2540273C00948C49 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C9E4FA32540249400948C49 /* BusinessDomain */ = {
+			isa = PBXGroup;
+			children = (
+				5C9E4FAD254024FE00948C49 /* BaseClient.swift */,
+				5C9E4FB22540256700948C49 /* BaseClient+User.swift */,
+			);
+			path = BusinessDomain;
+			sourceTree = "<group>";
+		};
+		5C9E4FA4254024AA00948C49 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5C9E4FA5254024C400948C49 /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		60DA0DA6E9E614246E78358D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65030F4481D9D4ED92B5ADBE /* Pods-vocablearner.debug.xcconfig */,
+				75AF153CA17A7B520CB67034 /* Pods-vocablearner.release.xcconfig */,
+				90952CD423BE073DA7F923B0 /* Pods-vocablearner-vocablearnerUITests.debug.xcconfig */,
+				59A58AECF02F6547AB67186A /* Pods-vocablearner-vocablearnerUITests.release.xcconfig */,
+				0BA6D819B037FC5695745272 /* Pods-vocablearnerTests.debug.xcconfig */,
+				FC1735FEC330E15E3CB5EBD8 /* Pods-vocablearnerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +267,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C11BB89253FF38E00AB4D3B /* Build configuration list for PBXNativeTarget "vocablearner" */;
 			buildPhases = (
+				CB9EC55F28F5EB106CE9295B /* [CP] Check Pods Manifest.lock */,
 				5C11BB5B253FF38B00AB4D3B /* Sources */,
 				5C11BB5C253FF38B00AB4D3B /* Frameworks */,
 				5C11BB5D253FF38B00AB4D3B /* Resources */,
+				FFB11F0ED8C87891D3C0BBCA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +286,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C11BB8C253FF38E00AB4D3B /* Build configuration list for PBXNativeTarget "vocablearnerTests" */;
 			buildPhases = (
+				7422852DA28723D6AB584593 /* [CP] Check Pods Manifest.lock */,
 				5C11BB71253FF38E00AB4D3B /* Sources */,
 				5C11BB72253FF38E00AB4D3B /* Frameworks */,
 				5C11BB73253FF38E00AB4D3B /* Resources */,
@@ -170,9 +305,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C11BB8F253FF38E00AB4D3B /* Build configuration list for PBXNativeTarget "vocablearnerUITests" */;
 			buildPhases = (
+				F853548A9BD37B100D0F10AC /* [CP] Check Pods Manifest.lock */,
 				5C11BB7C253FF38E00AB4D3B /* Sources */,
 				5C11BB7D253FF38E00AB4D3B /* Frameworks */,
 				5C11BB7E253FF38E00AB4D3B /* Resources */,
+				FCEAC04A073759FAD55ACE2E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,14 +390,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7422852DA28723D6AB584593 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vocablearnerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB9EC55F28F5EB106CE9295B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vocablearner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F853548A9BD37B100D0F10AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vocablearner-vocablearnerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCEAC04A073759FAD55ACE2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vocablearner-vocablearnerUITests/Pods-vocablearner-vocablearnerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vocablearner-vocablearnerUITests/Pods-vocablearner-vocablearnerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vocablearner-vocablearnerUITests/Pods-vocablearner-vocablearnerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFB11F0ED8C87891D3C0BBCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vocablearner/Pods-vocablearner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vocablearner/Pods-vocablearner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vocablearner/Pods-vocablearner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5C11BB5B253FF38B00AB4D3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C9E4FB32540256700948C49 /* BaseClient+User.swift in Sources */,
 				5C11BB67253FF38B00AB4D3B /* ViewController.swift in Sources */,
+				5C9E4FA6254024C400948C49 /* DataManager.swift in Sources */,
 				5C11BB63253FF38B00AB4D3B /* AppDelegate.swift in Sources */,
+				5C9E4F81254014A400948C49 /* CommonResources.swift in Sources */,
+				5C9E4FAE254024FE00948C49 /* BaseClient.swift in Sources */,
+				5C9E4F8A2540153600948C49 /* ListTransform.swift in Sources */,
+				5C9E4F7C2540141500948C49 /* StoryboardId.swift in Sources */,
+				5C9E4FBD2540273C00948C49 /* UserModel.swift in Sources */,
+				5C9E4FC22540282300948C49 /* UserInfoResponse.swift in Sources */,
+				5C9E4F772540121D00948C49 /* BaseUrl.swift in Sources */,
 				5C11BB65253FF38B00AB4D3B /* SceneDelegate.swift in Sources */,
+				5C9E4F892540153600948C49 /* CommonExtension.swift in Sources */,
+				5C9E4F882540153600948C49 /* ServerKey.swift in Sources */,
+				5C9E4FB82540258B00948C49 /* BaseResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,11 +685,13 @@
 		};
 		5C11BB8A253FF38E00AB4D3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65030F4481D9D4ED92B5ADBE /* Pods-vocablearner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = vocablearner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,11 +705,13 @@
 		};
 		5C11BB8B253FF38E00AB4D3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75AF153CA17A7B520CB67034 /* Pods-vocablearner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = vocablearner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +725,7 @@
 		};
 		5C11BB8D253FF38E00AB4D3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BA6D819B037FC5695745272 /* Pods-vocablearnerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +747,7 @@
 		};
 		5C11BB8E253FF38E00AB4D3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC1735FEC330E15E3CB5EBD8 /* Pods-vocablearnerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +769,7 @@
 		};
 		5C11BB90253FF38E00AB4D3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90952CD423BE073DA7F923B0 /* Pods-vocablearner-vocablearnerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +789,7 @@
 		};
 		5C11BB91253FF38E00AB4D3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59A58AECF02F6547AB67186A /* Pods-vocablearner-vocablearnerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,54 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireObjectMapper (5.1.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - JGProgressHUD (2.2)
+  - ObjectMapper (3.5.3)
+  - Realm (10.0.0):
+    - Realm/Headers (= 10.0.0)
+  - Realm/Headers (10.0.0)
+  - RealmSwift (10.0.0):
+    - Realm (= 10.0.0)
+  - SDWebImage (5.9.3):
+    - SDWebImage/Core (= 5.9.3)
+  - SDWebImage/Core (5.9.3)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - AlamofireObjectMapper (from `https://github.com/RomanPodymov/AlamofireObjectMapper.git`, branch `xcode-10-2-fix`)
+  - JGProgressHUD
+  - RealmSwift
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - JGProgressHUD
+    - ObjectMapper
+    - Realm
+    - RealmSwift
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  AlamofireObjectMapper:
+    :branch: xcode-10-2-fix
+    :git: https://github.com/RomanPodymov/AlamofireObjectMapper.git
+
+CHECKOUT OPTIONS:
+  AlamofireObjectMapper:
+    :commit: 0cbb1f954b9432124c30955514e0219c2d8e5a33
+    :git: https://github.com/RomanPodymov/AlamofireObjectMapper.git
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireObjectMapper: 9fec33dcec52497a2a32678cd3a7b597b5a32514
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  Realm: 5654b8e5e45034d07b219e089034be2ef7d1e7bf
+  RealmSwift: 5b4c8c85be4c14ff52054a4d80a8d338167dd79c
+  SDWebImage: a31ee8e90a97303529e03fb0c333eae0eacb88e9
+
+PODFILE CHECKSUM: aa28f6c696cd7b05301b9fb69f610c7acfd941d1
+
+COCOAPODS: 1.9.3
