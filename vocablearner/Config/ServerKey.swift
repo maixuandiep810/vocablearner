@@ -10,15 +10,16 @@ import Foundation
 import Alamofire
 
 struct Header {
-     static let ContentType = "Content-Type"
-     static let ApplicationJson = "application/json"
-     static let AccessTokenKey = "Access-Token"
+    static let ContentType = "Content-Type"
+    static let ApplicationJson = "application/json; charset=utf-8"
 }
 
 struct ResponseKey {
-    static let AccessToken = "AccessTokenKey"
-    static let ErrorKey = "e"
-    static let RawKey = "r"
+    static let StatusCode = "code"
+    static let MessageCode = "message"
+    static let Data = "data"
+    static let Token = "token"
+    static let User = "user"
 }
 
 enum ErrorCode: Int {

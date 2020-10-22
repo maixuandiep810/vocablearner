@@ -14,6 +14,4 @@ class UserInfoResponse: BaseResponse<UserModel> {
 }
 
 
-class AuthenticateResponse: UserInfoResponse {
-}
 

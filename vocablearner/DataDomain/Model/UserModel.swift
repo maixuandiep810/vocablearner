@@ -11,20 +11,20 @@ import RealmSwift
 
 class UserModel: Object, Mappable {
 
-    var username = ""
-    var email = ""
-    var avatarUrl = ""
-    var token = ""
+    @objc dynamic var username = ""
+    @objc dynamic var email = ""
+    @objc dynamic var avatarUrl = ""
+    @objc dynamic var token = ""
     
     required convenience init?(map: Map) {
         self.init()
     }
 
     func mapping(map: Map) {
-        username             <- map["username"]
+        username        <- map["username"]
         email           <- map["email"]
-        avatarUrl                <- map["avatar_url"]
-        token              <- map["token"]
+        avatarUrl       <- map["avatar_url"]
+        token           <- map["token"]
     }
 }
 
