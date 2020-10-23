@@ -9,7 +9,9 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 
-
+// USER RESPONSE from api server
+// = user information
+// = UserModel
 class UserInfoResponse: BaseResponse<UserModel> {
 }
 

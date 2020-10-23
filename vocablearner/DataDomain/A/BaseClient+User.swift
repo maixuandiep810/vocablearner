@@ -32,7 +32,7 @@ extension BaseClient {
                         CurrentUser.shared.user = user
                         RealmManager.shared.userDA.saveUser(user: user)
                         var newUser = RealmManager.shared.userDA.getCurrentUser()
-                        completion(true, nil, data);
+                        completion(true, nil, data.data);
                         break
 
                     case let .failure(error):
@@ -44,6 +44,5 @@ extension BaseClient {
         }
     }
     
-
-    
+        
 }

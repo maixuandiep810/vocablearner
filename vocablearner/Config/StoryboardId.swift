@@ -10,8 +10,8 @@ import Foundation
 struct StoryboardId {
     
     // ControllerID
-    static let MainControllerId = "MainController"
-    static let ParentControllerId = "ParentController"
+    static let LoginControllerID = "LoginControllerID"
+    static let ParentControllerID = "ParentControllerID"
     
     // ViewID
 //    static let BannerCellId = "BannerCellIdentifier"

@@ -9,6 +9,8 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 
+// User Model
+// = user information
 class UserModel: Object, Mappable {
 
     @objc dynamic var username = ""

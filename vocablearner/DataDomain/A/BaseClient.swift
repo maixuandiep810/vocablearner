@@ -24,6 +24,8 @@ class BaseClient: NSObject {
     {
         case login(username: String,
                    password: String)
+        
+        case getVocabulary
 
         static let baseHTTPS = API.kBaseUrlSSL
         static let baseHTTP = API.kBaseUrl
@@ -32,6 +34,7 @@ class BaseClient: NSObject {
         {
             switch self {
             case .login: return HTTPMethod.post
+            case .getVocabulary: return HTTPMethod.get
 
             }
             
@@ -42,6 +45,8 @@ class BaseClient: NSObject {
             switch self {
             case .login:
                 return String(format: API.kLoginUrl)
+            case .getVocabulary:
+                return String(format: API.kVocabularyUrl)
                 
             
             }
@@ -59,26 +64,24 @@ class BaseClient: NSObject {
                 urlHttpRequest.setValue(Header.ApplicationJson, forHTTPHeaderField: Header.ContentType)
 
                 switch self {
-                
-                case .login(let username, let password):
+                    case .login(let username, let password):
+                        var bodyRaw: [String: Any] = [
+                            "username": "user1",
+                            "password": "123"
+                        ]
+                        do {
+                            //  Auto add header ContentType = ApplicationJson
+                            try urlHttpRequest = try JSONEncoding.default.encode(urlHttpRequest, with: bodyRaw)
+                            print(urlHttpRequest.httpBody)
+                        } catch {
+                            print()
+                        }
+                        return urlHttpRequest
+                    case .getVocabulary:
+                        return urlHttpRequest
                     
-                    var bodyRaw: [String: Any] = [
-                        "username": "user1",
-                        "password": "123"
-                    ]
-                    
-                    do {
-                        //  Auto add header ContentType = ApplicationJson
-                        try urlHttpRequest = try JSONEncoding.default.encode(urlHttpRequest, with: bodyRaw)
-                        print(urlHttpRequest.httpBody)
-                    } catch {
-                        print()
                     }
-
-                    return urlHttpRequest
-                    
                 }
             }
-    }
 }
 

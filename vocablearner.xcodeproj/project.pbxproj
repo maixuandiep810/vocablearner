@@ -11,7 +11,7 @@
 		36453BA2FF8FD0A7888F7397 /* Pods_vocablearner_vocablearnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F72480BACCF4D625710B59 /* Pods_vocablearner_vocablearnerUITests.framework */; };
 		5C11BB63253FF38B00AB4D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB62253FF38B00AB4D3B /* AppDelegate.swift */; };
 		5C11BB65253FF38B00AB4D3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB64253FF38B00AB4D3B /* SceneDelegate.swift */; };
-		5C11BB67253FF38B00AB4D3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB66253FF38B00AB4D3B /* ViewController.swift */; };
+		5C11BB67253FF38B00AB4D3B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB66253FF38B00AB4D3B /* LoginController.swift */; };
 		5C11BB6A253FF38B00AB4D3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C11BB68253FF38B00AB4D3B /* Main.storyboard */; };
 		5C11BB6C253FF38E00AB4D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C11BB6B253FF38E00AB4D3B /* Assets.xcassets */; };
 		5C11BB6F253FF38E00AB4D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C11BB6D253FF38E00AB4D3B /* LaunchScreen.storyboard */; };
@@ -31,6 +31,13 @@
 		5C9E4FB82540258B00948C49 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4FB72540258B00948C49 /* BaseResponse.swift */; };
 		5C9E4FBD2540273C00948C49 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4FBC2540273C00948C49 /* UserModel.swift */; };
 		5C9E4FC22540282300948C49 /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4FC12540282300948C49 /* UserInfoResponse.swift */; };
+		5C9E833B2542921D00A032E6 /* ParentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E833A2542921D00A032E6 /* ParentController.swift */; };
+		5C9E8340254294D500A032E6 /* EnvironmentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E833F254294D500A032E6 /* EnvironmentConfig.swift */; };
+		5C9E8345254295F600A032E6 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E8344254295F600A032E6 /* UserController.swift */; };
+		5C9E834A2542962200A032E6 /* VocabularyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E83492542962200A032E6 /* VocabularyController.swift */; };
+		5C9E834F2542B3E100A032E6 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E834E2542B3E100A032E6 /* VocabularyModel.swift */; };
+		5C9E83542542B4CA00A032E6 /* VocabularyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E83532542B4CA00A032E6 /* VocabularyResponse.swift */; };
+		5C9E83592542DE0C00A032E6 /* BaseClient+Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E83582542DE0C00A032E6 /* BaseClient+Vocabulary.swift */; };
 		74D427AC907F904B65A3B393 /* Pods_vocablearner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCE95A46785E70014F984BA /* Pods_vocablearner.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +65,7 @@
 		5C11BB5F253FF38B00AB4D3B /* vocablearner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vocablearner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C11BB62253FF38B00AB4D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C11BB64253FF38B00AB4D3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5C11BB66253FF38B00AB4D3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C11BB66253FF38B00AB4D3B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		5C11BB69253FF38B00AB4D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C11BB6B253FF38E00AB4D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C11BB6E253FF38E00AB4D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +90,13 @@
 		5C9E4FB72540258B00948C49 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		5C9E4FBC2540273C00948C49 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5C9E4FC12540282300948C49 /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
+		5C9E833A2542921D00A032E6 /* ParentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentController.swift; sourceTree = "<group>"; };
+		5C9E833F254294D500A032E6 /* EnvironmentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfig.swift; sourceTree = "<group>"; };
+		5C9E8344254295F600A032E6 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		5C9E83492542962200A032E6 /* VocabularyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyController.swift; sourceTree = "<group>"; };
+		5C9E834E2542B3E100A032E6 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
+		5C9E83532542B4CA00A032E6 /* VocabularyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyResponse.swift; sourceTree = "<group>"; };
+		5C9E83582542DE0C00A032E6 /* BaseClient+Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Vocabulary.swift"; sourceTree = "<group>"; };
 		603ED3FC6EDD6FC093D54BFE /* Pods_vocablearnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vocablearnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65030F4481D9D4ED92B5ADBE /* Pods-vocablearner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearner.debug.xcconfig"; path = "Target Support Files/Pods-vocablearner/Pods-vocablearner.debug.xcconfig"; sourceTree = "<group>"; };
 		75AF153CA17A7B520CB67034 /* Pods-vocablearner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearner.release.xcconfig"; path = "Target Support Files/Pods-vocablearner/Pods-vocablearner.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,7 +173,6 @@
 				5C9E4F752540120000948C49 /* Config */,
 				5C11BB62253FF38B00AB4D3B /* AppDelegate.swift */,
 				5C11BB64253FF38B00AB4D3B /* SceneDelegate.swift */,
-				5C11BB66253FF38B00AB4D3B /* ViewController.swift */,
 				5C11BB68253FF38B00AB4D3B /* Main.storyboard */,
 				5C11BB6B253FF38E00AB4D3B /* Assets.xcassets */,
 				5C11BB6D253FF38E00AB4D3B /* LaunchScreen.storyboard */,
@@ -191,7 +204,7 @@
 			children = (
 				5C23D7E725412BEF00FF5B8B /* BaseClient.swift */,
 				5C23D7E825412BEF00FF5B8B /* BaseClient+User.swift */,
-				5C23D7FE254173A400FF5B8B /* CurrentUser.swift */,
+				5C9E83582542DE0C00A032E6 /* BaseClient+Vocabulary.swift */,
 			);
 			path = A;
 			sourceTree = "<group>";
@@ -205,6 +218,7 @@
 				5C9E4F762540121D00948C49 /* BaseUrl.swift */,
 				5C9E4F7B2540141500948C49 /* StoryboardId.swift */,
 				5C9E4F80254014A400948C49 /* CommonResources.swift */,
+				5C9E833F254294D500A032E6 /* EnvironmentConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -220,6 +234,10 @@
 		5C9E4F91254018CC00948C49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5C11BB66253FF38B00AB4D3B /* LoginController.swift */,
+				5C9E833A2542921D00A032E6 /* ParentController.swift */,
+				5C9E8344254295F600A032E6 /* UserController.swift */,
+				5C9E83492542962200A032E6 /* VocabularyController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,6 +258,8 @@
 				5C9E4FB72540258B00948C49 /* BaseResponse.swift */,
 				5C9E4FC12540282300948C49 /* UserInfoResponse.swift */,
 				5C9E4FBC2540273C00948C49 /* UserModel.swift */,
+				5C9E834E2542B3E100A032E6 /* VocabularyModel.swift */,
+				5C9E83532542B4CA00A032E6 /* VocabularyResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +267,7 @@
 		5C9E4FA4254024AA00948C49 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				5C23D7FE254173A400FF5B8B /* CurrentUser.swift */,
 				5C9E4FA5254024C400948C49 /* DataManager.swift */,
 				5C23D8112541796900FF5B8B /* RealmManager.swift */,
 			);
@@ -504,17 +525,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C11BB67253FF38B00AB4D3B /* ViewController.swift in Sources */,
+				5C11BB67253FF38B00AB4D3B /* LoginController.swift in Sources */,
 				5C9E4FA6254024C400948C49 /* DataManager.swift in Sources */,
+				5C9E8345254295F600A032E6 /* UserController.swift in Sources */,
+				5C9E83592542DE0C00A032E6 /* BaseClient+Vocabulary.swift in Sources */,
 				5C11BB63253FF38B00AB4D3B /* AppDelegate.swift in Sources */,
+				5C9E83542542B4CA00A032E6 /* VocabularyResponse.swift in Sources */,
 				5C23D7FF254173A400FF5B8B /* CurrentUser.swift in Sources */,
 				5C9E4F81254014A400948C49 /* CommonResources.swift in Sources */,
 				5C9E4F8A2540153600948C49 /* ListTransform.swift in Sources */,
+				5C9E834F2542B3E100A032E6 /* VocabularyModel.swift in Sources */,
 				5C23D8122541796900FF5B8B /* RealmManager.swift in Sources */,
+				5C9E8340254294D500A032E6 /* EnvironmentConfig.swift in Sources */,
 				5C9E4F7C2540141500948C49 /* StoryboardId.swift in Sources */,
+				5C9E834A2542962200A032E6 /* VocabularyController.swift in Sources */,
 				5C9E4FBD2540273C00948C49 /* UserModel.swift in Sources */,
 				5C9E4FC22540282300948C49 /* UserInfoResponse.swift in Sources */,
 				5C9E4F772540121D00948C49 /* BaseUrl.swift in Sources */,
+				5C9E833B2542921D00A032E6 /* ParentController.swift in Sources */,
 				5C23D7E925412BEF00FF5B8B /* BaseClient.swift in Sources */,
 				5C11BB65253FF38B00AB4D3B /* SceneDelegate.swift in Sources */,
 				5C9E4F892540153600948C49 /* CommonExtension.swift in Sources */,

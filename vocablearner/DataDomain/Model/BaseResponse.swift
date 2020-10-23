@@ -9,6 +9,9 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 
+
+// BASE RESPONSE from api server
+// = frame of response
 class BaseResponse<T: Mappable>: Object, Mappable {
     
     var code = 0
@@ -24,6 +27,4 @@ class BaseResponse<T: Mappable>: Object, Mappable {
         message          <- map["message"]
         data             <- map["data"]
     }
-
-    
 }
