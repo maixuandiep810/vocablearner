@@ -30,14 +30,39 @@ extension BaseClient {
                         let user = data.data as? UserModel
                         self.token = user?.token
                         CurrentUser.shared.user = user
-                        RealmManager.shared.userDA.saveUser(user: user)
-                        var newUser = RealmManager.shared.userDA.getCurrentUser()
+                        // ****
+                        // RealmManager.shared.userDA.saveUser(user: CurrentUser.shared.user)
+
                         completion(true, nil, data.data);
                         break
 
                     case let .failure(error):
                         completion(false, error as NSError?, nil);
                         
+                        break
+                    }
+                }
+        }
+    }
+    
+    /**
+    * Login
+    * @param: username, password md5
+    * @return : token
+    */
+    func loginWithUrl(token:String, completion:@escaping ServiceResponse) {
+        DispatchQueue.global(qos: .background).async {
+            // Run on background thread
+            let request = Services.logout(token: token) as URLRequestConvertible
+            Alamofire.request(request)
+                .responseJSON { (response: DataResponse<Any>) in
+                    switch response.result {
+                    case let .success(_):
+                        CurrentUser.shared.user = nil
+                        completion(true, nil, nil);
+                        break
+                    case let .failure(error):
+                        completion(false, error as NSError?, nil);
                         break
                     }
                 }

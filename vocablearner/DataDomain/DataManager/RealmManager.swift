@@ -50,4 +50,8 @@ class UserDA {
             }
         }
     }
+    
+    func deleteCurrentUser() {
+        let user = try! Realm(configuration: self.config).objects(UserModel.self).first
+    }
 }

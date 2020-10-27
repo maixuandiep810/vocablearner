@@ -23,8 +23,8 @@ class BaseResponse<T: Mappable>: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        code             <- map["code"]
-        message          <- map["message"]
-        data             <- map["data"]
+        code             <- map["Code"]
+        message          <- map["Message"]
+        data             <- map["Data"]
     }
 }

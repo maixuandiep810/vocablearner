@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, UITextFieldDelegate {
 
     
     // Mark: Properties
@@ -21,22 +21,34 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        BaseClient.shared.getVocabularyWithUrl()
-        { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-            if(isSuccess!) {
-                 self.resetRoot(id: StoryboardId.ParentControllerID)
-            } else {
-                // Show message login fail
-            }
-        }
-        
+        configView()
         
     }
     
     
-    // Mark: Util Methods
+    // Mark: Helper Methods
+
+    
+    func configView() {
+        // Init tap gesture
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                 action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    
+    // Mark: Development ENV Functions
+    func logout() {
+        if EnvironmentConfig.isDevelop {
+            
+        }
+    }
 
 
 }
@@ -57,6 +69,13 @@ extension LoginController {
                 // Show message login fail
             }
         }
+    }
+    
+    
+    // MARK : UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return false
     }
     
 }

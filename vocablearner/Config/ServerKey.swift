@@ -12,6 +12,7 @@ import Alamofire
 struct Header {
     static let ContentType = "Content-Type"
     static let ApplicationJson = "application/json; charset=utf-8"
+    static let Token = "Token"
 }
 
 struct ResponseKey {

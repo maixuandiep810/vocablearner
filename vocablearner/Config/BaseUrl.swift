@@ -16,8 +16,11 @@ struct API {
     static let kWeatherforecastUrl = "/api/weatherforecast"
 
     static let kLoginUrl = "/api/user/authenticate"
+    static let kLogoutUrl = "/api/user/logout"
     static let kRegisterUrl = "/api/user/register"
     static let kVocabularyUrl = "/api/vocabulary"
+    static let kCategoryUrl = "/api/category"
+
 
 
 }

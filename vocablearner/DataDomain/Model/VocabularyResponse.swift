@@ -17,6 +17,7 @@ class VocabularyResponse: BaseResponse<ListVocabularyModelData> {
 
 
 
+
 // LIST OF VOCABULARY MODEL DATA
 class ListVocabularyModelData: Object, Mappable {
     
@@ -27,7 +28,7 @@ class ListVocabularyModelData: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        list           <- (map["list"], ListTransform<VocabularyModel>())
+        list           <- (map["List"], ListTransform<VocabularyModel>())
     }
 }
 

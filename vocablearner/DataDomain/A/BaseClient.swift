@@ -25,7 +25,11 @@ class BaseClient: NSObject {
         case login(username: String,
                    password: String)
         
+        case logout(token: String)
+        
         case getVocabulary
+        case getCategory
+
 
         static let baseHTTPS = API.kBaseUrlSSL
         static let baseHTTP = API.kBaseUrl
@@ -33,9 +37,11 @@ class BaseClient: NSObject {
         var method: HTTPMethod
         {
             switch self {
-            case .login: return HTTPMethod.post
-            case .getVocabulary: return HTTPMethod.get
+            case .login(_, _): return HTTPMethod.post
+            case .logout(_): return HTTPMethod.get
 
+            case .getVocabulary: return HTTPMethod.get
+            case .getCategory: return HTTPMethod.get
             }
             
         }
@@ -43,12 +49,15 @@ class BaseClient: NSObject {
         var path: String
         {
             switch self {
-            case .login:
+            case .login(_, _):
                 return String(format: API.kLoginUrl)
+            case .logout(_):
+                return String(format: API.kLogoutUrl)
+                
             case .getVocabulary:
                 return String(format: API.kVocabularyUrl)
-                
-            
+            case .getCategory:
+                return String(format: API.kCategoryUrl)
             }
         
         }
@@ -77,11 +86,20 @@ class BaseClient: NSObject {
                             print()
                         }
                         return urlHttpRequest
+                    case .logout(let token):
+                        urlHttpRequest.setValue(token, forHTTPHeaderField: Header.Token)
+                        return urlHttpRequest
                     case .getVocabulary:
                         return urlHttpRequest
-                    
-                    }
+                    case .getCategory:
+                        return urlHttpRequest
                 }
+                
             }
+        
+        }
+    
+    
+    
 }
 

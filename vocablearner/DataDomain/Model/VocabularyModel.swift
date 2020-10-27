@@ -25,11 +25,11 @@ class VocabularyModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        word            <- map["word"]
-        meaning         <- map["meaning"]
-        definition      <- map["definition"]
-        sentence        <- map["sentence"]
-        imageUrl        <- map["imageUrl"]
-        audioUrl        <- map["audioUrl"]
+        word            <- map["Word"]
+        meaning         <- map["Meaning"]
+        definition      <- map["Definition"]
+        sentence        <- map["Sentence"]
+        imageUrl        <- map["ImageUrl"]
+        audioUrl        <- map["AudioUrl"]
     }
 }
