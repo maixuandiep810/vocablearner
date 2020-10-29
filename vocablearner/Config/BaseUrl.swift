@@ -19,6 +19,7 @@ struct API {
     static let kLogoutUrl = "/api/user/logout"
     static let kRegisterUrl = "/api/user/register"
     static let kVocabularyUrl = "/api/vocabulary"
+    static let kVocabularyByCategoryIdUrl = "/api/vocabulary/%@"
     static let kCategoryUrl = "/api/category"
 
 

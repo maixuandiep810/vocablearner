@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
+import RealmSwift
 
 extension BaseClient {
         
@@ -31,7 +32,7 @@ extension BaseClient {
                 }
         }
     }
-    
+
 
     
 }

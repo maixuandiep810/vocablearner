@@ -13,10 +13,13 @@ struct StoryboardId {
     static let LoginControllerID = "LoginControllerID"
     static let ParentControllerID = "ParentControllerID"
     static let CategoryControllerID = "CategoryControllerID"
+    static let VocabularyControllerID = "VocabularyControllerID"
+
 
     
     // Cell
     static let CategoryCellID = "CategoryCellID"
+    static let VocabularyCellID = "VocabularyCellID"
     
     
     // ViewID

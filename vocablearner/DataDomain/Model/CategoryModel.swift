@@ -9,8 +9,8 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 
-// User Model
-// = user information
+// Category Model
+// = category information
 class CategoryModel: Object, Mappable {
 
     @objc dynamic var id = 0

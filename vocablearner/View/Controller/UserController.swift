@@ -32,7 +32,7 @@ class UserController: UIViewController {
             self.avatarImage.sd_setImage(with: URL(string: "\(API.kFileUrl + user.avatarUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
 
         }
-        usernameLb.text = "Welcome, \(user.username)"
+        usernameLb.text = "\(user.username)"
 
     }
     

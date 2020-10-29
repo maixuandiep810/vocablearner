@@ -70,16 +70,16 @@ extension CategoryController {
         return cell
     }
     
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell: CategoryCell = self.colTag.cellForItem(at: indexPath) as! CategoryCell
-//        let controller: CategoryCell = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.DetailMovieControllerId) as! DetailMovieController
-//        controller.data = cell.data!
-//        if let image = cell.imgPoster.image {
-//            controller.posterData = image
-//            self.navigationController?.pushViewController(controller, animated: true)
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell: CategoryCell = self.categoryClt.cellForItem(at: indexPath) as! CategoryCell
+        let controller: VocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.VocabularyControllerID) as! VocabularyController
+        
+        if let categoryModel = cell.data {
+            controller.categoryModel = categoryModel
+
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
        
     
 }

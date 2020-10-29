@@ -28,6 +28,7 @@ class BaseClient: NSObject {
         case logout(token: String)
         
         case getVocabulary
+        case getVocabularyByCategoryId(categoryId: String)
         case getCategory
 
 
@@ -41,6 +42,7 @@ class BaseClient: NSObject {
             case .logout(_): return HTTPMethod.get
 
             case .getVocabulary: return HTTPMethod.get
+            case .getVocabularyByCategoryId(_): return HTTPMethod.get
             case .getCategory: return HTTPMethod.get
             }
             
@@ -56,6 +58,8 @@ class BaseClient: NSObject {
                 
             case .getVocabulary:
                 return String(format: API.kVocabularyUrl)
+            case .getVocabularyByCategoryId(let categoryId):
+                return String(format: API.kVocabularyByCategoryIdUrl, categoryId)
             case .getCategory:
                 return String(format: API.kCategoryUrl)
             }
@@ -90,6 +94,8 @@ class BaseClient: NSObject {
                         urlHttpRequest.setValue(token, forHTTPHeaderField: Header.Token)
                         return urlHttpRequest
                     case .getVocabulary:
+                        return urlHttpRequest
+                    case .getVocabularyByCategoryId(let categoryId):
                         return urlHttpRequest
                     case .getCategory:
                         return urlHttpRequest
