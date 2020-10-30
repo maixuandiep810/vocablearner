@@ -17,23 +17,20 @@ class UserController: UIViewController {
     @IBOutlet weak var usernameLb: UILabel!
     
     
+    // MARK: Life - cycle
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.navigationController?.navigationBar.topItem?.title = StoryboardConstVar.UserControllerNavTitle
         guard let user = CurrentUser.shared.user else { return }
         if user.avatarUrl != nil {
             self.avatarImage.sd_setImage(with: URL(string: "\(API.kFileUrl + user.avatarUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
 
         }
         usernameLb.text = "\(user.username)"
-
     }
     
     

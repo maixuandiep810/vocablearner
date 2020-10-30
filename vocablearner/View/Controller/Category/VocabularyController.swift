@@ -19,13 +19,17 @@ class VocabularyController: UIViewController, UICollectionViewDelegate, UICollec
     
     // MARK: Life - cycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadVocabulary()
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+// TODO: fix exactly title when back to parent controller
+//        self.navigationController?.navigationBar.topItem?.title = categoryModel.name
+        loadVocabulary()
+    }
+    
     
     
     // MARK: Private Methods

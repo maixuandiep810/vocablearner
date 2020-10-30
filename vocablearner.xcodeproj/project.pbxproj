@@ -26,10 +26,11 @@
 		5C2E0157254A9E230000E18B /* VocabularyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E0156254A9E230000E18B /* VocabularyController.swift */; };
 		5C2E015C254ABD200000E18B /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E015B254ABD200000E18B /* TestModel.swift */; };
 		5C2E0161254ABD760000E18B /* TestBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E0160254ABD760000E18B /* TestBaseResponse.swift */; };
+		5C4ADC6E254C143800A6B445 /* LearnVocabularyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ADC6D254C143800A6B445 /* LearnVocabularyController.swift */; };
 		5C9DECEE254A5D6D00DC182F /* MyNote.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C9DECED254A5D6D00DC182F /* MyNote.txt */; };
 		5C9DECFC254A795600DC182F /* VocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DECFB254A795600DC182F /* VocabularyCell.swift */; };
 		5C9E4F772540121D00948C49 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F762540121D00948C49 /* BaseUrl.swift */; };
-		5C9E4F7C2540141500948C49 /* StoryboardId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F7B2540141500948C49 /* StoryboardId.swift */; };
+		5C9E4F7C2540141500948C49 /* StoryboardString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F7B2540141500948C49 /* StoryboardString.swift */; };
 		5C9E4F81254014A400948C49 /* CommonResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F80254014A400948C49 /* CommonResources.swift */; };
 		5C9E4F882540153600948C49 /* ServerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F852540153600948C49 /* ServerKey.swift */; };
 		5C9E4F892540153600948C49 /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F862540153600948C49 /* CommonExtension.swift */; };
@@ -96,10 +97,11 @@
 		5C2E0156254A9E230000E18B /* VocabularyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyController.swift; sourceTree = "<group>"; };
 		5C2E015B254ABD200000E18B /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		5C2E0160254ABD760000E18B /* TestBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBaseResponse.swift; sourceTree = "<group>"; };
+		5C4ADC6D254C143800A6B445 /* LearnVocabularyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnVocabularyController.swift; sourceTree = "<group>"; };
 		5C9DECED254A5D6D00DC182F /* MyNote.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyNote.txt; sourceTree = "<group>"; };
 		5C9DECFB254A795600DC182F /* VocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyCell.swift; sourceTree = "<group>"; };
 		5C9E4F762540121D00948C49 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
-		5C9E4F7B2540141500948C49 /* StoryboardId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardId.swift; sourceTree = "<group>"; };
+		5C9E4F7B2540141500948C49 /* StoryboardString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardString.swift; sourceTree = "<group>"; };
 		5C9E4F80254014A400948C49 /* CommonResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResources.swift; sourceTree = "<group>"; };
 		5C9E4F852540153600948C49 /* ServerKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerKey.swift; sourceTree = "<group>"; };
 		5C9E4F862540153600948C49 /* CommonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				5C9E83492542962200A032E6 /* CategoryController.swift */,
 				5C2E0156254A9E230000E18B /* VocabularyController.swift */,
+				5C4ADC6D254C143800A6B445 /* LearnVocabularyController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -267,7 +270,7 @@
 				5C9E4F872540153600948C49 /* ListTransform.swift */,
 				5C9E4F852540153600948C49 /* ServerKey.swift */,
 				5C9E4F762540121D00948C49 /* BaseUrl.swift */,
-				5C9E4F7B2540141500948C49 /* StoryboardId.swift */,
+				5C9E4F7B2540141500948C49 /* StoryboardString.swift */,
 				5C9E4F80254014A400948C49 /* CommonResources.swift */,
 				5C9E833F254294D500A032E6 /* EnvironmentConfig.swift */,
 				5CDE88842547D97100F8851A /* UIConfig.swift */,
@@ -602,10 +605,11 @@
 				5C23D8122541796900FF5B8B /* RealmManager.swift in Sources */,
 				5C9E8340254294D500A032E6 /* EnvironmentConfig.swift in Sources */,
 				5CDE88732547C50900F8851A /* CategoryModel.swift in Sources */,
-				5C9E4F7C2540141500948C49 /* StoryboardId.swift in Sources */,
+				5C9E4F7C2540141500948C49 /* StoryboardString.swift in Sources */,
 				5C9E834A2542962200A032E6 /* CategoryController.swift in Sources */,
 				5C9E4FBD2540273C00948C49 /* UserModel.swift in Sources */,
 				5CDE88782547C93400F8851A /* CategoryResponse.swift in Sources */,
+				5C4ADC6E254C143800A6B445 /* LearnVocabularyController.swift in Sources */,
 				5C9E4FC22540282300948C49 /* UserInfoResponse.swift in Sources */,
 				5C9E4F772540121D00948C49 /* BaseUrl.swift in Sources */,
 				5C9E833B2542921D00A032E6 /* ParentController.swift in Sources */,

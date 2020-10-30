@@ -18,13 +18,16 @@ class CategoryController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: Life - cycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadCategory()
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.topItem?.title = StoryboardConstVar.CategoryControllerNavTitle
+        loadCategory()
+    }
+
     
     
     // MARK: Private Methods

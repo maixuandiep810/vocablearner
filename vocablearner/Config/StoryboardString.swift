@@ -14,19 +14,17 @@ struct StoryboardId {
     static let ParentControllerID = "ParentControllerID"
     static let CategoryControllerID = "CategoryControllerID"
     static let VocabularyControllerID = "VocabularyControllerID"
+    static let LearnVocabularyControllerID = "LearnVocabularyControllerID"
 
 
-    
     // Cell
     static let CategoryCellID = "CategoryCellID"
     static let VocabularyCellID = "VocabularyCellID"
-    
-    
-    // ViewID
-//    static let BannerCellId = "BannerCellIdentifier"
-//    static let DetailMovieCellId = "DetailMovieCell"
-//    static let MovieCellId = "MovieCell"
-//    static let BannerDetailCellId = "BannerDetailCellId"
-    
+}
+
+
+struct StoryboardConstVar {
+    static let CategoryControllerNavTitle = "Category"
+    static let UserControllerNavTitle = "User"
 }
 
