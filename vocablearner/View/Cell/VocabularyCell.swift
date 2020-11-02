@@ -19,7 +19,7 @@ class VocabularyCell: UICollectionViewCell {
         didSet {
             guard let data = data else { return }
             
-            if(data.imageUrl.count > 0){
+            if(data.imageUrl.count > 0 && data.imageView == nil){
                 self.vocabularyImage.sd_setImage(with: URL(string: "\(API.kFileUrl + data.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
                 vocabularyLabel.text = String(format: " \(data.word)")
             }

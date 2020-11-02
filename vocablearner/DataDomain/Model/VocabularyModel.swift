@@ -19,6 +19,7 @@ class VocabularyModel: Object, Mappable {
     @objc dynamic var sentence = ""
     @objc dynamic var imageUrl = ""
     @objc dynamic var audioUrl = ""
+    var imageView: UIImageView?
     
     required convenience init?(map: Map) {
         self.init()

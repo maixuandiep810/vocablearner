@@ -46,6 +46,9 @@
 		5C9E834F2542B3E100A032E6 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E834E2542B3E100A032E6 /* VocabularyModel.swift */; };
 		5C9E83542542B4CA00A032E6 /* VocabularyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E83532542B4CA00A032E6 /* VocabularyResponse.swift */; };
 		5C9E83592542DE0C00A032E6 /* BaseClient+Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E83582542DE0C00A032E6 /* BaseClient+Vocabulary.swift */; };
+		5CA34CC0254F9A8C009BBE34 /* LearnVocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34CBF254F9A8C009BBE34 /* LearnVocabularyCell.swift */; };
+		5CA34CC9254F9C6B009BBE34 /* LearnVocabularyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34CC8254F9C6B009BBE34 /* LearnVocabularyTable.swift */; };
+		5CA34CCE254FB401009BBE34 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34CCD254FB401009BBE34 /* ImageCell.swift */; };
 		5CDE88732547C50900F8851A /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE88722547C50900F8851A /* CategoryModel.swift */; };
 		5CDE88782547C93400F8851A /* CategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE88772547C93400F8851A /* CategoryResponse.swift */; };
 		5CDE887D2547C9B300F8851A /* BaseClient+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE887C2547C9B300F8851A /* BaseClient+Category.swift */; };
@@ -117,6 +120,9 @@
 		5C9E834E2542B3E100A032E6 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
 		5C9E83532542B4CA00A032E6 /* VocabularyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyResponse.swift; sourceTree = "<group>"; };
 		5C9E83582542DE0C00A032E6 /* BaseClient+Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Vocabulary.swift"; sourceTree = "<group>"; };
+		5CA34CBF254F9A8C009BBE34 /* LearnVocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnVocabularyCell.swift; sourceTree = "<group>"; };
+		5CA34CC8254F9C6B009BBE34 /* LearnVocabularyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnVocabularyTable.swift; sourceTree = "<group>"; };
+		5CA34CCD254FB401009BBE34 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		5CDE88722547C50900F8851A /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5CDE88772547C93400F8851A /* CategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponse.swift; sourceTree = "<group>"; };
 		5CDE887C2547C9B300F8851A /* BaseClient+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Category.swift"; sourceTree = "<group>"; };
@@ -229,6 +235,8 @@
 			children = (
 				5C18CCE32547BF15004934C5 /* CategoryCell.swift */,
 				5C9DECFB254A795600DC182F /* VocabularyCell.swift */,
+				5CA34CBF254F9A8C009BBE34 /* LearnVocabularyCell.swift */,
+				5CA34CCD254FB401009BBE34 /* ImageCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -281,6 +289,7 @@
 		5C9E4F90254018C600948C49 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CA34CC4254F9B0F009BBE34 /* Table */,
 				5C18CCE22547BEEB004934C5 /* Cell */,
 				5C9E4F91254018CC00948C49 /* Controller */,
 			);
@@ -332,6 +341,14 @@
 				5C23D8112541796900FF5B8B /* RealmManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		5CA34CC4254F9B0F009BBE34 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				5CA34CC8254F9C6B009BBE34 /* LearnVocabularyTable.swift */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 		60DA0DA6E9E614246E78358D /* Pods */ = {
@@ -601,11 +618,13 @@
 				5C23D7FF254173A400FF5B8B /* CurrentUser.swift in Sources */,
 				5C9E4F81254014A400948C49 /* CommonResources.swift in Sources */,
 				5C9E4F8A2540153600948C49 /* ListTransform.swift in Sources */,
+				5CA34CCE254FB401009BBE34 /* ImageCell.swift in Sources */,
 				5C9E834F2542B3E100A032E6 /* VocabularyModel.swift in Sources */,
 				5C23D8122541796900FF5B8B /* RealmManager.swift in Sources */,
 				5C9E8340254294D500A032E6 /* EnvironmentConfig.swift in Sources */,
 				5CDE88732547C50900F8851A /* CategoryModel.swift in Sources */,
 				5C9E4F7C2540141500948C49 /* StoryboardString.swift in Sources */,
+				5CA34CC9254F9C6B009BBE34 /* LearnVocabularyTable.swift in Sources */,
 				5C9E834A2542962200A032E6 /* CategoryController.swift in Sources */,
 				5C9E4FBD2540273C00948C49 /* UserModel.swift in Sources */,
 				5CDE88782547C93400F8851A /* CategoryResponse.swift in Sources */,
@@ -620,6 +639,7 @@
 				5C9E4F892540153600948C49 /* CommonExtension.swift in Sources */,
 				5C9E4F882540153600948C49 /* ServerKey.swift in Sources */,
 				5C23D7EA25412BEF00FF5B8B /* BaseClient+User.swift in Sources */,
+				5CA34CC0254F9A8C009BBE34 /* LearnVocabularyCell.swift in Sources */,
 				5C9E4FB82540258B00948C49 /* BaseResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

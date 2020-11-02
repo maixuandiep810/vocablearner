@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SDWebImage
 
 class VocabularyController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -74,4 +75,20 @@ extension VocabularyController {
         cell.data = self.listVocabularyModel[indexPath.row]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell: VocabularyCell = self.vocabularyClt.cellForItem(at: indexPath) as! VocabularyCell
+        let controller: LearnVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.LearnVocabularyControllerID) as! LearnVocabularyController
+        controller.listVocabularyModel = self.listVocabularyModel
+        self.navigationController?.pushViewController(controller, animated: true)
+
+        
+        
+//        if let listVocabularyModel = self.listVocabularyModel {
+//            controller.listVocabularyModel = listVocabularyModel
+//
+//            self.navigationController?.pushViewController(controller, animated: true)
+//        }
+    }
+
 }
