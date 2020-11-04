@@ -6,3 +6,5 @@ FULL auto layout
     - Learn Vocabulary Controller. 0001
 
 Clicl Event Table
+
+Nhay den dung Selected Vocab o view cha da chon

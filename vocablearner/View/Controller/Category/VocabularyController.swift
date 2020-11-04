@@ -80,6 +80,7 @@ extension VocabularyController {
         let cell: VocabularyCell = self.vocabularyClt.cellForItem(at: indexPath) as! VocabularyCell
         let controller: LearnVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.LearnVocabularyControllerID) as! LearnVocabularyController
         controller.listVocabularyModel = self.listVocabularyModel
+        controller.currentIndex = indexPath.row
         self.navigationController?.pushViewController(controller, animated: true)
 
         

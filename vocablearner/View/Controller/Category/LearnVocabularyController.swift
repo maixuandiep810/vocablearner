@@ -25,7 +25,6 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
     // MARK: Properties
 
     @IBOutlet weak var vocabularyClt: UICollectionView!
-    @IBOutlet weak var pageStepper: UIStepper!
     var listVocabularyModel = List<VocabularyModel>()
     var currentIndex = 0
 
@@ -34,7 +33,6 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.vocabularyClt.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,23 +40,17 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
         configUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        gotoCurrentCellSelected(animated: true)
+    }
+       
     
     // MARK: Outlet Actions
     
-    @IBAction func pageStepperValueChanged(_ sender: Any) {
-        print(self.pageStepper.value)
-       
-        let nextIndexRaw = Int(self.pageStepper.value)
-        let nextIndexPath = IndexPath(indexes: [0, nextIndexRaw])
-        self.vocabularyClt.isScrollEnabled = true
-        self.vocabularyClt.scrollToItem(at: nextIndexPath, at: .left, animated: true)
-        self.vocabularyClt.isScrollEnabled = false
-    }
     
     // MARK: ConfigUI
     
     func configUI() -> Void {
-        self.pageStepper.maximumValue = Double(self.listVocabularyModel.count)
     }
     
 }
@@ -91,6 +83,10 @@ extension LearnVocabularyController {
     }
     
     // MARK: Private Methods
+    func gotoCurrentCellSelected(animated: Bool) -> Void {
+        let nextIndexPath = IndexPath(indexes: [0, self.currentIndex])
+        self.vocabularyClt.scrollToItem(at: nextIndexPath, at: .right, animated: animated)
+    }
 }
 
 
