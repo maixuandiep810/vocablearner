@@ -36,6 +36,7 @@ enum LearnVocabularyTableCell_ENUM: Int {
     
     case ImageCellID = 0
     case AudioCellID = 1
+    case CheckAudioCellID = 2
     case Default = 9
     
     var cellID: String {
@@ -44,6 +45,8 @@ enum LearnVocabularyTableCell_ENUM: Int {
             return "ImageCellID"
         case .AudioCellID:
             return "AudioCellID"
+        case .CheckAudioCellID:
+            return "CheckAudioCellID"
         case .Default:
             return ""
         }
@@ -56,7 +59,10 @@ enum LearnVocabularyTableCell_ENUM: Int {
             height = 400
             return height
         case .AudioCellID:
-            height = 100
+            height = 160
+            return height
+        case .CheckAudioCellID:
+            height = 120
             return height
         case .Default:
             height = 0

@@ -31,19 +31,23 @@ extension LearnVocabularyCell {
         return 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case LearnVocabularyTableCell_ENUM.ImageCellID.rawValue:
-            let cell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.ImageCellID.cellID)
+            let cell: ImageCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.ImageCellID.cellID) as! ImageCell
             if(data!.imageUrl.count > 0 && data!.imageView == nil){
-                cell?.imageView?.sd_setImage(with: URL(string: "\(API.kFileUrl + data!.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
+                cell.imageView?.sd_setImage(with: URL(string: "\(API.kFileUrl + data!.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
             }
-            return cell!
+            return cell
         case LearnVocabularyTableCell_ENUM.AudioCellID.rawValue:
-            let cell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.AudioCellID.cellID)
-            return cell!
+            let cell: AudioCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.AudioCellID.cellID) as! AudioCell
+            cell.pronunciationLabel.text = data!.word
+            return cell
+        case LearnVocabularyTableCell_ENUM.CheckAudioCellID.rawValue:
+            let cell: CheckAudioCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.CheckAudioCellID.cellID) as! CheckAudioCell
+            return cell
         default:
             return UITableViewCell()
         }
@@ -55,8 +59,14 @@ extension LearnVocabularyCell {
             return LearnVocabularyTableCell_ENUM.ImageCellID.heightCell
         case LearnVocabularyTableCell_ENUM.AudioCellID.rawValue:
             return LearnVocabularyTableCell_ENUM.AudioCellID.heightCell
+        case LearnVocabularyTableCell_ENUM.CheckAudioCellID.rawValue:
+            return LearnVocabularyTableCell_ENUM.CheckAudioCellID.heightCell
         default:
             return LearnVocabularyTableCell_ENUM.Default.heightCell
         }
+    }
+    
+    func resetData () -> Void {
+        self.data = nil
     }
 }
