@@ -47,10 +47,12 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
     
     @IBAction func pageStepperValueChanged(_ sender: Any) {
         print(self.pageStepper.value)
-//        self.currentIndex = Int(self.pageStepper.value)
-//        let nextIndexRaw = Int(self.pageStepper.value)
-        let nextIndexPath = self.vocabularyClt.indexPathsForVisibleItems[1]
+       
+        let nextIndexRaw = Int(self.pageStepper.value)
+        let nextIndexPath = IndexPath(indexes: [0, nextIndexRaw])
+        self.vocabularyClt.isScrollEnabled = true
         self.vocabularyClt.scrollToItem(at: nextIndexPath, at: .left, animated: true)
+        self.vocabularyClt.isScrollEnabled = false
     }
     
     // MARK: ConfigUI
@@ -78,7 +80,24 @@ extension LearnVocabularyController {
         return cell
     }
     
-    // MARK: Private Methods
-
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.currentIndex = (self.currentIndex == self.listVocabularyModel.count - 1) && (self.vocabularyClt.scrollDirection == .right) ? (-1) : (self.currentIndex)
+        let scrollDirection = self.vocabularyClt.scrollDirection
+        self.vocabularyClt.isScrollEnabled = false
+        self.vocabularyClt.isScrollEnabled = true
+        self.currentIndex = (scrollDirection == .right) ? (self.currentIndex + 1) : (self.currentIndex - 1)
+        let nextIndexPath = IndexPath(indexes: [0, self.currentIndex])
+        self.vocabularyClt.scrollToItem(at: nextIndexPath, at: self.vocabularyClt.scrollDirectionExt, animated: true)
+    }
     
+    // MARK: Private Methods
 }
+
+
+
+
+// BIN
+
+//        self.currentIndex = Int(self.pageStepper.value)
+//        let nextIndexPath = self.vocabularyClt.indexPathsForVisibleItems[0]
+//        var indexPathList: [IndexPath] = []

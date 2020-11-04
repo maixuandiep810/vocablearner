@@ -462,6 +462,7 @@
                                                         <constraint firstAttribute="width" constant="370" id="STZ-DO-V74"/>
                                                         <constraint firstAttribute="height" constant="664" id="a0J-d8-vIT"/>
                                                     </constraints>
+                                                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCellID" rowHeight="370" id="egY-WI-g7m" customClass="ImageCell" customModule="vocablearner" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="28" width="370" height="370"/>
@@ -476,13 +477,21 @@
                                                                             <constraint firstAttribute="height" constant="370" id="hBv-nF-bNx"/>
                                                                             <constraint firstAttribute="width" constant="370" id="igg-Au-tMR"/>
                                                                         </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="10"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="inT-V0-2hP" firstAttribute="top" secondItem="twD-Mq-Fzp" secondAttribute="top" id="5be-mz-78F"/>
                                                                     <constraint firstItem="inT-V0-2hP" firstAttribute="centerX" secondItem="twD-Mq-Fzp" secondAttribute="centerX" id="ivA-3t-F5f"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <outlet property="vocabularyImage" destination="inT-V0-2hP" id="f8T-Tc-6kU"/>
                                                             </connections>
@@ -515,6 +524,7 @@
                                                                         <state key="normal" backgroundImage="audio_icon_001"/>
                                                                     </button>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableViewCellContentView>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
@@ -542,6 +552,7 @@
                                                                         <state key="normal" backgroundImage="audio_icon_001"/>
                                                                     </button>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableViewCellContentView>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </tableViewCell>

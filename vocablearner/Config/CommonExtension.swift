@@ -27,3 +27,49 @@ extension UIViewController {
 
 }
 
+
+extension UIScrollView {
+    enum ScrollDirection {
+        case up
+        case down
+        case left
+        case right
+        case unknown
+    }
+    
+    var scrollDirection: ScrollDirection {
+        guard let superview = superview else { return .unknown }
+        if panGestureRecognizer.translation(in: superview).y != 0 {
+            return panGestureRecognizer.translation(in: superview).y > 0 ? .down : .up
+        }
+        else if panGestureRecognizer.translation(in: superview).x != 0 {
+            return panGestureRecognizer.translation(in: superview).x < 0 ? .right : .left
+        }
+        return .unknown
+    }
+}
+
+extension UICollectionView {
+    var scrollDirectionExt: ScrollPosition {
+        switch self.scrollDirection {
+        case .right:
+            return ScrollPosition.right
+        case .left:
+            return ScrollPosition.left
+        case .up:
+            return ScrollPosition.top
+        case .down:
+            return ScrollPosition.bottom
+        default:
+            return ScrollPosition.right
+        }
+    }
+    
+}
+
+
+
+// BIN
+//func getDestinationScroll(section: Int, cell: Int) -> IndexPath {
+//    return IndexPath([section, cell])
+//}

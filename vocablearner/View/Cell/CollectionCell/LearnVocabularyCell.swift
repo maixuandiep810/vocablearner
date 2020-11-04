@@ -16,6 +16,7 @@ class LearnVocabularyCell: UICollectionViewCell, UITableViewDelegate, UITableVie
     var data: VocabularyModel? {
         didSet {
             guard let data = data else { return }
+            self.vocabularyTable.reloadData()
 //            self.layer.borderColor = UIConfig.categoryCellBorderColor
 //            self.layer.borderWidth = UIConfig.categoryCellBorderWidth
         }
@@ -37,12 +38,14 @@ extension LearnVocabularyCell {
         switch indexPath.row {
         case LearnVocabularyTableCell_ENUM.ImageCellID.rawValue:
             let cell: ImageCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.ImageCellID.cellID) as! ImageCell
+            cell.vocabularyImage.image = nil
             if(data!.imageUrl.count > 0 && data!.imageView == nil){
                 cell.imageView?.sd_setImage(with: URL(string: "\(API.kFileUrl + data!.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
             }
             return cell
         case LearnVocabularyTableCell_ENUM.AudioCellID.rawValue:
             let cell: AudioCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.AudioCellID.cellID) as! AudioCell
+            cell.pronunciationLabel.text = nil
             cell.pronunciationLabel.text = data!.word
             return cell
         case LearnVocabularyTableCell_ENUM.CheckAudioCellID.rawValue:
