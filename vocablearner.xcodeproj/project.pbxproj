@@ -51,6 +51,8 @@
 		5CA34CC0254F9A8C009BBE34 /* LearnVocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34CBF254F9A8C009BBE34 /* LearnVocabularyCell.swift */; };
 		5CA34CC9254F9C6B009BBE34 /* LearnVocabularyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34CC8254F9C6B009BBE34 /* LearnVocabularyTable.swift */; };
 		5CA34CCE254FB401009BBE34 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34CCD254FB401009BBE34 /* ImageCell.swift */; };
+		5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCEFE52555358B0090E74F /* DefinitionCell.swift */; };
+		5CBCEFF62555465D0090E74F /* TBLDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */; };
 		5CDE88732547C50900F8851A /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE88722547C50900F8851A /* CategoryModel.swift */; };
 		5CDE88782547C93400F8851A /* CategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE88772547C93400F8851A /* CategoryResponse.swift */; };
 		5CDE887D2547C9B300F8851A /* BaseClient+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE887C2547C9B300F8851A /* BaseClient+Category.swift */; };
@@ -127,6 +129,8 @@
 		5CA34CBF254F9A8C009BBE34 /* LearnVocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnVocabularyCell.swift; sourceTree = "<group>"; };
 		5CA34CC8254F9C6B009BBE34 /* LearnVocabularyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnVocabularyTable.swift; sourceTree = "<group>"; };
 		5CA34CCD254FB401009BBE34 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		5CBCEFE52555358B0090E74F /* DefinitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCell.swift; sourceTree = "<group>"; };
+		5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBLDefaultCell.swift; sourceTree = "<group>"; };
 		5CDE88722547C50900F8851A /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5CDE88772547C93400F8851A /* CategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponse.swift; sourceTree = "<group>"; };
 		5CDE887C2547C9B300F8851A /* BaseClient+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Category.swift"; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 			children = (
 				5C77E932255254EB00A86469 /* VocabularyTableCell */,
 				5C77E931255254B200A86469 /* CollectionCell */,
+				5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				5CA34CCD254FB401009BBE34 /* ImageCell.swift */,
 				5C77E9272552549800A86469 /* AudioCell.swift */,
 				5C77E92C255254AD00A86469 /* CheckAudioCell.swift */,
+				5CBCEFE52555358B0090E74F /* DefinitionCell.swift */,
 			);
 			path = VocabularyTableCell;
 			sourceTree = "<group>";
@@ -630,6 +636,7 @@
 				5C2E0157254A9E230000E18B /* VocabularyController.swift in Sources */,
 				5C77E92D255254AD00A86469 /* CheckAudioCell.swift in Sources */,
 				5C9E4FA6254024C400948C49 /* DataManager.swift in Sources */,
+				5CBCEFF62555465D0090E74F /* TBLDefaultCell.swift in Sources */,
 				5CDE88852547D97100F8851A /* UIConfig.swift in Sources */,
 				5C9E8345254295F600A032E6 /* UserController.swift in Sources */,
 				5C9E83592542DE0C00A032E6 /* BaseClient+Vocabulary.swift in Sources */,
@@ -650,6 +657,7 @@
 				5C9E4F7C2540141500948C49 /* StoryboardString.swift in Sources */,
 				5CA34CC9254F9C6B009BBE34 /* LearnVocabularyTable.swift in Sources */,
 				5C9E834A2542962200A032E6 /* CategoryController.swift in Sources */,
+				5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */,
 				5C9E4FBD2540273C00948C49 /* UserModel.swift in Sources */,
 				5CDE88782547C93400F8851A /* CategoryResponse.swift in Sources */,
 				5C4ADC6E254C143800A6B445 /* LearnVocabularyController.swift in Sources */,

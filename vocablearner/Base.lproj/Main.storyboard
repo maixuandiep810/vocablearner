@@ -454,46 +454,40 @@
                                                     </constraints>
                                                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCellID" rowHeight="370" id="egY-WI-g7m" customClass="ImageCell" customModule="vocablearner" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="28" width="370" height="370"/>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCellID" rowHeight="400" id="egY-WI-g7m" customClass="ImageCell" customModule="vocablearner" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="28" width="370" height="400"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="egY-WI-g7m" id="twD-Mq-Fzp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="370" height="370"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="370" height="400"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="inT-V0-2hP">
-                                                                        <rect key="frame" x="5" y="10" width="360" height="360"/>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bVi-3k-n4F">
+                                                                        <rect key="frame" x="0.0" y="10" width="100" height="100"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="360" id="hBv-nF-bNx"/>
-                                                                            <constraint firstAttribute="width" constant="360" id="igg-Au-tMR"/>
+                                                                            <constraint firstAttribute="height" constant="100" id="M3T-yC-YDZ"/>
+                                                                            <constraint firstAttribute="width" constant="100" id="Q6m-tC-ond"/>
                                                                         </constraints>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                <integer key="value" value="10"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="inT-V0-2hP" firstAttribute="top" secondItem="twD-Mq-Fzp" secondAttribute="top" constant="10" id="5be-mz-78F"/>
-                                                                    <constraint firstItem="inT-V0-2hP" firstAttribute="leading" secondItem="twD-Mq-Fzp" secondAttribute="leading" constant="5" id="ImP-nl-6fY"/>
-                                                                </constraints>
                                                             </tableViewCellContentView>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="bVi-3k-n4F" firstAttribute="top" secondItem="egY-WI-g7m" secondAttribute="top" constant="10" id="72e-Hu-1Cl"/>
+                                                                <constraint firstItem="bVi-3k-n4F" firstAttribute="leading" secondItem="egY-WI-g7m" secondAttribute="leading" id="MHC-p9-fa6"/>
+                                                            </constraints>
                                                             <connections>
-                                                                <outlet property="vocabularyImage" destination="inT-V0-2hP" id="f8T-Tc-6kU"/>
+                                                                <outlet property="vocabularyImage" destination="bVi-3k-n4F" id="7Lz-2n-Rpz"/>
                                                             </connections>
                                                         </tableViewCell>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AudioCellID" rowHeight="160" id="UyH-15-t5x" customClass="AudioCell" customModule="vocablearner" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="398" width="370" height="160"/>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AudioCellID" rowHeight="160" id="UyH-15-t5x" customClass="AudioCell" customModule="vocablearner" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="428" width="370" height="160"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UyH-15-t5x" id="rb1-D7-1KB">
                                                                 <rect key="frame" x="0.0" y="0.0" width="370" height="160"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pronunciation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS8-Ia-FIf">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IPA notation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS8-Ia-FIf">
                                                                         <rect key="frame" x="5" y="11" width="360" height="35"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -512,6 +506,9 @@
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" backgroundImage="audio_icon_001"/>
+                                                                        <connections>
+                                                                            <action selector="AudioButtonTouchUpInside:" destination="76n-fW-ygP" eventType="touchUpInside" id="nwl-SB-K67"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -521,14 +518,14 @@
                                                                 <outlet property="pronunciationLabel" destination="WIA-PE-YTV" id="nQb-uS-gfp"/>
                                                             </connections>
                                                         </tableViewCell>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckAudioCellID" rowHeight="120" id="UCN-P9-yhb" customClass="CheckAudioCell" customModule="vocablearner" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="558" width="370" height="120"/>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckAudioCellID" rowHeight="120" id="UCN-P9-yhb" customClass="CheckAudioCell" customModule="vocablearner" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="588" width="370" height="120"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UCN-P9-yhb" id="3cH-Cu-lnS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="370" height="120"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pronunciation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtO-Pa-Aox">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check pronunciation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtO-Pa-Aox">
                                                                         <rect key="frame" x="0.0" y="11" width="370" height="35"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -542,6 +539,56 @@
                                                                         <state key="normal" backgroundImage="audio_icon_001"/>
                                                                     </button>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </tableViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </tableViewCell>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefinitionCellID" rowHeight="120" id="f5N-O3-uKk" customClass="DefinitionCell" customModule="vocablearner" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="708" width="370" height="120"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f5N-O3-uKk" id="gm3-zt-4yX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="370" height="120"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Definition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ux-j8-cQ2">
+                                                                        <rect key="frame" x="0.0" y="11" width="370" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="nAJ-6U-Dec"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JR5-mP-XX8">
+                                                                        <rect key="frame" x="0.0" y="51" width="370" height="59"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                    </textView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="2ux-j8-cQ2" firstAttribute="leading" secondItem="gm3-zt-4yX" secondAttribute="leading" id="BWS-Lz-zW5"/>
+                                                                    <constraint firstItem="2ux-j8-cQ2" firstAttribute="trailing" secondItem="gm3-zt-4yX" secondAttribute="trailing" id="Izu-1G-Fiv"/>
+                                                                    <constraint firstItem="JR5-mP-XX8" firstAttribute="bottom" secondItem="gm3-zt-4yX" secondAttribute="bottom" constant="-10" id="PHQ-Tl-K29"/>
+                                                                    <constraint firstItem="JR5-mP-XX8" firstAttribute="top" secondItem="2ux-j8-cQ2" secondAttribute="bottom" id="ikU-zw-Jh4"/>
+                                                                    <constraint firstItem="JR5-mP-XX8" firstAttribute="trailing" secondItem="gm3-zt-4yX" secondAttribute="trailing" id="pDL-pY-Vbq"/>
+                                                                    <constraint firstItem="JR5-mP-XX8" firstAttribute="leading" secondItem="gm3-zt-4yX" secondAttribute="leading" id="pLa-qe-Jhh"/>
+                                                                    <constraint firstItem="2ux-j8-cQ2" firstAttribute="top" secondItem="gm3-zt-4yX" secondAttribute="top" constant="11" id="zRy-kc-Uej"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <connections>
+                                                                <outlet property="definitionTextView" destination="JR5-mP-XX8" id="xq7-J9-axY"/>
+                                                            </connections>
+                                                        </tableViewCell>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefaultCellID" rowHeight="120" id="srm-iT-sTR" customClass="TBLDefaultCell" customModule="vocablearner" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="828" width="370" height="120"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="srm-iT-sTR" id="6GB-OR-qBw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="370" height="120"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableViewCellContentView>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -629,6 +676,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

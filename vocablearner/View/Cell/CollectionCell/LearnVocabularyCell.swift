@@ -32,7 +32,7 @@ extension LearnVocabularyCell {
         return 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 6
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
@@ -51,8 +51,14 @@ extension LearnVocabularyCell {
         case LearnVocabularyTableCell_ENUM.CheckAudioCellID.rawValue:
             let cell: CheckAudioCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.CheckAudioCellID.cellID) as! CheckAudioCell
             return cell
+        case LearnVocabularyTableCell_ENUM.DefinitionCellID.rawValue:
+            let cell: DefinitionCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.DefinitionCellID.cellID) as! DefinitionCell
+            cell.definitionTextView.text = "aaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaa"
+            heightConfig.DefinitionCellID_TextView = cell.definitionTextView.contentSize.height
+            return cell
+    
         default:
-            return UITableViewCell()
+            return self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.Default.cellID) as! TBLDefaultCell
         }
     }
     
@@ -64,6 +70,8 @@ extension LearnVocabularyCell {
             return LearnVocabularyTableCell_ENUM.AudioCellID.heightCell
         case LearnVocabularyTableCell_ENUM.CheckAudioCellID.rawValue:
             return LearnVocabularyTableCell_ENUM.CheckAudioCellID.heightCell
+        case LearnVocabularyTableCell_ENUM.DefinitionCellID.rawValue:
+            return LearnVocabularyTableCell_ENUM.DefinitionCellID.heightCell
         default:
             return LearnVocabularyTableCell_ENUM.Default.heightCell
         }

@@ -46,6 +46,9 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
        
     
     // MARK: Outlet Actions
+    @IBAction func AudioButtonTouchUpInside(_ sender: Any) {
+        print("AAAAA")
+    }
     
     
     // MARK: ConfigUI
