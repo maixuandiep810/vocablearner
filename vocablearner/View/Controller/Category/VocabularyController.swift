@@ -30,35 +30,6 @@ class VocabularyController: UIViewController, UICollectionViewDelegate, UICollec
 //        self.navigationController?.navigationBar.topItem?.title = categoryModel.name
         loadVocabulary()
     }
-    
-    
-    
-    // MARK: Private Methods
-    
-    func loadVocabulary() {
-        BaseClient.shared.getVocabularyByCategoryIdWithUrl(categoryId: String(categoryModel.id),
-            completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-                if(isSuccess!) {
-                    self.listVocabularyModel = value as! List<VocabularyModel>
-                    self.vocabularyClt.reloadData()
-                }
-            }
-
-        )
-    }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
@@ -77,19 +48,30 @@ extension VocabularyController {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell: VocabularyCell = self.vocabularyClt.cellForItem(at: indexPath) as! VocabularyCell
+//        let cell: VocabularyCell = self.vocabularyClt.cellForItem(at: indexPath) as! VocabularyCell
         let controller: LearnVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.LearnVocabularyControllerID) as! LearnVocabularyController
         controller.listVocabularyModel = self.listVocabularyModel
         controller.currentIndex = indexPath.row
         self.navigationController?.pushViewController(controller, animated: true)
-
-        
-        
 //        if let listVocabularyModel = self.listVocabularyModel {
 //            controller.listVocabularyModel = listVocabularyModel
 //
 //            self.navigationController?.pushViewController(controller, animated: true)
 //        }
+    }
+    
+    // MARK: Private Methods
+    
+    func loadVocabulary() {
+        BaseClient.shared.getVocabularyByCategoryIdWithUrl(categoryId: String(categoryModel.id),
+            completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+                if(isSuccess!) {
+                    self.listVocabularyModel = value as! List<VocabularyModel>
+                    self.vocabularyClt.reloadData()
+                }
+            }
+
+        )
     }
 
 }

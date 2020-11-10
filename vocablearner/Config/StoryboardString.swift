@@ -16,6 +16,7 @@ struct StoryboardId {
     static let CategoryControllerID = "CategoryControllerID"
     static let VocabularyControllerID = "VocabularyControllerID"
     static let LearnVocabularyControllerID = "LearnVocabularyControllerID"
+    static let TestControllerID = "TestControllerID"
 
     // Table
     static let LearnVocabularyTableID = "LearnVocabularyTableID"
@@ -24,6 +25,7 @@ struct StoryboardId {
     static let CategoryCellID = "CategoryCellID"
     static let VocabularyCellID = "VocabularyCellID"
     static let LearnVocabularyCellID = "LearnVocabularyCellID"
+    static let TestCellID = "TestCellID"
 }
 
 
@@ -80,3 +82,5 @@ enum LearnVocabularyTableCell_ENUM: Int {
         }
     }
 }
+
+

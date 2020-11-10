@@ -16,8 +16,6 @@ class VocabularyResponse: BaseResponse<ListVocabularyModelData> {
 }
 
 
-
-
 // LIST OF VOCABULARY MODEL DATA
 class ListVocabularyModelData: Object, Mappable {
     

@@ -20,9 +20,14 @@ struct API {
     static let kRegisterUrl = "/api/user/register"
     static let kVocabularyUrl = "/api/vocabulary"
     static let kVocabularyByCategoryIdUrl = "/api/vocabulary/%@"
+    static let kCheckPronunciationByVocabularyIdUrl = "/api/file/check_pronunciation/%@"
     static let kCategoryUrl = "/api/category"
+    
+    static let kTestGetAudioUrl = "https://file-examples-com.github.io/uploads/2017/11/file_example_WAV_1MG.wav"
+}
 
-
-
+struct DocumentUrl {
+    
+    static let defaultAudioUrl = "recording.m4a"
 }
 

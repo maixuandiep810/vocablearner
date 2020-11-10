@@ -27,6 +27,10 @@
 		5C2E015C254ABD200000E18B /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E015B254ABD200000E18B /* TestModel.swift */; };
 		5C2E0161254ABD760000E18B /* TestBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E0160254ABD760000E18B /* TestBaseResponse.swift */; };
 		5C4ADC6E254C143800A6B445 /* LearnVocabularyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ADC6D254C143800A6B445 /* LearnVocabularyController.swift */; };
+		5C63C6A4255A3517007DB2CC /* GoTestControllerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63C6A3255A3517007DB2CC /* GoTestControllerButton.swift */; };
+		5C63C6A9255A3CC9007DB2CC /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63C6A8255A3CC9007DB2CC /* OptionView.swift */; };
+		5C63C6AE255A3F07007DB2CC /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63C6AD255A3F07007DB2CC /* TestCell.swift */; };
+		5C63C6B6255A4452007DB2CC /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63C6B5255A4452007DB2CC /* TestController.swift */; };
 		5C77E9282552549800A86469 /* AudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C77E9272552549800A86469 /* AudioCell.swift */; };
 		5C77E92D255254AD00A86469 /* CheckAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C77E92C255254AD00A86469 /* CheckAudioCell.swift */; };
 		5C9DECEE254A5D6D00DC182F /* MyNote.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C9DECED254A5D6D00DC182F /* MyNote.txt */; };
@@ -53,6 +57,7 @@
 		5CA34CCE254FB401009BBE34 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34CCD254FB401009BBE34 /* ImageCell.swift */; };
 		5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCEFE52555358B0090E74F /* DefinitionCell.swift */; };
 		5CBCEFF62555465D0090E74F /* TBLDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */; };
+		5CD4A13C2559235100621E40 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4A13B2559235100621E40 /* DocumentManager.swift */; };
 		5CDE88732547C50900F8851A /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE88722547C50900F8851A /* CategoryModel.swift */; };
 		5CDE88782547C93400F8851A /* CategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE88772547C93400F8851A /* CategoryResponse.swift */; };
 		5CDE887D2547C9B300F8851A /* BaseClient+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE887C2547C9B300F8851A /* BaseClient+Category.swift */; };
@@ -105,6 +110,10 @@
 		5C2E015B254ABD200000E18B /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		5C2E0160254ABD760000E18B /* TestBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBaseResponse.swift; sourceTree = "<group>"; };
 		5C4ADC6D254C143800A6B445 /* LearnVocabularyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnVocabularyController.swift; sourceTree = "<group>"; };
+		5C63C6A3255A3517007DB2CC /* GoTestControllerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTestControllerButton.swift; sourceTree = "<group>"; };
+		5C63C6A8255A3CC9007DB2CC /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
+		5C63C6AD255A3F07007DB2CC /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		5C63C6B5255A4452007DB2CC /* TestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
 		5C77E9272552549800A86469 /* AudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCell.swift; sourceTree = "<group>"; };
 		5C77E92C255254AD00A86469 /* CheckAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAudioCell.swift; sourceTree = "<group>"; };
 		5C9DECED254A5D6D00DC182F /* MyNote.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyNote.txt; sourceTree = "<group>"; };
@@ -131,6 +140,7 @@
 		5CA34CCD254FB401009BBE34 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		5CBCEFE52555358B0090E74F /* DefinitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCell.swift; sourceTree = "<group>"; };
 		5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBLDefaultCell.swift; sourceTree = "<group>"; };
+		5CD4A13B2559235100621E40 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		5CDE88722547C50900F8851A /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5CDE88772547C93400F8851A /* CategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponse.swift; sourceTree = "<group>"; };
 		5CDE887C2547C9B300F8851A /* BaseClient+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Category.swift"; sourceTree = "<group>"; };
@@ -179,6 +189,7 @@
 				603ED3FC6EDD6FC093D54BFE /* Pods_vocablearnerTests.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		5C11BB56253FF38B00AB4D3B = {
@@ -189,7 +200,6 @@
 				5C11BB83253FF38E00AB4D3B /* vocablearnerUITests */,
 				5C11BB60253FF38B00AB4D3B /* Products */,
 				60DA0DA6E9E614246E78358D /* Pods */,
-				1133B8BD9A1CF22C0741ABEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,6 +242,7 @@
 		5C11BB83253FF38E00AB4D3B /* vocablearnerUITests */ = {
 			isa = PBXGroup;
 			children = (
+				1133B8BD9A1CF22C0741ABEA /* Frameworks */,
 				5C11BB84253FF38E00AB4D3B /* vocablearnerUITests.swift */,
 				5C11BB86253FF38E00AB4D3B /* Info.plist */,
 			);
@@ -259,12 +270,22 @@
 			path = A;
 			sourceTree = "<group>";
 		};
+		5C63C6A2255A34D0007DB2CC /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				5C63C6A3255A3517007DB2CC /* GoTestControllerButton.swift */,
+				5C63C6A8255A3CC9007DB2CC /* OptionView.swift */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
 		5C77E931255254B200A86469 /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
 				5C18CCE32547BF15004934C5 /* CategoryCell.swift */,
 				5C9DECFB254A795600DC182F /* VocabularyCell.swift */,
 				5CA34CBF254F9A8C009BBE34 /* LearnVocabularyCell.swift */,
+				5C63C6AD255A3F07007DB2CC /* TestCell.swift */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -295,6 +316,7 @@
 				5C9E83492542962200A032E6 /* CategoryController.swift */,
 				5C2E0156254A9E230000E18B /* VocabularyController.swift */,
 				5C4ADC6D254C143800A6B445 /* LearnVocabularyController.swift */,
+				5C63C6B5255A4452007DB2CC /* TestController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -317,6 +339,7 @@
 		5C9E4F90254018C600948C49 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C63C6A2255A34D0007DB2CC /* CommonUI */,
 				5CA34CC4254F9B0F009BBE34 /* Table */,
 				5C18CCE22547BEEB004934C5 /* Cell */,
 				5C9E4F91254018CC00948C49 /* Controller */,
@@ -367,6 +390,7 @@
 				5C23D7FE254173A400FF5B8B /* CurrentUser.swift */,
 				5C9E4FA5254024C400948C49 /* DataManager.swift */,
 				5C23D8112541796900FF5B8B /* RealmManager.swift */,
+				5CD4A13B2559235100621E40 /* DocumentManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -635,7 +659,9 @@
 				5C11BB67253FF38B00AB4D3B /* LoginController.swift in Sources */,
 				5C2E0157254A9E230000E18B /* VocabularyController.swift in Sources */,
 				5C77E92D255254AD00A86469 /* CheckAudioCell.swift in Sources */,
+				5C63C6AE255A3F07007DB2CC /* TestCell.swift in Sources */,
 				5C9E4FA6254024C400948C49 /* DataManager.swift in Sources */,
+				5CD4A13C2559235100621E40 /* DocumentManager.swift in Sources */,
 				5CBCEFF62555465D0090E74F /* TBLDefaultCell.swift in Sources */,
 				5CDE88852547D97100F8851A /* UIConfig.swift in Sources */,
 				5C9E8345254295F600A032E6 /* UserController.swift in Sources */,
@@ -655,6 +681,7 @@
 				5C9E8340254294D500A032E6 /* EnvironmentConfig.swift in Sources */,
 				5CDE88732547C50900F8851A /* CategoryModel.swift in Sources */,
 				5C9E4F7C2540141500948C49 /* StoryboardString.swift in Sources */,
+				5C63C6A4255A3517007DB2CC /* GoTestControllerButton.swift in Sources */,
 				5CA34CC9254F9C6B009BBE34 /* LearnVocabularyTable.swift in Sources */,
 				5C9E834A2542962200A032E6 /* CategoryController.swift in Sources */,
 				5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */,
@@ -662,6 +689,7 @@
 				5CDE88782547C93400F8851A /* CategoryResponse.swift in Sources */,
 				5C4ADC6E254C143800A6B445 /* LearnVocabularyController.swift in Sources */,
 				5C9E4FC22540282300948C49 /* UserInfoResponse.swift in Sources */,
+				5C63C6B6255A4452007DB2CC /* TestController.swift in Sources */,
 				5C9E4F772540121D00948C49 /* BaseUrl.swift in Sources */,
 				5C9E833B2542921D00A032E6 /* ParentController.swift in Sources */,
 				5C23D7E925412BEF00FF5B8B /* BaseClient.swift in Sources */,
@@ -672,6 +700,7 @@
 				5C9E4F882540153600948C49 /* ServerKey.swift in Sources */,
 				5C23D7EA25412BEF00FF5B8B /* BaseClient+User.swift in Sources */,
 				5CA34CC0254F9A8C009BBE34 /* LearnVocabularyCell.swift in Sources */,
+				5C63C6A9255A3CC9007DB2CC /* OptionView.swift in Sources */,
 				5C9E4FB82540258B00948C49 /* BaseResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

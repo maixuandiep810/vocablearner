@@ -10,24 +10,47 @@ import UIKit
 class LoginController: UIViewController, UITextFieldDelegate {
 
     
-    // Mark: Properties
+    // MARK: Properties
     
     @IBOutlet var usernameTf: UITextField!
     @IBOutlet weak var passwordTf: UITextField!
     
-    
-    
-    // Mark: Life - cycle
+
+    // MARK: Life - cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-        
+    }
+    
+}
+
+extension LoginController {
+    
+    // MARK: Actions
+    @IBAction func LoginBtnTouchUpInside(_ sender: Any) {
+        BaseClient.shared.loginWithUrl(username: usernameTf.text!, password: passwordTf.text!)
+        { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+            if(isSuccess!) {
+                // TODO : check login FAIL or SUCCESS
+                 self.resetRoot(id: StoryboardId.ParentControllerID)
+            } else {
+                let alert = UIAlertController(title: "Failed", message: "Username Or Password Incorrect", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+        }
     }
     
     
-    // Mark: Helper Methods
-
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return false
+    }
+    
+    
+    // MARK: Helper Methods
     
     func configView() {
         // Init tap gesture
@@ -37,45 +60,14 @@ class LoginController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tap)
     }
     
-    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     
-    
-    // Mark: Development ENV Functions
+    // MARK: Development ENV Functions
     func logout() {
         if EnvironmentConfig.isDevelop {
-            
         }
-    }
-
-
-}
-
-
-// Mark: Extensions - LoginController
-
-extension LoginController {
-    
-    // Mark: Actions
-    @IBAction func LoginBtnTouchUpInside(_ sender: Any) {
-        
-        BaseClient.shared.loginWithUrl(username: usernameTf.text!, password: passwordTf.text!)
-        { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-            if(isSuccess!) {
-                 self.resetRoot(id: StoryboardId.ParentControllerID)
-            } else {
-                // Show message login fail
-            }
-        }
-    }
-    
-    
-    // MARK : UITextFieldDelegate
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        dismissKeyboard()
-        return false
     }
     
 }

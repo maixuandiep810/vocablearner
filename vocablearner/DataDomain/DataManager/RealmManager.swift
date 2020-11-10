@@ -5,6 +5,11 @@
 //  Created by Rocky on 10/22/20.
 //
 
+
+// TODO XXXXXXXXX
+
+
+
 import Foundation
 import RealmSwift
 
@@ -52,6 +57,6 @@ class UserDA {
     }
     
     func deleteCurrentUser() {
-        let user = try! Realm(configuration: self.config).objects(UserModel.self).first
+//        let user = try! Realm(configuration: self.config).objects(UserModel.self).first
     }
 }

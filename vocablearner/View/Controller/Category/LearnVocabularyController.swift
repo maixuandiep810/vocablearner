@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import AVFoundation
 
 
 
@@ -20,19 +21,31 @@ import RealmSwift
 
 
 
-class LearnVocabularyController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class LearnVocabularyController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
     // MARK: Properties
 
     @IBOutlet weak var vocabularyClt: UICollectionView!
     var listVocabularyModel = List<VocabularyModel>()
     var currentIndex = 0
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!
+    var audioPlayer: AVAudioPlayer?
 
 
     // MARK: Life - cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        recordingSession = AVAudioSession.sharedInstance()
+        do {
+//            let url = NSURL(string: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3") as! URL
+//            try audioPlayer = AVAudioPlayer.
+//            audioPlayer?.delegate = self
+//            audioPlayer?.prepareToPlay()
+        } catch let error as NSError {
+            print("audioPlayer error \(error.localizedDescription)")
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +61,21 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
     // MARK: Outlet Actions
     @IBAction func AudioButtonTouchUpInside(_ sender: Any) {
         print("AAAAA")
+        self.audioPlayer?.play()
+        
+    }
+    @IBAction func CheckAudioButtonTouchUpInside(_ sender: Any) {
+        print("BBBB")
+        let checkAudioButton: UIButton! = sender as! UIButton
+        if recordingSession.recordPermission != .granted {
+            requestRecordPermission()
+            return
+        }
+        if audioRecorder == nil {
+            startRecording(checkAudioButton: checkAudioButton)
+        } else {
+            finishRecording(checkAudioButton: checkAudioButton, success: true)
+        }
     }
     
     
@@ -89,6 +117,90 @@ extension LearnVocabularyController {
     func gotoCurrentCellSelected(animated: Bool) -> Void {
         let nextIndexPath = IndexPath(indexes: [0, self.currentIndex])
         self.vocabularyClt.scrollToItem(at: nextIndexPath, at: .right, animated: animated)
+    }
+    
+    func requestRecordPermission() -> Void {
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                    } else {
+                    }
+                }
+            }
+        } catch {
+            print("Error info: \(error)")        }
+    }
+    
+    
+    func startRecording(checkAudioButton: UIButton!) {
+        
+        let currentIndexPath = IndexPath(indexes: [0, self.currentIndex])
+        let currentLearnVocabularyCell: LearnVocabularyCell! = self.vocabularyClt.cellForItem(at: currentIndexPath) as! LearnVocabularyCell
+        currentLearnVocabularyCell.vocabularyTable.isScrollEnabled = false
+        if let image = UIImage(named: "finish_record.png") {
+            checkAudioButton.setImage(image, for: .normal)
+        }
+        let audioFilename = DocumentManager.shared.getDocumentsDirectory().appendingPathComponent(DocumentUrl.defaultAudioUrl)
+
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+
+        do {
+            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.record()
+        } catch {
+            finishRecording(checkAudioButton: checkAudioButton, success: false)
+        }
+    }
+    
+    func finishRecording(checkAudioButton: UIButton!, success: Bool) {
+        audioRecorder.stop()
+        audioRecorder = nil
+
+        if let image = UIImage(named: "start_record.png") {
+            checkAudioButton.setImage(image, for: .normal)
+        }
+        
+        if success {
+            BaseClient.shared.checkPronunciation(vocabularyId: "1")
+            { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+                if(isSuccess!) {
+                } else {
+                    let alert = UIAlertController(title: "Successed", message: "Successed.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+        } else {
+            let alert = UIAlertController(title: "Failed", message: "Failed.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
+    
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully
+                    flag: Bool) {
+    }
+
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer,
+                    error: Error?) {
+    }
+
+    func audioPlayerBeginInterruption(_ player: AVAudioPlayer) {
+    }
+
+    func audioPlayerEndInterruption(player: AVAudioPlayer) {
     }
 }
 

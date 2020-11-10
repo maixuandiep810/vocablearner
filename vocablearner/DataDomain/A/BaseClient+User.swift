@@ -14,31 +14,36 @@ import AlamofireObjectMapper
 extension BaseClient {
     
     /**
-    * Login
-    * @param: username, password md5
-    * @return : token
-    */
+     * Login
+     * @param: username, password md5
+     * @return : token
+     */
     func loginWithUrl(username:String, password: String, completion:@escaping ServiceResponse) {
         DispatchQueue.global(qos: .background).async {
-            
             // Run on background thread
             let request = Services.login(username: username, password: password) as URLRequestConvertible
             Alamofire.request(request)
                 .responseObject { (response: DataResponse<UserInfoResponse>) in
                     switch response.result {
+                    
                     case let .success(data):
-                        let user = data.data as? UserModel
+                        let user = data.data
                         self.token = user?.token
                         CurrentUser.shared.user = user
                         // ****
                         // RealmManager.shared.userDA.saveUser(user: CurrentUser.shared.user)
-
-                        completion(true, nil, data.data);
-                        break
-
-                    case let .failure(error):
-                        completion(false, error as NSError?, nil);
                         
+                        // TODO : save token to DB
+                        
+                        DispatchQueue.main.async {
+                            completion(true, nil, data.data);
+                        }
+                        break
+                        
+                    case let .failure(error):
+                        DispatchQueue.main.async {
+                            completion(false, error as NSError?, nil);
+                        }
                         break
                     }
                 }
@@ -46,28 +51,32 @@ extension BaseClient {
     }
     
     /**
-    * Login
-    * @param: username, password md5
-    * @return : token
-    */
-    func loginWithUrl(token:String, completion:@escaping ServiceResponse) {
+     * Login
+     * @param: username, password md5
+     * @return : token
+     */
+    func logoutWithUrl(token:String, completion:@escaping ServiceResponse) {
         DispatchQueue.global(qos: .background).async {
             // Run on background thread
             let request = Services.logout(token: token) as URLRequestConvertible
             Alamofire.request(request)
                 .responseJSON { (response: DataResponse<Any>) in
                     switch response.result {
-                    case let .success(_):
+                    case .success(_):
                         CurrentUser.shared.user = nil
-                        completion(true, nil, nil);
+                        DispatchQueue.main.async {
+                            completion(true, nil, nil);
+                        }
                         break
                     case let .failure(error):
-                        completion(false, error as NSError?, nil);
+                        DispatchQueue.main.async {
+                            completion(false, error as NSError?, nil);
+                        }
                         break
                     }
                 }
         }
     }
     
-        
+    
 }

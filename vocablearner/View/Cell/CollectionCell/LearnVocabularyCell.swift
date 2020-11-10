@@ -13,6 +13,7 @@ class LearnVocabularyCell: UICollectionViewCell, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var vocabularyTable: UITableView!
     
+    
     var data: VocabularyModel? {
         didSet {
             guard let data = data else { return }
@@ -80,4 +81,6 @@ extension LearnVocabularyCell {
     func resetData () -> Void {
         self.data = nil
     }
+    
+    
 }

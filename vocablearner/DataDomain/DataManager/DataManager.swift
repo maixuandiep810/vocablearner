@@ -16,6 +16,7 @@ import UIKit
 class DataManager: NSObject {
 
     static let shared = DataManager()
+    
     let imageCache = NSCache<AnyObject, AnyObject>()
 
     func AddValue(key: String, value: String) -> Void {

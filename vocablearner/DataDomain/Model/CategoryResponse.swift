@@ -16,8 +16,6 @@ class CategoryResponse: BaseResponse<ListCategoryModelData> {
 }
 
 
-
-
 // LIST OF CAREGORY MODEL DATA
 class ListCategoryModelData: Object, Mappable {
     

@@ -29,6 +29,7 @@ class BaseClient: NSObject {
         
         case getVocabulary
         case getVocabularyByCategoryId(categoryId: String)
+        case checkPronunciation(vocabularyId: String)
         case getCategory
 
 
@@ -43,6 +44,8 @@ class BaseClient: NSObject {
 
             case .getVocabulary: return HTTPMethod.get
             case .getVocabularyByCategoryId(_): return HTTPMethod.get
+            case .checkPronunciation(_): return HTTPMethod.post
+                
             case .getCategory: return HTTPMethod.get
             }
             
@@ -60,52 +63,85 @@ class BaseClient: NSObject {
                 return String(format: API.kVocabularyUrl)
             case .getVocabularyByCategoryId(let categoryId):
                 return String(format: API.kVocabularyByCategoryIdUrl, categoryId)
+            case .checkPronunciation(let vocabularyId):
+                return String(format: API.kCheckPronunciationByVocabularyIdUrl, vocabularyId)
+                
             case .getCategory:
                 return String(format: API.kCategoryUrl)
             }
         
         }
+        
+
             
         // MARK: URLRequestConvertible
-            func asURLRequest() throws -> URLRequest
-            {
-                
-                // Create http url
-                let urlHttp = try Services.baseHTTP.appending(path).asURL()
-                var urlHttpRequest = URLRequest(url: urlHttp)
-                urlHttpRequest.httpMethod = method.rawValue
-                urlHttpRequest.setValue(Header.ApplicationJson, forHTTPHeaderField: Header.ContentType)
-
-                switch self {
-                    case .login(let username, let password):
-                        var bodyRaw: [String: Any] = [
-                            "username": "user1",
-                            "password": "123"
-                        ]
-                        do {
-                            //  Auto add header ContentType = ApplicationJson
-                            try urlHttpRequest = try JSONEncoding.default.encode(urlHttpRequest, with: bodyRaw)
-                            print(urlHttpRequest.httpBody)
-                        } catch {
-                            print()
-                        }
-                        return urlHttpRequest
-                    case .logout(let token):
-                        urlHttpRequest.setValue(token, forHTTPHeaderField: Header.Token)
-                        return urlHttpRequest
-                    case .getVocabulary:
-                        return urlHttpRequest
-                    case .getVocabularyByCategoryId(let categoryId):
-                        return urlHttpRequest
-                    case .getCategory:
-                        return urlHttpRequest
+        func asURLRequest() throws -> URLRequest
+        {
+            
+            // Create http url
+            let urlHttp = try Services.baseHTTP.appending(path).asURL()
+            var urlHttpRequest = URLRequest(url: urlHttp)
+            urlHttpRequest.httpMethod = method.rawValue
+            urlHttpRequest.setValue(Header.ApplicationJson, forHTTPHeaderField: Header.ContentType)
+            
+            switch self {
+            case .login(let username, let password):
+                var bodyRaw: [String: Any] = [
+                    "username": "user1",
+                    "password": "123"
+                ]
+                do {
+                    //  Auto add header ContentType = ApplicationJson
+                    try urlHttpRequest = try JSONEncoding.default.encode(urlHttpRequest, with: bodyRaw)
+                    
+                    
+                    print(urlHttpRequest.httpBody)
+                } catch {
+                    print()
                 }
+                return urlHttpRequest
                 
+            case .logout(let token):
+                urlHttpRequest.setValue(token, forHTTPHeaderField: Header.Token)
+                return urlHttpRequest
+            case .getVocabulary:
+                return urlHttpRequest
+            case .getVocabularyByCategoryId(let categoryId):
+                return urlHttpRequest
+            case .checkPronunciation(let vocabularyId):
+                urlHttpRequest.setValue(Header.MultipartFormdata, forHTTPHeaderField: Header.ContentType)
+                return urlHttpRequest
+                
+            case .getCategory:
+                return urlHttpRequest
             }
-        
+            
         }
+    }
     
     
     
 }
 
+
+
+
+//var multipartFormData: MultipartFormData {
+//    let multipartFormData = MultipartFormData()
+//    switch self {
+//    case .checkPronunciation(_):
+//        multipartFormData.append(DocumentManager.shared.getDocumentsDirectory().appendingPathComponent(DocumentUrl.defaultAudioUrl), withName: "audio")
+//    default: ()
+//    }
+//    return multipartFormData
+//}
+//
+//func getMultipartFormData() -> MultipartFormData {
+//    let multipartFormData = MultipartFormData()
+//    switch self {
+//    case .checkPronunciation(_):
+//        multipartFormData.append(DocumentManager.shared.getDocumentsDirectory().appendingPathComponent(DocumentUrl.defaultAudioUrl), withName: "audio")
+//    default: ()
+//    }
+//    return multipartFormData
+//}
