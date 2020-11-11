@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LoginController: UIViewController, UITextFieldDelegate {
 
@@ -32,8 +33,8 @@ extension LoginController {
         BaseClient.shared.loginWithUrl(username: usernameTf.text!, password: passwordTf.text!)
         { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
             if(isSuccess!) {
+                self.resetRoot(id: StoryboardId.ParentControllerID)
                 // TODO : check login FAIL or SUCCESS
-                 self.resetRoot(id: StoryboardId.ParentControllerID)
             } else {
                 let alert = UIAlertController(title: "Failed", message: "Username Or Password Incorrect", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))

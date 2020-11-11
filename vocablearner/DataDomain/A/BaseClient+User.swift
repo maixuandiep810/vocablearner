@@ -30,13 +30,16 @@ extension BaseClient {
                         let user = data.data
                         self.token = user?.token
                         CurrentUser.shared.user = user
-                        // ****
+                        
+                        // TODO : save token to
                         // RealmManager.shared.userDA.saveUser(user: CurrentUser.shared.user)
-                        
-                        // TODO : save token to DB
-                        
-                        DispatchQueue.main.async {
-                            completion(true, nil, data.data);
+                        switch data.code {
+                        case 1:
+                            DispatchQueue.main.async {
+                                completion(true, nil, nil);
+                            }
+                        default:
+                            ()
                         }
                         break
                         

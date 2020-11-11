@@ -11,11 +11,8 @@ import SDWebImage
 
 class UserController: UIViewController {
     
-    
-    
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var usernameLb: UILabel!
-    
     
     // MARK: Life - cycle
     
@@ -25,26 +22,39 @@ class UserController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.topItem?.title = StoryboardConstVar.UserControllerNavTitle
-        guard let user = CurrentUser.shared.user else { return }
-        if user.avatarUrl != nil {
-            self.avatarImage.sd_setImage(with: URL(string: "\(API.kFileUrl + user.avatarUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
-
-        }
-        usernameLb.text = "\(user.username)"
+        assignData()
+        configUI()
     }
-    
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+extension UserController {
+    func configUI() -> Void {
+        self.avatarImage.layer.masksToBounds = true
+        self.avatarImage.layer.cornerRadius = 75
+    }
+    func assignData() -> Void {
+        guard let user = CurrentUser.shared.user else { return }
+        if(user.avatarUrl.count > 0){
+            self.avatarImage.sd_setImage(with: URL(string: "\(API.kFileUrl + user.avatarUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
+        }
+        self.usernameLb.text = "\(user.username)"
+    }
+}
+
+
+
+
+
+
+
+
+/*
+// MARK: - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // Get the new view controller using segue.destination.
+    // Pass the selected object to the new view controller.
+}
+*/
