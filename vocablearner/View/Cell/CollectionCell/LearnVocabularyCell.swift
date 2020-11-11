@@ -13,13 +13,10 @@ class LearnVocabularyCell: UICollectionViewCell, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var vocabularyTable: UITableView!
     
-    
     var data: VocabularyModel? {
         didSet {
-            guard let data = data else { return }
+            guard (data != nil) else { return }
             self.vocabularyTable.reloadData()
-//            self.layer.borderColor = UIConfig.categoryCellBorderColor
-//            self.layer.borderWidth = UIConfig.categoryCellBorderWidth
         }
     }
 }
@@ -27,13 +24,11 @@ class LearnVocabularyCell: UICollectionViewCell, UITableViewDelegate, UITableVie
 extension LearnVocabularyCell {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if let data = self.data {
-            return 1
-        }
-        return 0
+        guard (self.data != nil) else { return 0 }
+        return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
@@ -41,7 +36,7 @@ extension LearnVocabularyCell {
             let cell: ImageCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.ImageCellID.cellID) as! ImageCell
             cell.vocabularyImage.image = nil
             if(data!.imageUrl.count > 0 && data!.imageView == nil){
-                cell.imageView?.sd_setImage(with: URL(string: "\(API.kFileUrl + data!.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
+                cell.vocabularyImage.sd_setImage(with: URL(string: "\(API.kFileUrl + data!.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
             }
             return cell
         case LearnVocabularyTableCell_ENUM.AudioCellID.rawValue:

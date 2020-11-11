@@ -16,6 +16,7 @@ class VocabularyModel: Object, Mappable {
     @objc dynamic var id = 0
     @objc dynamic var word = ""
     @objc dynamic var meaning = ""
+    @objc dynamic var ipaTranscription = ""
     @objc dynamic var definition = ""
     @objc dynamic var sentence = ""
     @objc dynamic var imageUrl = ""

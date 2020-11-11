@@ -66,7 +66,7 @@ enum LearnVocabularyTableCell_ENUM: Int {
         var height = CGFloat()
         switch self {
         case .ImageCellID:
-            height = 400
+            height = 360
             return height
         case .AudioCellID:
             height = 160

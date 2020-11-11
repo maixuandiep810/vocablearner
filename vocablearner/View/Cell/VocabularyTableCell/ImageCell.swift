@@ -14,19 +14,21 @@ class ImageCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        configViewUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 }
 
 extension ImageCell {
     func configViewUI() -> Void {
-        self.layer.borderWidth = UIConfig.defaultBorderWidth
-        self.layer.borderColor = UIConfig.defaultBorderColor
+        self.vocabularyImage.layer.borderWidth = UIConfig.defaultBorderWidth
+        self.vocabularyImage.layer.borderColor = UIConfig.defaultBorderColor
+        self.vocabularyImage.layer.masksToBounds = true
+        self.vocabularyImage.layer.cornerRadius = 40
+
     }
 }
