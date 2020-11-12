@@ -10,6 +10,7 @@ import UIKit
 class DefinitionCell: UITableViewCell {
 
     @IBOutlet weak var definitionTextView: UITextView!
+    var heightDefinitionTextView = CGFloat()
 
     override func awakeFromNib() {
         super.awakeFromNib()

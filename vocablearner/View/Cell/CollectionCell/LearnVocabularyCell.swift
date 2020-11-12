@@ -17,6 +17,8 @@ class LearnVocabularyCell: UICollectionViewCell, UITableViewDelegate, UITableVie
         didSet {
             guard (data != nil) else { return }
             self.vocabularyTable.reloadData()
+            self.vocabularyTable.beginUpdates()
+            self.vocabularyTable.endUpdates()
         }
     }
 }
@@ -28,7 +30,7 @@ extension LearnVocabularyCell {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
@@ -49,7 +51,7 @@ extension LearnVocabularyCell {
             return cell
         case LearnVocabularyTableCell_ENUM.DefinitionCellID.rawValue:
             let cell: DefinitionCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.DefinitionCellID.cellID) as! DefinitionCell
-            cell.definitionTextView.text = "aaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaaaaaaa aaaaa aaaaa"
+            cell.definitionTextView.text = data!.definition
             heightConfig.DefinitionCellID_TextView = cell.definitionTextView.contentSize.height
             return cell
     
@@ -72,6 +74,8 @@ extension LearnVocabularyCell {
             return LearnVocabularyTableCell_ENUM.Default.heightCell
         }
     }
+    
+
     
     func resetData () -> Void {
         self.data = nil

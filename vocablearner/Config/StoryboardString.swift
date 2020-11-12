@@ -77,7 +77,7 @@ enum LearnVocabularyTableCell_ENUM: Int {
         case .DefinitionCellID:
             return heightConfig.DefinitionCellID_Title + heightConfig.DefinitionCellID_TextView
         case .Default:
-            height = 40
+            height = 200
             return height
         }
     }

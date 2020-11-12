@@ -53,7 +53,6 @@
 		5C9E83542542B4CA00A032E6 /* VocabularyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E83532542B4CA00A032E6 /* VocabularyResponse.swift */; };
 		5C9E83592542DE0C00A032E6 /* BaseClient+Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E83582542DE0C00A032E6 /* BaseClient+Vocabulary.swift */; };
 		5CA34CC0254F9A8C009BBE34 /* LearnVocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34CBF254F9A8C009BBE34 /* LearnVocabularyCell.swift */; };
-		5CA34CC9254F9C6B009BBE34 /* LearnVocabularyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34CC8254F9C6B009BBE34 /* LearnVocabularyTable.swift */; };
 		5CA34CCE254FB401009BBE34 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34CCD254FB401009BBE34 /* ImageCell.swift */; };
 		5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCEFE52555358B0090E74F /* DefinitionCell.swift */; };
 		5CBCEFF62555465D0090E74F /* TBLDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */; };
@@ -136,7 +135,6 @@
 		5C9E83532542B4CA00A032E6 /* VocabularyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyResponse.swift; sourceTree = "<group>"; };
 		5C9E83582542DE0C00A032E6 /* BaseClient+Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Vocabulary.swift"; sourceTree = "<group>"; };
 		5CA34CBF254F9A8C009BBE34 /* LearnVocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnVocabularyCell.swift; sourceTree = "<group>"; };
-		5CA34CC8254F9C6B009BBE34 /* LearnVocabularyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnVocabularyTable.swift; sourceTree = "<group>"; };
 		5CA34CCD254FB401009BBE34 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		5CBCEFE52555358B0090E74F /* DefinitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCell.swift; sourceTree = "<group>"; };
 		5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBLDefaultCell.swift; sourceTree = "<group>"; };
@@ -398,7 +396,6 @@
 		5CA34CC4254F9B0F009BBE34 /* Table */ = {
 			isa = PBXGroup;
 			children = (
-				5CA34CC8254F9C6B009BBE34 /* LearnVocabularyTable.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -682,7 +679,6 @@
 				5CDE88732547C50900F8851A /* CategoryModel.swift in Sources */,
 				5C9E4F7C2540141500948C49 /* StoryboardString.swift in Sources */,
 				5C63C6A4255A3517007DB2CC /* GoTestControllerButton.swift in Sources */,
-				5CA34CC9254F9C6B009BBE34 /* LearnVocabularyTable.swift in Sources */,
 				5C9E834A2542962200A032E6 /* CategoryController.swift in Sources */,
 				5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */,
 				5C9E4FBD2540273C00948C49 /* UserModel.swift in Sources */,
