@@ -15,6 +15,7 @@ class TestController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var testClt: UICollectionView!
     var categoryModel = CategoryModel()
     var listVocabularyModel = List<VocabularyModel>()
+    var currentIndex = 0
     
     
     
@@ -45,6 +46,23 @@ extension TestController {
         cell.data = self.listVocabularyModel[indexPath.row]
         return cell
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.currentIndex = (self.currentIndex == self.listVocabularyModel.count - 1) && (self.testClt.scrollDirection == .right) ? (-1) : (self.currentIndex)
+        let scrollDirection = self.testClt.scrollDirection
+        self.testClt.isScrollEnabled = false
+        self.testClt.isScrollEnabled = true
+        self.currentIndex = (scrollDirection == .right) ? (self.currentIndex + 1) : (self.currentIndex - 1)
+        let nextIndexPath = IndexPath(indexes: [0, self.currentIndex])
+        self.testClt.scrollToItem(at: nextIndexPath, at: self.testClt.scrollDirectionExt, animated: true)
+    }
+    
+    // MARK: Private Methods
+    func gotoCurrentCellSelected(animated: Bool) -> Void {
+        let nextIndexPath = IndexPath(indexes: [0, self.currentIndex])
+        self.testClt.scrollToItem(at: nextIndexPath, at: .right, animated: animated)
+    }
+    
     
     // MARK: Private Methods
     

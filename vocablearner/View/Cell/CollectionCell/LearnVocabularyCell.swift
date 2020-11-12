@@ -44,15 +44,14 @@ extension LearnVocabularyCell {
         case LearnVocabularyTableCell_ENUM.AudioCellID.rawValue:
             let cell: AudioCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.AudioCellID.cellID) as! AudioCell
             cell.pronunciationLabel.text = nil
-            cell.pronunciationLabel.text = data!.word
+            cell.pronunciationLabel.text = data!.sentence
             return cell
         case LearnVocabularyTableCell_ENUM.CheckAudioCellID.rawValue:
             let cell: CheckAudioCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.CheckAudioCellID.cellID) as! CheckAudioCell
             return cell
         case LearnVocabularyTableCell_ENUM.DefinitionCellID.rawValue:
             let cell: DefinitionCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.DefinitionCellID.cellID) as! DefinitionCell
-            cell.definitionTextView.text = data!.definition
-            heightConfig.DefinitionCellID_TextView = cell.definitionTextView.contentSize.height
+            cell.definitionLabel.text = data!.definition
             return cell
     
         default:
@@ -69,7 +68,22 @@ extension LearnVocabularyCell {
         case LearnVocabularyTableCell_ENUM.CheckAudioCellID.rawValue:
             return LearnVocabularyTableCell_ENUM.CheckAudioCellID.heightCell
         case LearnVocabularyTableCell_ENUM.DefinitionCellID.rawValue:
-            return LearnVocabularyTableCell_ENUM.DefinitionCellID.heightCell
+            return UITableView.automaticDimension
+        default:
+            return LearnVocabularyTableCell_ENUM.Default.heightCell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case LearnVocabularyTableCell_ENUM.ImageCellID.rawValue:
+            return LearnVocabularyTableCell_ENUM.ImageCellID.heightCell
+        case LearnVocabularyTableCell_ENUM.AudioCellID.rawValue:
+            return LearnVocabularyTableCell_ENUM.AudioCellID.heightCell
+        case LearnVocabularyTableCell_ENUM.CheckAudioCellID.rawValue:
+            return LearnVocabularyTableCell_ENUM.CheckAudioCellID.heightCell
+        case LearnVocabularyTableCell_ENUM.DefinitionCellID.rawValue:
+            return UITableView.automaticDimension
         default:
             return LearnVocabularyTableCell_ENUM.Default.heightCell
         }

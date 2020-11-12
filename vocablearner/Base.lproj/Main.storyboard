@@ -564,7 +564,7 @@
                                                                 <outlet property="pronunciationLabel" destination="WIA-PE-YTV" id="nQb-uS-gfp"/>
                                                             </connections>
                                                         </tableViewCell>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefinitionCellID" rowHeight="120" id="f5N-O3-uKk" customClass="DefinitionCell" customModule="vocablearner" customModuleProvider="target">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefinitionCellID" rowHeight="120" id="f5N-O3-uKk">
                                                             <rect key="frame" x="0.0" y="708" width="370" height="120"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f5N-O3-uKk" id="gm3-zt-4yX">
@@ -967,7 +967,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I5-c1-Ef5">
                                                                         <rect key="frame" x="37" y="47" width="300" height="40"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -1004,11 +1004,11 @@
                                                                 </subviews>
                                                             </tableViewCellContentView>
                                                         </tableViewCell>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DefinitionCellID" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefinitionCellID" rowHeight="130.33332824707031" id="BDm-Fu-nug" customClass="DefinitionCell" customModule="vocablearner" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="668" width="374" height="130.33332824707031"/>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DefinitionCellID" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefinitionCellID" rowHeight="120" id="BDm-Fu-nug" customClass="DefinitionCell" customModule="vocablearner" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="668" width="374" height="120"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BDm-Fu-nug" id="PQw-pX-BAp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="130.33332824707031"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Definition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUq-bN-sLz">
@@ -1021,33 +1021,29 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2n-hT-SZX">
-                                                                        <rect key="frame" x="38" y="59" width="317" height="40.333333333333343"/>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="317" id="Mtb-YW-GRZ"/>
-                                                                        </constraints>
-                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngo-7a-VtP">
+                                                                        <rect key="frame" x="38" y="56" width="300" height="44"/>
                                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                    </textView>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="B2n-hT-SZX" firstAttribute="trailing" secondItem="PQw-pX-BAp" secondAttribute="trailing" constant="-19" id="8G8-Xx-KLd"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Ngo-7a-VtP" secondAttribute="trailing" constant="36" id="Cbq-gn-MTn"/>
+                                                                    <constraint firstItem="Ngo-7a-VtP" firstAttribute="top" secondItem="aUq-bN-sLz" secondAttribute="bottom" constant="5" id="VQc-82-znI"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Ngo-7a-VtP" secondAttribute="bottom" constant="20" id="Y91-VG-XeQ"/>
+                                                                    <constraint firstItem="Ngo-7a-VtP" firstAttribute="leading" secondItem="PQw-pX-BAp" secondAttribute="leading" constant="38" id="YPe-nC-Ybt"/>
                                                                     <constraint firstItem="aUq-bN-sLz" firstAttribute="leading" secondItem="PQw-pX-BAp" secondAttribute="leading" constant="38" id="hYB-IP-sUX"/>
-                                                                    <constraint firstItem="B2n-hT-SZX" firstAttribute="bottom" secondItem="PQw-pX-BAp" secondAttribute="bottom" constant="-31" id="jdq-bm-ZMe"/>
-                                                                    <constraint firstItem="B2n-hT-SZX" firstAttribute="leading" secondItem="PQw-pX-BAp" secondAttribute="leading" constant="38" id="khm-g1-PIi"/>
                                                                     <constraint firstItem="aUq-bN-sLz" firstAttribute="top" secondItem="PQw-pX-BAp" secondAttribute="top" constant="11" id="qc6-a7-dUP"/>
                                                                     <constraint firstItem="aUq-bN-sLz" firstAttribute="trailing" secondItem="PQw-pX-BAp" secondAttribute="trailing" constant="-36" id="wxT-hJ-x6o"/>
-                                                                    <constraint firstItem="B2n-hT-SZX" firstAttribute="top" secondItem="aUq-bN-sLz" secondAttribute="bottom" constant="8" symbolic="YES" id="xWK-yK-hzh"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <connections>
-                                                                <outlet property="definitionTextView" destination="B2n-hT-SZX" id="x5g-9f-Lbk"/>
+                                                                <outlet property="definitionLabel" destination="Ngo-7a-VtP" id="hLy-S7-RIX"/>
                                                             </connections>
                                                         </tableViewCell>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DefaultCellID" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefaultCellID" rowHeight="100" id="3Jq-Bh-rML" customClass="TBLDefaultCell" customModule="vocablearner" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="798.33332824707031" width="374" height="100"/>
+                                                            <rect key="frame" x="0.0" y="788" width="374" height="100"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Jq-Bh-rML" id="r3f-xg-ecV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
