@@ -17,6 +17,7 @@ struct StoryboardId {
     static let VocabularyControllerID = "VocabularyControllerID"
     static let LearnVocabularyControllerID = "LearnVocabularyControllerID"
     static let TestControllerID = "TestControllerID"
+    static let AddCategoryControllerID = "AddCategoryControllerID"
 
     // Table
     static let LearnVocabularyTableID = "LearnVocabularyTableID"
@@ -26,6 +27,7 @@ struct StoryboardId {
     static let VocabularyCellID = "VocabularyCellID"
     static let LearnVocabularyCellID = "LearnVocabularyCellID"
     static let TestCellID = "TestCellID"
+    static let AddCustomTopicHeaderID = "AddCustomTopicHeaderID"
 }
 
 

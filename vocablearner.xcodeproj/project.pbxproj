@@ -18,6 +18,7 @@
 		5C11BB7A253FF38E00AB4D3B /* vocablearnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB79253FF38E00AB4D3B /* vocablearnerTests.swift */; };
 		5C11BB85253FF38E00AB4D3B /* vocablearnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB84253FF38E00AB4D3B /* vocablearnerUITests.swift */; };
 		5C18CCE42547BF15004934C5 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C18CCE32547BF15004934C5 /* CategoryCell.swift */; };
+		5C193550255D34EB008869B4 /* AddCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C19354F255D34EB008869B4 /* AddCategoryController.swift */; };
 		5C23D7E925412BEF00FF5B8B /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23D7E725412BEF00FF5B8B /* BaseClient.swift */; };
 		5C23D7EA25412BEF00FF5B8B /* BaseClient+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23D7E825412BEF00FF5B8B /* BaseClient+User.swift */; };
 		5C23D7FF254173A400FF5B8B /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23D7FE254173A400FF5B8B /* CurrentUser.swift */; };
@@ -100,6 +101,7 @@
 		5C11BB84253FF38E00AB4D3B /* vocablearnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vocablearnerUITests.swift; sourceTree = "<group>"; };
 		5C11BB86253FF38E00AB4D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C18CCE32547BF15004934C5 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		5C19354F255D34EB008869B4 /* AddCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryController.swift; sourceTree = "<group>"; };
 		5C23D7E725412BEF00FF5B8B /* BaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseClient.swift; sourceTree = "<group>"; };
 		5C23D7E825412BEF00FF5B8B /* BaseClient+User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseClient+User.swift"; sourceTree = "<group>"; };
 		5C23D7FE254173A400FF5B8B /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -250,11 +252,19 @@
 		5C18CCE22547BEEB004934C5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				5C193554255D3D3B008869B4 /* AddCategory */,
 				5C77E932255254EB00A86469 /* VocabularyTableCell */,
 				5C77E931255254B200A86469 /* CollectionCell */,
 				5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		5C193554255D3D3B008869B4 /* AddCategory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddCategory;
 			sourceTree = "<group>";
 		};
 		5C23D7E325412BA400FF5B8B /* A */ = {
@@ -315,6 +325,7 @@
 				5C2E0156254A9E230000E18B /* VocabularyController.swift */,
 				5C4ADC6D254C143800A6B445 /* LearnVocabularyController.swift */,
 				5C63C6B5255A4452007DB2CC /* TestController.swift */,
+				5C19354F255D34EB008869B4 /* AddCategoryController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -660,6 +671,7 @@
 				5C9E4FA6254024C400948C49 /* DataManager.swift in Sources */,
 				5CD4A13C2559235100621E40 /* DocumentManager.swift in Sources */,
 				5CBCEFF62555465D0090E74F /* TBLDefaultCell.swift in Sources */,
+				5C193550255D34EB008869B4 /* AddCategoryController.swift in Sources */,
 				5CDE88852547D97100F8851A /* UIConfig.swift in Sources */,
 				5C9E8345254295F600A032E6 /* UserController.swift in Sources */,
 				5C9E83592542DE0C00A032E6 /* BaseClient+Vocabulary.swift in Sources */,

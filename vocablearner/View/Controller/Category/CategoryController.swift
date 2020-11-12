@@ -32,6 +32,12 @@ class CategoryController: UIViewController, UICollectionViewDelegate, UICollecti
         let testButton: GoTestControllerButton = sender as! GoTestControllerButton
         gotoTestController(testButton: testButton)
     }
+    
+    @IBAction func addTopicTouchUpInside(_ sender: Any) {
+        gotoAddCategoryController()
+    }
+    
+    
 }
 
 
@@ -61,6 +67,14 @@ extension CategoryController {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if (kind == UICollectionView.elementKindSectionHeader) {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: StoryboardId.AddCustomTopicHeaderID, for: indexPath)
+            return headerView
+        }
+        fatalError()
+    }
+    
     
     // MARK: Private Methods
     
@@ -83,7 +97,36 @@ extension CategoryController {
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
+    
+    func gotoAddCategoryController() -> Void {
+        let controller: AddCategoryController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.AddCategoryControllerID) as! AddCategoryController
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
