@@ -19,6 +19,7 @@
 		5C11BB85253FF38E00AB4D3B /* vocablearnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB84253FF38E00AB4D3B /* vocablearnerUITests.swift */; };
 		5C18CCE42547BF15004934C5 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C18CCE32547BF15004934C5 /* CategoryCell.swift */; };
 		5C193550255D34EB008869B4 /* AddCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C19354F255D34EB008869B4 /* AddCategoryController.swift */; };
+		5C22F5AC2564B13D00577558 /* CategoryHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C22F5AB2564B13D00577558 /* CategoryHeaderCell.swift */; };
 		5C23D7E925412BEF00FF5B8B /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23D7E725412BEF00FF5B8B /* BaseClient.swift */; };
 		5C23D7EA25412BEF00FF5B8B /* BaseClient+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23D7E825412BEF00FF5B8B /* BaseClient+User.swift */; };
 		5C23D7FF254173A400FF5B8B /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23D7FE254173A400FF5B8B /* CurrentUser.swift */; };
@@ -102,6 +103,7 @@
 		5C11BB86253FF38E00AB4D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C18CCE32547BF15004934C5 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		5C19354F255D34EB008869B4 /* AddCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryController.swift; sourceTree = "<group>"; };
+		5C22F5AB2564B13D00577558 /* CategoryHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderCell.swift; sourceTree = "<group>"; };
 		5C23D7E725412BEF00FF5B8B /* BaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseClient.swift; sourceTree = "<group>"; };
 		5C23D7E825412BEF00FF5B8B /* BaseClient+User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseClient+User.swift"; sourceTree = "<group>"; };
 		5C23D7FE254173A400FF5B8B /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				5C9DECFB254A795600DC182F /* VocabularyCell.swift */,
 				5CA34CBF254F9A8C009BBE34 /* LearnVocabularyCell.swift */,
 				5C63C6AD255A3F07007DB2CC /* TestCell.swift */,
+				5C22F5AB2564B13D00577558 /* CategoryHeaderCell.swift */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -349,7 +352,6 @@
 			isa = PBXGroup;
 			children = (
 				5C63C6A2255A34D0007DB2CC /* CommonUI */,
-				5CA34CC4254F9B0F009BBE34 /* Table */,
 				5C18CCE22547BEEB004934C5 /* Cell */,
 				5C9E4F91254018CC00948C49 /* Controller */,
 			);
@@ -402,13 +404,6 @@
 				5CD4A13B2559235100621E40 /* DocumentManager.swift */,
 			);
 			path = DataManager;
-			sourceTree = "<group>";
-		};
-		5CA34CC4254F9B0F009BBE34 /* Table */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Table;
 			sourceTree = "<group>";
 		};
 		60DA0DA6E9E614246E78358D /* Pods */ = {
@@ -683,6 +678,7 @@
 				5C23D7FF254173A400FF5B8B /* CurrentUser.swift in Sources */,
 				5C9E4F81254014A400948C49 /* CommonResources.swift in Sources */,
 				5C9E4F8A2540153600948C49 /* ListTransform.swift in Sources */,
+				5C22F5AC2564B13D00577558 /* CategoryHeaderCell.swift in Sources */,
 				5CA34CCE254FB401009BBE34 /* ImageCell.swift in Sources */,
 				5C9E834F2542B3E100A032E6 /* VocabularyModel.swift in Sources */,
 				5C77E9282552549800A86469 /* AudioCell.swift in Sources */,

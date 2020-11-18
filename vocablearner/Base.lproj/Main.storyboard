@@ -178,7 +178,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="AddCustomTopicHeaderID" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddCustomTopicHeaderID" id="UoJ-S9-PoP">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="AddCustomTopicHeaderID" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddCustomTopicHeaderID" id="UoJ-S9-PoP" customClass="CategoryHeaderCell" customModule="vocablearner" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -191,7 +191,16 @@
                                                 <action selector="addTopicTouchUpInside:" destination="yQa-Hq-ZX2" eventType="touchUpInside" id="lHP-Li-UJN"/>
                                             </connections>
                                         </button>
+                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Level" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFU-Cz-GR8">
+                                            <rect key="frame" x="269" y="8" width="97" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
+                                    <connections>
+                                        <outlet property="levelTF" destination="fFU-Cz-GR8" id="7Qb-4e-82h"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="yQa-Hq-ZX2" id="YY1-xn-Yq9"/>
@@ -1146,7 +1155,7 @@
                                             <outlet property="vocabularyImage" destination="C3I-Y8-raC" id="QO9-nd-tWF"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AudioCellID" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="WP6-ZD-M2d" customClass="AudioCell" customModule="vocablearner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="WP6-ZD-M2d" customClass="AudioCell" customModule="vocablearner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="388" width="374" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WP6-ZD-M2d" id="TmL-Je-syC">
@@ -1160,20 +1169,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BL-9E-kAQ">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOj-fn-Sij">
                                                     <rect key="frame" x="37" y="47" width="300" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <segue destination="LpH-cT-wRo" kind="presentation" id="h3M-Pp-tfP"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="pronunciationLabel" destination="2BL-9E-kAQ" id="gdU-7J-miA"/>
-                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AudioCellID" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="ewo-6m-Qse" customClass="AudioCell" customModule="vocablearner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="ewo-6m-Qse" customClass="AudioCell" customModule="vocablearner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="488" width="374" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ewo-6m-Qse" id="1wK-YZ-ej6">
@@ -1195,7 +1203,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AudioCellID" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="38f-0w-zHu" customClass="AudioCell" customModule="vocablearner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="38f-0w-zHu" customClass="AudioCell" customModule="vocablearner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="608" width="374" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="38f-0w-zHu" id="sWP-so-GZq">
@@ -1248,6 +1256,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKr-b9-kYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4498.5507246376819" y="1131.521739130435"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yBF-4y-2T4">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="LpH-cT-wRo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b44-Cz-hKT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gyB-rD-DqI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b6i-QR-3t9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gyB-rD-DqI" firstAttribute="top" secondItem="b6i-QR-3t9" secondAttribute="top" id="ATS-5a-5s9"/>
+                            <constraint firstItem="gyB-rD-DqI" firstAttribute="leading" secondItem="b6i-QR-3t9" secondAttribute="leading" id="VaI-Y6-h17"/>
+                            <constraint firstItem="gyB-rD-DqI" firstAttribute="bottom" secondItem="b6i-QR-3t9" secondAttribute="bottom" id="WdZ-Yb-Z5x"/>
+                            <constraint firstItem="gyB-rD-DqI" firstAttribute="trailing" secondItem="b6i-QR-3t9" secondAttribute="trailing" id="tzn-m3-sDD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oYv-dm-GuX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OXk-sj-ZwY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5216" y="1132"/>
         </scene>
     </scenes>
     <resources>

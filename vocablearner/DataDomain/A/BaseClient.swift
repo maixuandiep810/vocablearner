@@ -31,7 +31,7 @@ class BaseClient: NSObject {
         case getVocabularyByCategoryId(categoryId: String)
         case checkPronunciation(vocabularyId: String)
         case getCategory
-
+        case getCategoryByLevel(levelId: String)
 
         static let baseHTTPS = API.kBaseUrlSSL
         static let baseHTTP = API.kBaseUrl
@@ -47,6 +47,7 @@ class BaseClient: NSObject {
             case .checkPronunciation(_): return HTTPMethod.post
                 
             case .getCategory: return HTTPMethod.get
+            case .getCategoryByLevel(_): return HTTPMethod.get
             }
             
         }
@@ -68,6 +69,8 @@ class BaseClient: NSObject {
                 
             case .getCategory:
                 return String(format: API.kCategoryUrl)
+            case .getCategoryByLevel(let levelId):
+                return String(format: API.kCategoryByLevelUrl, levelId)
             }
         
         }
@@ -86,15 +89,13 @@ class BaseClient: NSObject {
             
             switch self {
             case .login(let username, let password):
-                var bodyRaw: [String: Any] = [
-                    "username": "user1",
-                    "password": "123"
+                let bodyRaw: [String: Any] = [
+                    "username": username,
+                    "password": password
                 ]
                 do {
                     //  Auto add header ContentType = ApplicationJson
                     try urlHttpRequest = try JSONEncoding.default.encode(urlHttpRequest, with: bodyRaw)
-                    
-                    
                     print(urlHttpRequest.httpBody)
                 } catch {
                     print()
@@ -106,13 +107,15 @@ class BaseClient: NSObject {
                 return urlHttpRequest
             case .getVocabulary:
                 return urlHttpRequest
-            case .getVocabularyByCategoryId(let categoryId):
+            case .getVocabularyByCategoryId(_):
                 return urlHttpRequest
-            case .checkPronunciation(let vocabularyId):
+            case .checkPronunciation(_):
                 urlHttpRequest.setValue(Header.MultipartFormdata, forHTTPHeaderField: Header.ContentType)
                 return urlHttpRequest
                 
             case .getCategory:
+                return urlHttpRequest
+            case .getCategoryByLevel(_):
                 return urlHttpRequest
             }
             
