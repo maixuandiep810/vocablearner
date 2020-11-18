@@ -22,6 +22,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        configViewDEV()
     }
     
 }
@@ -61,6 +62,13 @@ extension LoginController {
         view.addGestureRecognizer(tap)
     }
     
+    func configViewDEV() {
+        if EnvironmentConfig.isDevelop {
+            usernameTf.text = "user1"
+            passwordTf.text = "123"
+        }
+    }
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -70,6 +78,8 @@ extension LoginController {
         if EnvironmentConfig.isDevelop {
         }
     }
+    
+    
     
 }
     

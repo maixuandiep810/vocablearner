@@ -18,6 +18,7 @@ struct StoryboardId {
     static let LearnVocabularyControllerID = "LearnVocabularyControllerID"
     static let TestControllerID = "TestControllerID"
     static let AddCategoryControllerID = "AddCategoryControllerID"
+    static let AddVocabularyControllerID = "AddVocabularyControllerID"
 
     // Table
     static let LearnVocabularyTableID = "LearnVocabularyTableID"
@@ -74,6 +75,50 @@ enum LearnVocabularyTableCell_ENUM: Int {
             height = 160
             return height
         case .CheckAudioCellID:
+            height = 120
+            return height
+        case .DefinitionCellID:
+            return heightConfig.DefinitionCellID_Title + heightConfig.DefinitionCellID_TextView
+        case .Default:
+            height = 200
+            return height
+        }
+    }
+}
+
+enum AddCategoryTableCell_ENUM: Int {
+    
+    case ImageCellID = 0
+    case NameID = 1
+    case LevelCellID = 2
+    case DefinitionCellID = 3
+    case Default = 9
+    
+    var cellID: String {
+        switch self {
+        case .ImageCellID:
+            return "ImageCellID"
+        case .NameID:
+            return "NameCellID"
+        case .LevelCellID:
+            return "LevelCellID"
+        case .DefinitionCellID:
+            return "DefinitionCellID"
+        case .Default:
+            return "DefaultCellID"
+        }
+    }
+        
+    var heightCell: CGFloat {
+        var height = CGFloat()
+        switch self {
+        case .ImageCellID:
+            height = 360
+            return height
+        case .NameID:
+            height = 160
+            return height
+        case .LevelCellID:
             height = 120
             return height
         case .DefinitionCellID:
