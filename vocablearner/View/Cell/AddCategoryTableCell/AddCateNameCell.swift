@@ -7,15 +7,10 @@
 
 import UIKit
 
-protocol AddCateTextViewDelegate: class {
-    func AddCateTextViewBeginEditing(cellID: String)
-    func AddCateTextViewDidChange(cellID: String)
-}
+class AddCateNameCell: UITableViewCell, UITextFieldDelegate {
 
-class AddCateNameCell: UITableViewCell, UITextViewDelegate {
-
-    @IBOutlet weak var nameTV: UITextView!
-    weak var delegate: AddCateTextViewDelegate?
+    @IBOutlet weak var nameTF: UITextField!
+    weak var delegate: AddCateTextFieldDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,17 +25,18 @@ class AddCateNameCell: UITableViewCell, UITextViewDelegate {
 
 extension AddCateNameCell {
     func configViewUI() -> Void {
-        self.nameTV.layer.borderWidth = UIConfig.defaultBorderWidth
-        self.nameTV.layer.borderColor = UIConfig.defaultBorderColor
-        self.nameTV.layer.masksToBounds = true
-        self.nameTV.layer.cornerRadius = 40
+        self.nameTF.delegate = self
+        self.nameTF.layer.borderWidth = UIConfig.defaultBorderWidth
+        self.nameTF.layer.borderColor = UIConfig.defaultBorderColor
+        self.nameTF.layer.masksToBounds = true
+        self.nameTF.layer.cornerRadius = 10
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        self.delegate?.AddCateTextViewBeginEditing(cellID: AddCategoryTableCell_ENUM.NameID.cellID)
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.NameCellID.cellID)
     }
-
-    func textViewDidChange(_ textView: UITextView) {
-        self.delegate?.AddCateTextViewDidChange(cellID: AddCategoryTableCell_ENUM.NameID.cellID)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.delegate?.AddCateTextFieldShouldReturn()
+        return false
     }
 }

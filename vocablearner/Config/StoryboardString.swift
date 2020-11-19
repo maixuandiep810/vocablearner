@@ -89,7 +89,7 @@ enum LearnVocabularyTableCell_ENUM: Int {
 enum AddCategoryTableCell_ENUM: Int {
     
     case ImageCellID = 0
-    case NameID = 1
+    case NameCellID = 1
     case LevelCellID = 2
     case DefinitionCellID = 3
     case Default = 9
@@ -98,7 +98,7 @@ enum AddCategoryTableCell_ENUM: Int {
         switch self {
         case .ImageCellID:
             return "ImageCellID"
-        case .NameID:
+        case .NameCellID:
             return "NameCellID"
         case .LevelCellID:
             return "LevelCellID"
@@ -115,8 +115,8 @@ enum AddCategoryTableCell_ENUM: Int {
         case .ImageCellID:
             height = 360
             return height
-        case .NameID:
-            height = 160
+        case .NameCellID:
+            height = 110
             return height
         case .LevelCellID:
             height = 120

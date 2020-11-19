@@ -31,10 +31,10 @@ class CategoryController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     // MARK: IBAction
     
-    @IBAction func testButtonTouchUpInside(_ sender: Any) {
-        let testButton: GoTestControllerButton = sender as! GoTestControllerButton
-        gotoTestController(testButton: testButton)
-    }
+//    @IBAction func testButtonTouchUpInside(_ sender: Any) {
+//        let testButton: GoTestControllerButton = sender as! GoTestControllerButton
+//        gotoTestController(testButton: testButton)
+//    }
     
     @IBAction func addTopicTouchUpInside(_ sender: Any) {
         gotoAddCategoryController()
@@ -153,6 +153,7 @@ extension CategoryController {
         
         self.categoryHeaderCell!.levelTF.inputView = self.levelPK!
         self.categoryHeaderCell!.levelTF.inputAccessoryView = toolBar
+        self.categoryHeaderCell!.levelTF.text = LevelOptions.pickerData[0]
     }
     
     

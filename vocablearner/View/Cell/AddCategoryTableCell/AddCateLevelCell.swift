@@ -7,7 +7,10 @@
 
 import UIKit
 
-class AddCateLevelCell: UITableViewCell {
+class AddCateLevelCell: UITableViewCell, UITextFieldDelegate {
+    
+    @IBOutlet weak var levelTF: UITextField!
+    weak var delegate: AddCateTextFieldDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,5 +20,25 @@ class AddCateLevelCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
 }
+
+extension AddCateLevelCell {
+    func configViewUI() -> Void {
+        self.levelTF.delegate = self
+        self.levelTF.layer.borderWidth = UIConfig.defaultBorderWidth
+        self.levelTF.layer.borderColor = UIConfig.defaultBorderColor
+        self.levelTF.layer.masksToBounds = true
+        self.levelTF.layer.cornerRadius = 10
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.LevelCellID.cellID)
+    }
+}
+
+
+//
+//@IBAction func levelTFUpInside(_ sender: Any) {
+//    self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.LevelCellID.cellID)
+//}
