@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddCategoryController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, AddCateTextFieldDelegate {
+class AddCategoryController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AddCateTextFieldDelegate {
     
     
     // MARK: Properties
@@ -32,6 +32,10 @@ class AddCategoryController: UIViewController, UITableViewDataSource, UITableVie
     
     // MARK: IBActions
     
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        dismissKeyboard()
+
+    }
     
 }
 
@@ -186,5 +190,12 @@ extension AddCategoryController {
         self.levelCell!.levelTF.inputView = self.levelPK!
         self.levelCell!.levelTF.inputAccessoryView = toolBar
         self.levelCell!.levelTF.text = LevelOptions.pickerData[1]
+    }
+    
+    func configUITapGesture() -> Void {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
     }
 }
