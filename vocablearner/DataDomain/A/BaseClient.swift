@@ -22,9 +22,7 @@ class BaseClient: NSObject {
    // Create basic url
     enum Services: URLRequestConvertible
     {
-        case login(username: String,
-                   password: String)
-        
+        case login(username: String, password: String)
         case logout(token: String)
         
         case getVocabulary
@@ -95,8 +93,7 @@ class BaseClient: NSObject {
                 ]
                 do {
                     //  Auto add header ContentType = ApplicationJson
-                    try urlHttpRequest = try JSONEncoding.default.encode(urlHttpRequest, with: bodyRaw)
-                    print(urlHttpRequest.httpBody)
+                    urlHttpRequest = try JSONEncoding.default.encode(urlHttpRequest, with: bodyRaw)
                 } catch {
                     print()
                 }

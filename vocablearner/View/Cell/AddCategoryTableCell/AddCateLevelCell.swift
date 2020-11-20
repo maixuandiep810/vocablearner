@@ -33,7 +33,11 @@ extension AddCateLevelCell {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.LevelCellID.cellID)
+        self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.LevelCellID.cellID, textField: levelTF)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.delegate?.AddCateTextFieldShouldReturn(cellID: AddCategoryTableCell_ENUM.LevelCellID.cellID, textField: levelTF)
+        return false
     }
 }
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2FDBDBEF064FAA94BFCFC06C /* Pods_vocablearnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603ED3FC6EDD6FC093D54BFE /* Pods_vocablearnerTests.framework */; };
 		36453BA2FF8FD0A7888F7397 /* Pods_vocablearner_vocablearnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F72480BACCF4D625710B59 /* Pods_vocablearner_vocablearnerUITests.framework */; };
+		5C0BB7F6256751D700FC4996 /* AddCateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0BB7F5256751D700FC4996 /* AddCateRequest.swift */; };
+		5C0BB7FB25676BBE00FC4996 /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0BB7FA25676BBE00FC4996 /* ValidationHelper.swift */; };
 		5C11BB63253FF38B00AB4D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB62253FF38B00AB4D3B /* AppDelegate.swift */; };
 		5C11BB65253FF38B00AB4D3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB64253FF38B00AB4D3B /* SceneDelegate.swift */; };
 		5C11BB67253FF38B00AB4D3B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11BB66253FF38B00AB4D3B /* LoginController.swift */; };
@@ -94,6 +96,8 @@
 		0BA6D819B037FC5695745272 /* Pods-vocablearnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearnerTests.debug.xcconfig"; path = "Target Support Files/Pods-vocablearnerTests/Pods-vocablearnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		59A58AECF02F6547AB67186A /* Pods-vocablearner-vocablearnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearner-vocablearnerUITests.release.xcconfig"; path = "Target Support Files/Pods-vocablearner-vocablearnerUITests/Pods-vocablearner-vocablearnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5BCE95A46785E70014F984BA /* Pods_vocablearner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vocablearner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C0BB7F5256751D700FC4996 /* AddCateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateRequest.swift; sourceTree = "<group>"; };
+		5C0BB7FA25676BBE00FC4996 /* ValidationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
 		5C11BB5F253FF38B00AB4D3B /* vocablearner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vocablearner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C11BB62253FF38B00AB4D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C11BB64253FF38B00AB4D3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 				5C9E4F80254014A400948C49 /* CommonResources.swift */,
 				5C9E833F254294D500A032E6 /* EnvironmentConfig.swift */,
 				5CDE88842547D97100F8851A /* UIConfig.swift */,
+				5C0BB7FA25676BBE00FC4996 /* ValidationHelper.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				5CDE88772547C93400F8851A /* CategoryResponse.swift */,
 				5C2E015B254ABD200000E18B /* TestModel.swift */,
 				5C2E0160254ABD760000E18B /* TestBaseResponse.swift */,
+				5C0BB7F5256751D700FC4996 /* AddCateRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -694,6 +700,7 @@
 				5C63C6AE255A3F07007DB2CC /* TestCell.swift in Sources */,
 				5CB7B0AD2564F6A9007011FE /* AddCateImageCell.swift in Sources */,
 				5C9E4FA6254024C400948C49 /* DataManager.swift in Sources */,
+				5C0BB7FB25676BBE00FC4996 /* ValidationHelper.swift in Sources */,
 				5CD4A13C2559235100621E40 /* DocumentManager.swift in Sources */,
 				5CBCEFF62555465D0090E74F /* TBLDefaultCell.swift in Sources */,
 				5C193550255D34EB008869B4 /* AddCategoryController.swift in Sources */,
@@ -733,6 +740,7 @@
 				5C23D7E925412BEF00FF5B8B /* BaseClient.swift in Sources */,
 				5C11BB65253FF38B00AB4D3B /* SceneDelegate.swift in Sources */,
 				5CDE887D2547C9B300F8851A /* BaseClient+Category.swift in Sources */,
+				5C0BB7F6256751D700FC4996 /* AddCateRequest.swift in Sources */,
 				5C2E015C254ABD200000E18B /* TestModel.swift in Sources */,
 				5C9E4F892540153600948C49 /* CommonExtension.swift in Sources */,
 				5C9E4F882540153600948C49 /* ServerKey.swift in Sources */,

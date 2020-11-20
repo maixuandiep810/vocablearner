@@ -8,3 +8,7 @@ FULL auto layout
 Clicl Event Table
 
 Nhay den dung Selected Vocab o view cha da chon
+
+TODO
+validate image URL
+lay duoc ket qua alert

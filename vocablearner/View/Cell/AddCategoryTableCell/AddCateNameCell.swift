@@ -33,10 +33,10 @@ extension AddCateNameCell {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.NameCellID.cellID)
+        self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.NameCellID.cellID, textField: nameTF)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.delegate?.AddCateTextFieldShouldReturn()
+        self.delegate?.AddCateTextFieldShouldReturn(cellID: AddCategoryTableCell_ENUM.NameCellID.cellID, textField: nameTF)
         return false
     }
 }

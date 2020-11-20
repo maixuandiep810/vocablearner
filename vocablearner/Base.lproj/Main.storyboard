@@ -19,10 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kEA-Bs-5X6">
-                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Using username to login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnm-8D-JOD">
                                 <rect key="frame" x="85" y="291" width="329" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -75,6 +71,10 @@
                                         <integer key="value" value="70"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kEA-Bs-5X6">
+                                <rect key="frame" x="-20" y="8" width="414" height="692"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -1310,7 +1310,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="360"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image_001" translatesAutoresizingMaskIntoConstraints="NO" id="zs9-M7-IvU">
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image_001" translatesAutoresizingMaskIntoConstraints="NO" id="zs9-M7-IvU">
                                                     <rect key="frame" x="37" y="11" width="300" height="300"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
@@ -1436,7 +1436,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1Q-3p-Rp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="leq-v6-VUo">
                     <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="c0M-LW-2xp" id="K8Z-OW-hhf"/>
+                        <action selector="selectImageFromPhotoLibrary:" destination="c0M-LW-2xp" id="SLT-ef-Rpw"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
