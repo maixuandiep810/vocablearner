@@ -28,8 +28,10 @@ class BaseClient: NSObject {
         case getVocabulary
         case getVocabularyByCategoryId(categoryId: String)
         case checkPronunciation(vocabularyId: String)
+        
         case getCategory
         case getCategoryByLevel(levelId: String)
+        case addCategory(addCateRequest: AddCateRequest)
 
         static let baseHTTPS = API.kBaseUrlSSL
         static let baseHTTP = API.kBaseUrl
@@ -46,6 +48,7 @@ class BaseClient: NSObject {
                 
             case .getCategory: return HTTPMethod.get
             case .getCategoryByLevel(_): return HTTPMethod.get
+            case .addCategory(_): return HTTPMethod.post
             }
             
         }
@@ -69,6 +72,8 @@ class BaseClient: NSObject {
                 return String(format: API.kCategoryUrl)
             case .getCategoryByLevel(let levelId):
                 return String(format: API.kCategoryByLevelUrl, levelId)
+            case .addCategory:
+                return String(format: API.kCategoryUrl)
             }
         
         }
@@ -113,6 +118,8 @@ class BaseClient: NSObject {
             case .getCategory:
                 return urlHttpRequest
             case .getCategoryByLevel(_):
+                return urlHttpRequest
+            case .addCategory:
                 return urlHttpRequest
             }
             

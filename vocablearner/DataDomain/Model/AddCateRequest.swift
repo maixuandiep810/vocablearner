@@ -12,5 +12,5 @@ import UIKit
 class AddCateRequest {
     var name = ""
     var levelId = 0
-    var imageURL = NSURL(string: "")
+    var imageURL = URL(string: "")
 }

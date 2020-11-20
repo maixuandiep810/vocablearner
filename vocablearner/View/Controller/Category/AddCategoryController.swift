@@ -19,8 +19,6 @@ class AddCategoryController: UIViewController, UITableViewDataSource, UITableVie
     var cellDict: [String: Any] = Dictionary()
     var isFirstLoad = true
     let addCateRequest = AddCateRequest()
-    var alertOption = false
-    var isValidated = false
     
     
     
@@ -208,7 +206,7 @@ extension AddCategoryController {
     @objc func addTapped() -> Void {
         
         if getData() {
-            gotoCategoryController()
+            uploadAddCategory(addCateRequest: addCateRequest)
         }
     }
     @objc func cancelTapped() -> Void {
@@ -283,7 +281,7 @@ extension AddCategoryController {
     // MARK: Properties
     
     func gotoCategoryController() -> Void {
-        
+    
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -296,24 +294,28 @@ extension AddCategoryController {
         let validation = Validation()
         
         if validation.validateAllField(nameCell: nameCell, levelCell: levelCell) == false {
-            alertValidation(yesOption: true, noOption: false, message: "a")
+            alertValidation(yesOption: true, noOption: false, message: "a", cellId: "", parentController: self)
             return false
+        }
+        else {
+            self.addCateRequest.name = nameCell.nameTF.text!
+            self.addCateRequest.levelId = LevelOptions.pickerId[levelCell.levelTF.text!]!
         }
         
         if validation.validateAddCateImageCell(cell: imageCell) == false {
-            alertValidation(yesOption: true, noOption: true, message: "B")
-            if self.alertOption == false {
-               return false
-            }
+            self.addCateRequest.imageURL = nil
+            alertValidation(yesOption: true, noOption: true, message: "B", cellId: AddCategoryTableCell_ENUM.ImageCellID.cellID, parentController: self)
         }
-                
-        self.addCateRequest.imageURL = (imageCell.info![UIImagePickerController.InfoKey.imageURL] as! NSURL)
-        self.addCateRequest.name = nameCell.nameTF.text!
-        self.addCateRequest.levelId = LevelOptions.pickerId[levelCell.levelTF.text!]!
+        else {
+            let stringNSURL = (imageCell.info![UIImagePickerController.InfoKey.imageURL] as! NSURL).absoluteString!
+            let valueURL = URL(string: stringNSURL)!
+            self.addCateRequest.imageURL = valueURL
+        }
+        
         return true
     }
     
-    func alertValidation(yesOption: Bool, noOption: Bool, message: String) -> Void {
+    func alertValidation(yesOption: Bool, noOption: Bool, message: String, cellId: String, parentController: AddCategoryController) -> Void {
         
         // create the alert
         let alert = UIAlertController(title: "Notice", message: message, preferredStyle: UIAlertController.Style.alert)
@@ -321,16 +323,34 @@ extension AddCategoryController {
         // add the actions (buttons)
         if yesOption {
             alert.addAction(UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler: { action in
-                self.alertOption = true
+                if cellId == AddCategoryTableCell_ENUM.ImageCellID.cellID {
+                    parentController.uploadAddCategory(addCateRequest: parentController.addCateRequest)
+                }
             }))
         }
         if noOption {
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {action in
-                self.alertOption = false
             }))
         }
         
         // show the alert
-        self.present(alert, animated: true, completion: {})
+        self.present(alert, animated: true, completion: {
+        })
+    }
+    
+    func uploadAddCategory(addCateRequest: AddCateRequest) -> Void {
+        BaseClient.shared.addCategory(addCateRequest: addCateRequest)
+        { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+            if(isSuccess!) {
+                let alert = UIAlertController(title: "Yes", message: "Yes", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                self.gotoCategoryController()
+            } else {
+                let alert = UIAlertController(title: "No", message: "No", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+        }
     }
 }
