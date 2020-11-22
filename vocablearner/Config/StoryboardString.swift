@@ -29,6 +29,7 @@ struct StoryboardId {
     static let LearnVocabularyCellID = "LearnVocabularyCellID"
     static let TestCellID = "TestCellID"
     static let AddCustomTopicHeaderID = "AddCustomTopicHeaderID"
+    static let AddVocabCellID = "AddVocabCellID"
 }
 
 

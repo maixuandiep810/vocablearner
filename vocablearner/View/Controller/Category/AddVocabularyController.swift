@@ -10,6 +10,8 @@ import UIKit
 class AddVocabularyController: UIViewController {
 
     // MARK: Properties
+    var categoryId = 0
+    var categoryModel = CategoryModel()
     
     
     // MARK: Life-Cycle

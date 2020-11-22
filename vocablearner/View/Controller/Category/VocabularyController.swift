@@ -38,26 +38,37 @@ extension VocabularyController {
 
     // MARK: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.listVocabularyModel.count
+        return self.listVocabularyModel.count + 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: VocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.VocabularyCellID, for: indexPath) as! VocabularyCell
-        cell.data = self.listVocabularyModel[indexPath.row]
-        return cell
+        switch indexPath.row {
+        case self.listVocabularyModel.count:
+            let cell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.AddVocabCellID, for: indexPath)
+            return cell
+        default:
+                    let cell: VocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.VocabularyCellID, for: indexPath) as! VocabularyCell
+            cell.data = self.listVocabularyModel[indexPath.row]
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell: VocabularyCell = self.vocabularyClt.cellForItem(at: indexPath) as! VocabularyCell
-        let controller: LearnVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.LearnVocabularyControllerID) as! LearnVocabularyController
-        controller.listVocabularyModel = self.listVocabularyModel
-        controller.currentIndex = indexPath.row
-        self.navigationController?.pushViewController(controller, animated: true)
-//        if let listVocabularyModel = self.listVocabularyModel {
-//            controller.listVocabularyModel = listVocabularyModel
-//
-//            self.navigationController?.pushViewController(controller, animated: true)
-//        }
+        switch indexPath.row {
+        case self.listVocabularyModel.count:
+            <#code#>
+        default:
+            //        let cell: VocabularyCell = self.vocabularyClt.cellForItem(at: indexPath) as! VocabularyCell
+                    let controller: LearnVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.LearnVocabularyControllerID) as! LearnVocabularyController
+                    controller.listVocabularyModel = self.listVocabularyModel
+                    controller.currentIndex = indexPath.row
+                    self.navigationController?.pushViewController(controller, animated: true)
+            //        if let listVocabularyModel = self.listVocabularyModel {
+            //            controller.listVocabularyModel = listVocabularyModel
+            //
+            //            self.navigationController?.pushViewController(controller, animated: true)
+            //        }
+        }
     }
     
     // MARK: Private Methods
@@ -72,6 +83,12 @@ extension VocabularyController {
             }
 
         )
+    }
+    
+    func gotoAddVocabController() -> Void {
+        let controller: AddVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.AddVocabularyControllerID) as! AddVocabularyController
+        controller.categoryModel = self.categoryModel
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
 }
