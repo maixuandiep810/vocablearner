@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FAF03B9256B1F420002B230 /* BaseClient+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */; };
+		0FAF03BB256B1FC40002B230 /* AddFinishRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */; };
+		0FAF03BD256B245D0002B230 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BC256B245D0002B230 /* SuccessResponse.swift */; };
 		2FDBDBEF064FAA94BFCFC06C /* Pods_vocablearnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603ED3FC6EDD6FC093D54BFE /* Pods_vocablearnerTests.framework */; };
 		36453BA2FF8FD0A7888F7397 /* Pods_vocablearner_vocablearnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F72480BACCF4D625710B59 /* Pods_vocablearner_vocablearnerUITests.framework */; };
 		5C0BB7F6256751D700FC4996 /* AddCateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0BB7F5256751D700FC4996 /* AddCateRequest.swift */; };
@@ -94,6 +97,9 @@
 
 /* Begin PBXFileReference section */
 		0BA6D819B037FC5695745272 /* Pods-vocablearnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearnerTests.debug.xcconfig"; path = "Target Support Files/Pods-vocablearnerTests/Pods-vocablearnerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Test.swift"; sourceTree = "<group>"; };
+		0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFinishRequest.swift; sourceTree = "<group>"; };
+		0FAF03BC256B245D0002B230 /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
 		59A58AECF02F6547AB67186A /* Pods-vocablearner-vocablearnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearner-vocablearnerUITests.release.xcconfig"; path = "Target Support Files/Pods-vocablearner-vocablearnerUITests/Pods-vocablearner-vocablearnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5BCE95A46785E70014F984BA /* Pods_vocablearner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vocablearner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C0BB7F5256751D700FC4996 /* AddCateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateRequest.swift; sourceTree = "<group>"; };
@@ -300,6 +306,7 @@
 				5C23D7E825412BEF00FF5B8B /* BaseClient+User.swift */,
 				5CDE887C2547C9B300F8851A /* BaseClient+Category.swift */,
 				5C9E83582542DE0C00A032E6 /* BaseClient+Vocabulary.swift */,
+				0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */,
 			);
 			path = A;
 			sourceTree = "<group>";
@@ -418,6 +425,8 @@
 				5C2E015B254ABD200000E18B /* TestModel.swift */,
 				5C2E0160254ABD760000E18B /* TestBaseResponse.swift */,
 				5C0BB7F5256751D700FC4996 /* AddCateRequest.swift */,
+				0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */,
+				0FAF03BC256B245D0002B230 /* SuccessResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -698,6 +707,7 @@
 				5C2E0157254A9E230000E18B /* VocabularyController.swift in Sources */,
 				5C77E92D255254AD00A86469 /* CheckAudioCell.swift in Sources */,
 				5C63C6AE255A3F07007DB2CC /* TestCell.swift in Sources */,
+				0FAF03BB256B1FC40002B230 /* AddFinishRequest.swift in Sources */,
 				5CB7B0AD2564F6A9007011FE /* AddCateImageCell.swift in Sources */,
 				5C9E4FA6254024C400948C49 /* DataManager.swift in Sources */,
 				5C0BB7FB25676BBE00FC4996 /* ValidationHelper.swift in Sources */,
@@ -724,8 +734,10 @@
 				5CDE88732547C50900F8851A /* CategoryModel.swift in Sources */,
 				5CB7B0B22564F764007011FE /* AddCateDefinitionCell.swift in Sources */,
 				5C9E4F7C2540141500948C49 /* StoryboardString.swift in Sources */,
+				0FAF03B9256B1F420002B230 /* BaseClient+Test.swift in Sources */,
 				5C63C6A4255A3517007DB2CC /* GoTestControllerButton.swift in Sources */,
 				5C9E834A2542962200A032E6 /* CategoryController.swift in Sources */,
+				0FAF03BD256B245D0002B230 /* SuccessResponse.swift in Sources */,
 				5CB7B09A2564F527007011FE /* AddVocabularyController.swift in Sources */,
 				5CB7B0C1256606AE007011FE /* AddCateProtocol.swift in Sources */,
 				5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */,

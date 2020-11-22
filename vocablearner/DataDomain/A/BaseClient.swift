@@ -19,7 +19,7 @@ class BaseClient: NSObject {
     //Block
     typealias ServiceResponse = (Bool?, NSError?, AnyObject?) -> Void
     
-   // Create basic url
+    // Create basic url
     enum Services: URLRequestConvertible
     {
         case login(username: String, password: String)
@@ -32,7 +32,9 @@ class BaseClient: NSObject {
         case getCategory
         case getCategoryByLevel(levelId: String)
         case addCategory(addCateRequest: AddCateRequest)
-
+        
+        case addFinishTest(addFinishRequest: AddFinishRequest)
+        
         static let baseHTTPS = API.kBaseUrlSSL
         static let baseHTTP = API.kBaseUrl
         
@@ -41,7 +43,7 @@ class BaseClient: NSObject {
             switch self {
             case .login(_, _): return HTTPMethod.post
             case .logout(_): return HTTPMethod.get
-
+                
             case .getVocabulary: return HTTPMethod.get
             case .getVocabularyByCategoryId(_): return HTTPMethod.get
             case .checkPronunciation(_): return HTTPMethod.post
@@ -49,10 +51,12 @@ class BaseClient: NSObject {
             case .getCategory: return HTTPMethod.get
             case .getCategoryByLevel(_): return HTTPMethod.get
             case .addCategory(_): return HTTPMethod.post
+                
+            case .addFinishTest(_): return HTTPMethod.post
             }
             
         }
-
+        
         var path: String
         {
             switch self {
@@ -74,12 +78,15 @@ class BaseClient: NSObject {
                 return String(format: API.kCategoryByLevelUrl, levelId)
             case .addCategory:
                 return String(format: API.kCategoryUrl)
+                
+            case .addFinishTest:
+                return String(format: API.kFinishTestUrl)
             }
-        
+            
         }
         
-
-            
+        
+        
         // MARK: URLRequestConvertible
         func asURLRequest() throws -> URLRequest
         {
@@ -120,6 +127,9 @@ class BaseClient: NSObject {
             case .getCategoryByLevel(_):
                 return urlHttpRequest
             case .addCategory:
+                return urlHttpRequest
+                
+            case .addFinishTest:
                 return urlHttpRequest
             }
             

@@ -28,3 +28,14 @@ class BaseResponse<T: Mappable>: Object, Mappable {
         data             <- map["Data"]
     }
 }
+
+
+class NullModel: Object, Mappable {
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+
+    func mapping(map: Map) {
+    }
+}

@@ -23,7 +23,7 @@ class TestController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+    }	
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -78,5 +78,25 @@ extension TestController {
         )
     }
     
+
+    
+
+    
+    func finishTest(addFinishRequest: AddFinishRequest) {
+        BaseClient.shared.addFinishTestByUrl (addFinishRequest: addFinishRequest,
+            completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+                if(isSuccess!) {
+                    self.gotoCategoryController()
+                }
+            }
+
+        )
+    }
+    
+    func gotoCategoryController() -> Void {
+    
+        self.navigationController?.popViewController(animated: true)
+    }
+
 
 }

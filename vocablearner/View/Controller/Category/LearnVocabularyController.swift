@@ -26,6 +26,7 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
     // MARK: Properties
 
     @IBOutlet weak var vocabularyClt: UICollectionView!
+        var categoryModel = CategoryModel()
     var listVocabularyModel = List<VocabularyModel>()
     var currentIndex = 0
     var recordingSession: AVAudioSession!
@@ -93,14 +94,20 @@ extension LearnVocabularyController {
     // MARK: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.listVocabularyModel.count
+        return self.listVocabularyModel.count + 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: LearnVocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.LearnVocabularyCellID, for: indexPath) as! LearnVocabularyCell
-        cell.resetData()
-        cell.data = self.listVocabularyModel[indexPath.row]
-        return cell
+        switch indexPath.row {
+        case self.listVocabularyModel.count:
+            let cell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.LearnVocabularyCellID, for: indexPath)
+            return cell
+        default:
+                    let cell: LearnVocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.LearnVocabularyCellID, for: indexPath) as! LearnVocabularyCell
+            cell.resetData()
+            cell.data = self.listVocabularyModel[indexPath.row]
+            return cell
+        }
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -202,6 +209,23 @@ extension LearnVocabularyController {
 
     func audioPlayerEndInterruption(player: AVAudioPlayer) {
     }
+    
+    
+    func finishTest(addFinishRequest: AddFinishRequest) {
+        BaseClient.shared.addFinishTestByUrl (addFinishRequest: addFinishRequest,
+            completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+                if(isSuccess!) {
+                    self.gotoCategoryController()
+                }
+            }
+
+        )
+    }
+    
+    func gotoCategoryController() -> Void {
+    
+        let controller = (self.navigationController?.viewControllers[0])!
+        self.navigationController?.popToViewController(controller, animated: true)    }
 }
 
 

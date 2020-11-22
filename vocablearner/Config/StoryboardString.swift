@@ -30,6 +30,7 @@ struct StoryboardId {
     static let TestCellID = "TestCellID"
     static let AddCustomTopicHeaderID = "AddCustomTopicHeaderID"
     static let AddVocabCellID = "AddVocabCellID"
+    static let FinishCellID = "FinishCellID"
 }
 
 

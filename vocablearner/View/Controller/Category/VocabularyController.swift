@@ -56,13 +56,10 @@ extension VocabularyController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case self.listVocabularyModel.count:
-            <#code#>
+            gotoAddVocabController()
         default:
             //        let cell: VocabularyCell = self.vocabularyClt.cellForItem(at: indexPath) as! VocabularyCell
-                    let controller: LearnVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.LearnVocabularyControllerID) as! LearnVocabularyController
-                    controller.listVocabularyModel = self.listVocabularyModel
-                    controller.currentIndex = indexPath.row
-                    self.navigationController?.pushViewController(controller, animated: true)
+            gotoLearnVocabController(indexPath: indexPath)
             //        if let listVocabularyModel = self.listVocabularyModel {
             //            controller.listVocabularyModel = listVocabularyModel
             //
@@ -81,10 +78,16 @@ extension VocabularyController {
                     self.vocabularyClt.reloadData()
                 }
             }
-
         )
     }
-    
+ 
+    func gotoLearnVocabController(indexPath: IndexPath) -> Void {
+        let controller: LearnVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.LearnVocabularyControllerID) as! LearnVocabularyController
+        controller.listVocabularyModel = self.listVocabularyModel
+        controller.currentIndex = indexPath.row
+        controller.categoryModel = self.categoryModel
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     func gotoAddVocabController() -> Void {
         let controller: AddVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.AddVocabularyControllerID) as! AddVocabularyController
         controller.categoryModel = self.categoryModel
