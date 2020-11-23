@@ -13,8 +13,8 @@ class CategoryController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: Properties
     
     @IBOutlet weak var categoryClt: UICollectionView!
-    var levelPK: UIPickerView?
     var categoryHeaderCell: CategoryHeaderCell?
+    var levelPK: UIPickerView?
     var listCategoryModel = List<CategoryModel>()
     
     
@@ -29,6 +29,8 @@ class CategoryController: UIViewController, UICollectionViewDelegate, UICollecti
         self.navigationController?.navigationBar.topItem?.title = StoryboardConstVar.CategoryControllerNavTitle
         loadCategory()
     }
+    
+    
     // MARK: IBActions
     
     @IBAction func testButtonTouchUpInside(_ sender: Any) {

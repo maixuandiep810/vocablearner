@@ -29,7 +29,9 @@ class CategoryCell: UICollectionViewCell {
 }
 
 extension CategoryCell {
+    
     func configUI() -> Void {
+        
         self.layer.borderColor = UIConfig.categoryCellBorderColor
         self.layer.borderWidth = UIConfig.categoryCellBorderWidth
         
@@ -38,13 +40,13 @@ extension CategoryCell {
         self.testButton.layer.maskedCorners = [.layerMinXMaxYCorner]
     }
     
+    
     func didSetData() -> Void {
-        guard let data = data else { return }
         
+        guard let data = data else { return }
         if(data.imageUrl.count > 0){
             self.categoryImage.sd_setImage(with: URL(string: "\(API.kFileUrl + data.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
             categoryLabel.text = String(format: " \(data.name)")
-            
             testButton.categoryModel = data
         }
     }

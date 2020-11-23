@@ -23,6 +23,7 @@ class VocabularyModel: Object, Mappable {
     @objc dynamic var audioUrl = ""
     // TODO: WHY     @objc dynamic var questions = List<QuestionModel>() cannot be reprented OBJC
     var questions = List<QuestionModel>()
+    var test: QuestionModel? = nil
 
     var imageView: UIImageView?
     
@@ -40,6 +41,35 @@ class VocabularyModel: Object, Mappable {
         audioUrl        <- map["AudioUrl"]
         questions       <- (map["Questions"], ListTransform<QuestionModel>())
     }
+    
+    func createTest() {
+        let index = Int.random(in: 0..<questions.count)
+        if self.questions.count > 0 {
+            let test = self.questions[index]
+            
+            var answer = List<String>()
+            answer.append(test.firstAnswer)
+            answer.append(test.secondAnswer)
+            answer.append(test.thirdAnswer)
+            answer.append(self.word)
+        
+            answer = mixOrder(answer: answer)
+            test.firstAnswer = answer[0]
+            test.secondAnswer = answer[1]
+            test.thirdAnswer = answer[2]
+            test.fourthAnswer = answer[3]
+            self.test = test
+        }
+    }
+    
+    func mixOrder(answer: List<String>) -> List<String> {
+        let num_1 = Int.random(in: 0..<4)
+        let num_2 = Int.random(in: 0..<4)
+        let answerTemp = answer[num_1]
+        answer[num_1] = answer[num_2]
+        answer[num_2] = answerTemp
+        return answer
+    }
 }
 
 // Question Model
@@ -50,6 +80,7 @@ class QuestionModel: Object, Mappable {
     @objc dynamic var firstAnswer = ""
     @objc dynamic var secondAnswer = ""
     @objc dynamic var thirdAnswer = ""
+    var fourthAnswer = ""
     
     required convenience init?(map: Map) {
         self.init()

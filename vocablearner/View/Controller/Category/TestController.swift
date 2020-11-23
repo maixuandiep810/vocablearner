@@ -57,20 +57,25 @@ extension TestController {
         self.testClt.scrollToItem(at: nextIndexPath, at: self.testClt.scrollDirectionExt, animated: true)
     }
     
+    
+    
     // MARK: Private Methods
+    
+    
     func gotoCurrentCellSelected(animated: Bool) -> Void {
         let nextIndexPath = IndexPath(indexes: [0, self.currentIndex])
         self.testClt.scrollToItem(at: nextIndexPath, at: .right, animated: animated)
     }
     
     
-    // MARK: Private Methods
-    
     func loadVocabulary() {
         BaseClient.shared.getVocabularyByCategoryIdWithUrl(categoryId: String(categoryModel.id),
             completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 if(isSuccess!) {
                     self.listVocabularyModel = value as! List<VocabularyModel>
+                    for i in 0...self.listVocabularyModel.count - 1 {
+                        self.listVocabularyModel[i].createTest()
+                    }
                     self.testClt.reloadData()
                 }
             }
@@ -78,9 +83,6 @@ extension TestController {
         )
     }
     
-
-    
-
     
     func finishTest(addFinishRequest: AddFinishRequest) {
         BaseClient.shared.addFinishTestByUrl (addFinishRequest: addFinishRequest,
@@ -92,6 +94,7 @@ extension TestController {
 
         )
     }
+    
     
     func gotoCategoryController() -> Void {
     

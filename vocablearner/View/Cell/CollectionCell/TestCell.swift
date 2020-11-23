@@ -16,31 +16,23 @@ class TestCell: UICollectionViewCell {
     @IBOutlet weak var optionView_4: OptionView!
     var question: QuestionModel?
     var parentController = TestController()
+    var isDisable = false
     
     var data: VocabularyModel? {
         didSet {
             guard let data = data else { return }
             configUI()
-            if data.questions.count > 0 {
-                let randomNum = Int.random(in: 0..<data.questions.count)
-                question = data.questions[randomNum]
-
-                guard let question = question else { return }
-                
-                var answer = List<String>()
-                answer.append(question.firstAnswer)
-                answer.append(question.secondAnswer)
-                answer.append(question.thirdAnswer)
-                answer.append(data.word)
-                answer = mixOrder(answer: answer)
-                
-                assignData(answer: answer)
+            if data.questions.count > 0 && data.test != nil{
+                assignData()
             }
         }
     }
     
     func resetData() -> Void {
         self.data = nil
+        resetViewUI(optionView: optionView_1)
+        resetViewUI(optionView: optionView_2)
+        resetViewUI(optionView: optionView_3)
     }
     
     func mixOrder(answer: List<String>) -> List<String> {
@@ -76,12 +68,16 @@ class TestCell: UICollectionViewCell {
         optionView.resultImage.layer.masksToBounds = true
         optionView.resultImage.layer.cornerRadius = 20
     }
+    func resetViewUI(optionView: OptionView) -> Void {
+        optionView.resultLabel.text = nil
+        optionView.resultImage.image = nil
+    }
     
-    func assignData(answer: List<String>) -> Void {
-        assignOptionViewData(optionView: optionView_1, answer: answer[0])
-        assignOptionViewData(optionView: optionView_2, answer: answer[1])
-        assignOptionViewData(optionView: optionView_3, answer: answer[2])
-        assignOptionViewData(optionView: optionView_4, answer: answer[3])
+    func assignData() -> Void {
+        assignOptionViewData(optionView: optionView_1, answer: self.data!.test!.firstAnswer)
+        assignOptionViewData(optionView: optionView_2, answer: self.data!.test!.secondAnswer)
+        assignOptionViewData(optionView: optionView_3, answer: self.data!.test!.thirdAnswer)
+        assignOptionViewData(optionView: optionView_4, answer: self.data!.test!.fourthAnswer)
     }
     
     func assignOptionViewData(optionView: OptionView, answer: String) -> Void {
