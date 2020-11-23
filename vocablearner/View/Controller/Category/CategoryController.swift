@@ -29,12 +29,12 @@ class CategoryController: UIViewController, UICollectionViewDelegate, UICollecti
         self.navigationController?.navigationBar.topItem?.title = StoryboardConstVar.CategoryControllerNavTitle
         loadCategory()
     }
-    // MARK: IBAction
+    // MARK: IBActions
     
-//    @IBAction func testButtonTouchUpInside(_ sender: Any) {
-//        let testButton: GoTestControllerButton = sender as! GoTestControllerButton
-//        gotoTestController(testButton: testButton)
-//    }
+    @IBAction func testButtonTouchUpInside(_ sender: Any) {
+        let testButton: GoTestControllerButton = sender as! GoTestControllerButton
+        gotoTestController(testButton: testButton)
+    }
     
     @IBAction func addTopicTouchUpInside(_ sender: Any) {
         gotoAddCategoryController()
