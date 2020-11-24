@@ -14,7 +14,7 @@ class TestCell: UICollectionViewCell {
     @IBOutlet weak var optionView_2: OptionView!
     @IBOutlet weak var optionView_3: OptionView!
     @IBOutlet weak var optionView_4: OptionView!
-    var question: QuestionModel?
+//    var question: QuestionModel?
     var parentController = TestController()
     var isDisable = false
     
@@ -67,6 +67,15 @@ class TestCell: UICollectionViewCell {
         optionView.titleImage.layer.cornerRadius = 20
         optionView.resultImage.layer.masksToBounds = true
         optionView.resultImage.layer.cornerRadius = 20
+        
+        if self.isDisable == true && optionView.isChosen == true {
+            if optionView.isRight == true {
+                optionView.resultImage.image = UIImage(named: "correct_001")
+            }
+            else {
+                optionView.resultImage.image = UIImage(named: "incorrect_001")
+            }
+        }
     }
     func resetViewUI(optionView: OptionView) -> Void {
         optionView.resultLabel.text = nil

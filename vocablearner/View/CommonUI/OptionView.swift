@@ -9,10 +9,11 @@ import UIKit
 
 class OptionView: UIView {
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var titleImage: UIImageView!
     var parentController = TestController()
     var parentCell = TestCell()
+    var isChosen = false
+    var isRight = false
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     }
@@ -24,10 +25,13 @@ class OptionView: UIView {
         if parentCell.isDisable == false {
             if self.resultLabel.text == parentCell.data!.word {
                 resultImage.image = UIImage(named: "correct_001")
+                isRight = true
             } else {
                 resultImage.image = UIImage(named: "incorrect_001")
+                isRight = false
             }
-            parentCell.isDisable = true
+            parentCell.isChosen = true
+            isChosen = true
         }
     }
 
