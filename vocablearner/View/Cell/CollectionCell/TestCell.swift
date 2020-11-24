@@ -16,7 +16,9 @@ class TestCell: UICollectionViewCell {
     @IBOutlet weak var optionView_4: OptionView!
 //    var question: QuestionModel?
     var parentController = TestController()
-    var isDisable = false
+    var order = -1
+    
+    var result = TestResult()
     
     var data: VocabularyModel? {
         didSet {
@@ -30,9 +32,7 @@ class TestCell: UICollectionViewCell {
     
     func resetData() -> Void {
         self.data = nil
-        resetViewUI(optionView: optionView_1)
-        resetViewUI(optionView: optionView_2)
-        resetViewUI(optionView: optionView_3)
+        resetUI()
     }
     
     func mixOrder(answer: List<String>) -> List<String> {
@@ -51,49 +51,36 @@ class TestCell: UICollectionViewCell {
         if(data!.imageView == nil){
             self.vocabularyImage.sd_setImage(with: URL(string: "\(API.kFileUrl + data!.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
         }
-        configOptionViewUI(optionView: optionView_1)
-        configOptionViewUI(optionView: optionView_2)
-        configOptionViewUI(optionView: optionView_3)
-        configOptionViewUI(optionView: optionView_4)
+        
+        optionView_1.configUI(isChosen: result.option_CHOSEN[0])
+        optionView_2.configUI(isChosen: result.option_CHOSEN[1])
+        optionView_3.configUI(isChosen: result.option_CHOSEN[2])
+        optionView_4.configUI(isChosen: result.option_CHOSEN[3])
     }
     
-    func configOptionViewUI(optionView: OptionView) -> Void {
-        optionView.layer.masksToBounds = true
-        optionView.layer.cornerRadius = 20
-        optionView.layer.borderWidth = UIConfig.optionViewBorderWidth
-        optionView.layer.borderColor = UIConfig.optionViewBorderColor
-        
-        optionView.titleImage.layer.masksToBounds = true
-        optionView.titleImage.layer.cornerRadius = 20
-        optionView.resultImage.layer.masksToBounds = true
-        optionView.resultImage.layer.cornerRadius = 20
-        
-        if self.isDisable == true && optionView.isChosen == true {
-            if optionView.isRight == true {
-                optionView.resultImage.image = UIImage(named: "correct_001")
-            }
-            else {
-                optionView.resultImage.image = UIImage(named: "incorrect_001")
-            }
-        }
+
+    func resetUI() -> Void {
+        optionView_1.resetData()
+        optionView_2.resetData()
+        optionView_3.resetData()
+        optionView_4.resetData()
     }
-    func resetViewUI(optionView: OptionView) -> Void {
-        optionView.resultLabel.text = nil
-        optionView.resultImage.image = nil
+    
+    func resetUI_CHOSEN() -> Void {
+        optionView_1.resetUI_CHOSEN(isChosen: false)
+        optionView_2.resetUI_CHOSEN(isChosen: false)
+        optionView_3.resetUI_CHOSEN(isChosen: false)
+        optionView_4.resetUI_CHOSEN(isChosen: false)
     }
     
     func assignData() -> Void {
-        assignOptionViewData(optionView: optionView_1, answer: self.data!.test!.firstAnswer)
-        assignOptionViewData(optionView: optionView_2, answer: self.data!.test!.secondAnswer)
-        assignOptionViewData(optionView: optionView_3, answer: self.data!.test!.thirdAnswer)
-        assignOptionViewData(optionView: optionView_4, answer: self.data!.test!.fourthAnswer)
+        optionView_1.assignData(answer: self.data!.test!.firstAnswer, parentCell: self, parentController: self.parentController, order: 0)
+        optionView_2.assignData(answer: self.data!.test!.secondAnswer, parentCell: self, parentController: self.parentController, order: 1)
+        optionView_3.assignData(answer: self.data!.test!.thirdAnswer, parentCell: self, parentController: self.parentController, order: 2)
+        optionView_4.assignData(answer: self.data!.test!.fourthAnswer, parentCell: self, parentController: self.parentController, order: 3)
     }
     
-    func assignOptionViewData(optionView: OptionView, answer: String) -> Void {
-        optionView.parentController = self.parentController
-        optionView.parentCell = self
-        optionView.resultLabel.text = answer
-    }
+
 }
 
 

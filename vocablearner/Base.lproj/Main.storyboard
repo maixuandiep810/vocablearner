@@ -766,15 +766,9 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WHx-Av-ZIL">
-                                                            <rect key="frame" x="306" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
-                                                        <outlet property="resultImage" destination="WHx-Av-ZIL" id="sWn-fK-fUT"/>
                                                         <outlet property="resultLabel" destination="xOT-JS-n0Q" id="oeT-PG-tIu"/>
                                                         <outlet property="titleImage" destination="eej-Ma-oCO" id="y7f-07-jVs"/>
                                                     </connections>
@@ -794,15 +788,9 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Fc-f5-2k0">
-                                                            <rect key="frame" x="306" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
-                                                        <outlet property="resultImage" destination="9Fc-f5-2k0" id="l4r-yp-YQe"/>
                                                         <outlet property="resultLabel" destination="AZF-bj-aYf" id="y2q-V7-seX"/>
                                                         <outlet property="titleImage" destination="tkM-z7-mMC" id="nHR-0M-cs8"/>
                                                     </connections>
@@ -822,15 +810,9 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hvm-Na-rhA">
-                                                            <rect key="frame" x="306" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
-                                                        <outlet property="resultImage" destination="Hvm-Na-rhA" id="x6E-pg-3CY"/>
                                                         <outlet property="resultLabel" destination="abP-Ko-VIA" id="gm1-YM-8u5"/>
                                                         <outlet property="titleImage" destination="q8V-Hc-bg7" id="44Q-bA-a5q"/>
                                                     </connections>
@@ -850,15 +832,9 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="\" translatesAutoresizingMaskIntoConstraints="NO" id="WfL-sl-NKk">
-                                                            <rect key="frame" x="306" y="-1" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
-                                                        <outlet property="resultImage" destination="WfL-sl-NKk" id="En3-r3-HMl"/>
                                                         <outlet property="resultLabel" destination="dGc-Sg-h7e" id="PeG-yl-lgt"/>
                                                         <outlet property="titleImage" destination="Be2-wT-Y8q" id="tpG-mT-LfK"/>
                                                     </connections>
@@ -902,6 +878,37 @@
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JT4-qt-d0z">
                                 <rect key="frame" x="20" y="656" width="374" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuZ-ui-kS9">
+                                        <rect key="frame" x="8" y="15" width="80" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Check"/>
+                                        <connections>
+                                            <action selector="checkBTNTouchUpInSide:" destination="YYQ-ba-xYc" eventType="touchUpInside" id="Vth-f7-zoh"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AAAAAAAAAA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7E-LG-voG">
+                                        <rect key="frame" x="96" y="0.0" width="70" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Finish: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz1-zd-gFc">
+                                        <rect key="frame" x="174" y="0.0" width="91" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BBBB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufV-nd-a4F">
+                                        <rect key="frame" x="273" y="0.0" width="91" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="miy-Jf-gKg"/>
@@ -926,12 +933,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkBTN" destination="MuZ-ui-kS9" id="XUm-l5-fdc"/>
+                        <outlet property="finishedLB" destination="ufV-nd-a4F" id="eMB-jg-cWG"/>
+                        <outlet property="resultLB" destination="q7E-LG-voG" id="OSD-dh-Ymh"/>
                         <outlet property="testClt" destination="wvJ-p4-nQP" id="leG-zN-0cA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6T-NL-nVF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5216" y="430"/>
+            <point key="canvasLocation" x="5215.9420289855079" y="429.61956521739131"/>
         </scene>
         <!--Learn Vocabulary Controller-->
         <scene sceneID="bj7-U6-3wg">
@@ -1551,7 +1561,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="\" width="128" height="128"/>
         <image name="audio_icon_001" width="128" height="128"/>
         <image name="background_001" width="320" height="568"/>
         <image name="default_image_001" width="750" height="750"/>

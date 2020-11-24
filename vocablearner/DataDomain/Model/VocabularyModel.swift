@@ -58,6 +58,7 @@ class VocabularyModel: Object, Mappable {
             test.secondAnswer = answer[1]
             test.thirdAnswer = answer[2]
             test.fourthAnswer = answer[3]
+            test.word = self.word
             self.test = test
         }
     }
@@ -81,7 +82,8 @@ class QuestionModel: Object, Mappable {
     @objc dynamic var secondAnswer = ""
     @objc dynamic var thirdAnswer = ""
     var fourthAnswer = ""
-    
+    var word = ""
+
     required convenience init?(map: Map) {
         self.init()
     }
