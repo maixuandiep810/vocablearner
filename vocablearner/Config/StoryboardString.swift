@@ -195,7 +195,7 @@ struct LevelOptions {
 }
 
 struct TopicDayOptions {
-    static let pickerData = [1, 2, 3, 4, 5,6 ,7 ,8 , 9]
+    static let pickerData = [1, 2, 3, 4, 5, 6 ,7 ,8 , 9]
 }
 
 struct IpaKeyBoard {

@@ -14,7 +14,7 @@ class TestSettingCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var levelLB: UILabel!
     @IBOutlet weak var topicDayTF: UITextField!
     @IBOutlet weak var timeLB: UILabel!
-    var levelPK: UIPickerView?
+    var dayPK: UIPickerView?
     var parentController: UserSettingController?
     
     var data: TestSettingModel? {
@@ -50,11 +50,12 @@ class TestSettingCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return LevelOptions.pickerData.count
+        return TopicDayOptions.pickerData.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return LevelOptions.pickerData[row] }
+        return String(TopicDayOptions.pickerData[row] )
+    }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.topicDayTF.text = String(TopicDayOptions.pickerData[row])
@@ -64,21 +65,21 @@ class TestSettingCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSo
         guard let parentController = parentController else {
             return
         }
-        self.levelPK = UIPickerView(frame:CGRect(x: 0, y: 0, width: parentController.view.frame.size.width, height: 216))
-        self.levelPK!.delegate = self
+        self.dayPK = UIPickerView(frame:CGRect(x: 0, y: 0, width: parentController.view.frame.size.width, height: 216))
+        self.dayPK!.delegate = self
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.levelPickerDone))
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dayPKDone))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.levelPickerCancel))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.dayPKCancel))
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         
-        self.topicDayTF.inputView = self.levelPK!
+        self.topicDayTF.inputView = self.dayPK!
         self.topicDayTF.inputAccessoryView = toolBar
         self.topicDayTF.text = String(TopicDayOptions.pickerData[0])
     }
@@ -86,13 +87,13 @@ class TestSettingCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSo
     
     // MARK: Target Action
     
-    @objc func levelPickerDone() -> Void {
+    @objc func dayPKDone() -> Void {
         self.topicDayTF.resignFirstResponder()
 //        let topicDayTF = self.topicDayTF.text
 ////        let levelId = String(LevelOptions.pickerId[levelTFText!]!)
 ////        self.loadCategoryByLevel(levelId: levelId)
     }
-    @objc func levelPickerCancel() -> Void {
+    @objc func dayPKCancel() -> Void {
         self.topicDayTF.resignFirstResponder()
     }
     
