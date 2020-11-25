@@ -19,6 +19,7 @@ struct StoryboardId {
     static let TestControllerID = "TestControllerID"
     static let AddCategoryControllerID = "AddCategoryControllerID"
     static let AddVocabularyControllerID = "AddVocabularyControllerID"
+    static let UserSettingControllerID = "UserSettingControllerID"
 
     // Table
     static let LearnVocabularyTableID = "LearnVocabularyTableID"
@@ -32,6 +33,7 @@ struct StoryboardId {
     static let AddVocabCellID = "AddVocabCellID"
     static let FinishCellID = "FinishCellID"
     static let KeyBoardCellID = "KeyBoardCellID"
+    static let TestSettingCellID = "TestSettingCellID"
 }
 
 
@@ -190,6 +192,10 @@ struct LevelOptions {
     static let pickerData = ["All", "A1", "A2", "B1", "B2", "C1", "C2"]
     static let AddCatePickerData = ["A1", "A2", "B1", "B2", "C1", "C2"]
     static let pickerId = ["All": 0, "A1": 1, "A2": 2, "B1": 3, "B2": 4, "C1": 5, "C2": 6]
+}
+
+struct TopicDayOptions {
+    static let pickerData = [1, 2, 3, 4, 5,6 ,7 ,8 , 9]
 }
 
 struct IpaKeyBoard {

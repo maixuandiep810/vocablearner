@@ -26,6 +26,7 @@ struct API {
     static let kCategoryUrl = "/api/category"
     static let kCategoryByLevelUrl = "/api/category/level/%@"
     static let kFinishTestUrl = "/api/test/finish"
+    static let kTestSettingUrl = "/api/usersetting/testsetting/%@"
     
     static let kTestGetAudioUrl = "https://file-examples-com.github.io/uploads/2017/11/file_example_WAV_1MG.wav"
 }

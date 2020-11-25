@@ -72,6 +72,11 @@
 		5CB7B0C1256606AE007011FE /* AddCateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7B0C0256606AE007011FE /* AddCateProtocol.swift */; };
 		5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCEFE52555358B0090E74F /* DefinitionCell.swift */; };
 		5CBCEFF62555465D0090E74F /* TBLDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */; };
+		5CC006F3256DF37500F83793 /* UserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC006F2256DF37500F83793 /* UserSettingController.swift */; };
+		5CC006F8256DF99200F83793 /* TestSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC006F7256DF99200F83793 /* TestSettingCell.swift */; };
+		5CC006FD256DFCBC00F83793 /* TestSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC006FC256DFCBC00F83793 /* TestSettingModel.swift */; };
+		5CC00702256DFD4600F83793 /* TestSettingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC00701256DFD4600F83793 /* TestSettingResponse.swift */; };
+		5CC00707256DFECA00F83793 /* BaseClient+TestSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC00706256DFECA00F83793 /* BaseClient+TestSetting.swift */; };
 		5CD4A13C2559235100621E40 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4A13B2559235100621E40 /* DocumentManager.swift */; };
 		5CDE88732547C50900F8851A /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE88722547C50900F8851A /* CategoryModel.swift */; };
 		5CDE88782547C93400F8851A /* CategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE88772547C93400F8851A /* CategoryResponse.swift */; };
@@ -170,6 +175,11 @@
 		5CB7B0C0256606AE007011FE /* AddCateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateProtocol.swift; sourceTree = "<group>"; };
 		5CBCEFE52555358B0090E74F /* DefinitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCell.swift; sourceTree = "<group>"; };
 		5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBLDefaultCell.swift; sourceTree = "<group>"; };
+		5CC006F2256DF37500F83793 /* UserSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingController.swift; sourceTree = "<group>"; };
+		5CC006F7256DF99200F83793 /* TestSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSettingCell.swift; sourceTree = "<group>"; };
+		5CC006FC256DFCBC00F83793 /* TestSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSettingModel.swift; sourceTree = "<group>"; };
+		5CC00701256DFD4600F83793 /* TestSettingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSettingResponse.swift; sourceTree = "<group>"; };
+		5CC00706256DFECA00F83793 /* BaseClient+TestSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+TestSetting.swift"; sourceTree = "<group>"; };
 		5CD4A13B2559235100621E40 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		5CDE88722547C50900F8851A /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5CDE88772547C93400F8851A /* CategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponse.swift; sourceTree = "<group>"; };
@@ -312,6 +322,7 @@
 				5CDE887C2547C9B300F8851A /* BaseClient+Category.swift */,
 				5C9E83582542DE0C00A032E6 /* BaseClient+Vocabulary.swift */,
 				0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */,
+				5CC00706256DFECA00F83793 /* BaseClient+TestSetting.swift */,
 			);
 			path = A;
 			sourceTree = "<group>";
@@ -337,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				5C64C005256B73C500294BA3 /* KeyBoardCell.swift */,
+				5CC006F7256DF99200F83793 /* TestSettingCell.swift */,
 			);
 			path = CommonCell;
 			sourceTree = "<group>";
@@ -415,6 +427,7 @@
 		5C9E4F91254018CC00948C49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5CC006F1256DF34800F83793 /* User */,
 				5C64BFFB256B71E700294BA3 /* CommonController */,
 				5C9DECF5254A78B400DC182F /* Category */,
 				5C11BB66253FF38B00AB4D3B /* LoginController.swift */,
@@ -440,6 +453,7 @@
 				5C9E4FB72540258B00948C49 /* BaseResponse.swift */,
 				5C9E4FC12540282300948C49 /* UserInfoResponse.swift */,
 				5C9E4FBC2540273C00948C49 /* UserModel.swift */,
+				5CC006FC256DFCBC00F83793 /* TestSettingModel.swift */,
 				5CDE88722547C50900F8851A /* CategoryModel.swift */,
 				5C9E834E2542B3E100A032E6 /* VocabularyModel.swift */,
 				5C9E83532542B4CA00A032E6 /* VocabularyResponse.swift */,
@@ -449,6 +463,7 @@
 				5C0BB7F5256751D700FC4996 /* AddCateRequest.swift */,
 				0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */,
 				0FAF03BC256B245D0002B230 /* SuccessResponse.swift */,
+				5CC00701256DFD4600F83793 /* TestSettingResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -470,6 +485,14 @@
 				5CB7B0A72564F694007011FE /* AddVocabImageCell.swift */,
 			);
 			path = AddVocabularyTableCell;
+			sourceTree = "<group>";
+		};
+		5CC006F1256DF34800F83793 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5CC006F2256DF37500F83793 /* UserSettingController.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		60DA0DA6E9E614246E78358D /* Pods */ = {
@@ -726,6 +749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C11BB67253FF38B00AB4D3B /* LoginController.swift in Sources */,
+				5CC00702256DFD4600F83793 /* TestSettingResponse.swift in Sources */,
 				5C2E0157254A9E230000E18B /* VocabularyController.swift in Sources */,
 				5C77E92D255254AD00A86469 /* CheckAudioCell.swift in Sources */,
 				5C63C6AE255A3F07007DB2CC /* TestCell.swift in Sources */,
@@ -742,6 +766,7 @@
 				5C9E83592542DE0C00A032E6 /* BaseClient+Vocabulary.swift in Sources */,
 				5C9DECFC254A795600DC182F /* VocabularyCell.swift in Sources */,
 				5C18CCE42547BF15004934C5 /* CategoryCell.swift in Sources */,
+				5CC006F3256DF37500F83793 /* UserSettingController.swift in Sources */,
 				5C11BB63253FF38B00AB4D3B /* AppDelegate.swift in Sources */,
 				5C2E0161254ABD760000E18B /* TestBaseResponse.swift in Sources */,
 				5C9E83542542B4CA00A032E6 /* VocabularyResponse.swift in Sources */,
@@ -756,6 +781,7 @@
 				5C9E8340254294D500A032E6 /* EnvironmentConfig.swift in Sources */,
 				5CDE88732547C50900F8851A /* CategoryModel.swift in Sources */,
 				5CB7B0B22564F764007011FE /* AddCateDefinitionCell.swift in Sources */,
+				5CC006FD256DFCBC00F83793 /* TestSettingModel.swift in Sources */,
 				5C9E4F7C2540141500948C49 /* StoryboardString.swift in Sources */,
 				0FAF03B9256B1F420002B230 /* BaseClient+Test.swift in Sources */,
 				5C64C006256B73C500294BA3 /* KeyBoardCell.swift in Sources */,
@@ -779,12 +805,14 @@
 				5C0BB7F6256751D700FC4996 /* AddCateRequest.swift in Sources */,
 				5C2E015C254ABD200000E18B /* TestModel.swift in Sources */,
 				5C9E4F892540153600948C49 /* CommonExtension.swift in Sources */,
+				5CC006F8256DF99200F83793 /* TestSettingCell.swift in Sources */,
 				5C9E4F882540153600948C49 /* ServerKey.swift in Sources */,
 				5C23D7EA25412BEF00FF5B8B /* BaseClient+User.swift in Sources */,
 				5CA34CC0254F9A8C009BBE34 /* LearnVocabularyCell.swift in Sources */,
 				5CB7B0A82564F694007011FE /* AddVocabImageCell.swift in Sources */,
 				5C63C6A9255A3CC9007DB2CC /* OptionView.swift in Sources */,
 				5C9E4FB82540258B00948C49 /* BaseResponse.swift in Sources */,
+				5CC00707256DFECA00F83793 /* BaseClient+TestSetting.swift in Sources */,
 				5CB7B0BC2564F7CE007011FE /* AddCateLevelCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

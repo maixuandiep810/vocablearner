@@ -35,6 +35,8 @@ class BaseClient: NSObject {
         
         case addFinishTest(addFinishRequest: AddFinishRequest)
         
+        case getTestSetting(userId: String)
+        
         static let baseHTTPS = API.kBaseUrlSSL
         static let baseHTTP = API.kBaseUrl
         
@@ -53,6 +55,8 @@ class BaseClient: NSObject {
             case .addCategory(_): return HTTPMethod.post
                 
             case .addFinishTest(_): return HTTPMethod.post
+            
+            case .getTestSetting(_): return HTTPMethod.get
             }
             
         }
@@ -81,6 +85,9 @@ class BaseClient: NSObject {
                 
             case .addFinishTest:
                 return String(format: API.kFinishTestUrl)
+        
+            case .getTestSetting(let userId):
+                return String(format: API.kTestSettingUrl, userId)
             }
             
         }
@@ -130,6 +137,9 @@ class BaseClient: NSObject {
                 return urlHttpRequest
                 
             case .addFinishTest:
+                return urlHttpRequest
+                
+            case .getTestSetting(_):
                 return urlHttpRequest
             }
             
