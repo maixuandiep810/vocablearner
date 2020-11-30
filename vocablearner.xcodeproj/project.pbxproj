@@ -450,20 +450,8 @@
 		5C9E4FA22540244B00948C49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5C9E4FB72540258B00948C49 /* BaseResponse.swift */,
-				5C9E4FC12540282300948C49 /* UserInfoResponse.swift */,
-				5C9E4FBC2540273C00948C49 /* UserModel.swift */,
-				5CC006FC256DFCBC00F83793 /* TestSettingModel.swift */,
-				5CDE88722547C50900F8851A /* CategoryModel.swift */,
-				5C9E834E2542B3E100A032E6 /* VocabularyModel.swift */,
-				5C9E83532542B4CA00A032E6 /* VocabularyResponse.swift */,
-				5CDE88772547C93400F8851A /* CategoryResponse.swift */,
-				5C2E015B254ABD200000E18B /* TestModel.swift */,
-				5C2E0160254ABD760000E18B /* TestBaseResponse.swift */,
-				5C0BB7F5256751D700FC4996 /* AddCateRequest.swift */,
-				0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */,
-				0FAF03BC256B245D0002B230 /* SuccessResponse.swift */,
-				5CC00701256DFD4600F83793 /* TestSettingResponse.swift */,
+				5CC26EEC2574EC9B00D9E378 /* Response */,
+				5CC26EEB2574EC9200D9E378 /* DataModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -493,6 +481,34 @@
 				5CC006F2256DF37500F83793 /* UserSettingController.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		5CC26EEB2574EC9200D9E378 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C9E4FBC2540273C00948C49 /* UserModel.swift */,
+				5CC006FC256DFCBC00F83793 /* TestSettingModel.swift */,
+				5CDE88722547C50900F8851A /* CategoryModel.swift */,
+				5C9E834E2542B3E100A032E6 /* VocabularyModel.swift */,
+				5C2E015B254ABD200000E18B /* TestModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		5CC26EEC2574EC9B00D9E378 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5C9E4FB72540258B00948C49 /* BaseResponse.swift */,
+				5C9E4FC12540282300948C49 /* UserInfoResponse.swift */,
+				5C9E83532542B4CA00A032E6 /* VocabularyResponse.swift */,
+				5CDE88772547C93400F8851A /* CategoryResponse.swift */,
+				5C2E0160254ABD760000E18B /* TestBaseResponse.swift */,
+				5C0BB7F5256751D700FC4996 /* AddCateRequest.swift */,
+				0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */,
+				0FAF03BC256B245D0002B230 /* SuccessResponse.swift */,
+				5CC00701256DFD4600F83793 /* TestSettingResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		60DA0DA6E9E614246E78358D /* Pods */ = {
