@@ -11,6 +11,6 @@ import UIKit
 // = user information
 class AddCateRequest {
     var name = ""
-    var levelId = 0
+    var isDifficult = false
     var imageURL = URL(string: "")
 }

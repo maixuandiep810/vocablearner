@@ -75,7 +75,7 @@ extension BaseClient {
                     multipartFormData.append(addCateRequest.name.data(using: String.Encoding.utf8)!, withName: "Image" as String)
                 }
                 multipartFormData.append(addCateRequest.name.data(using: String.Encoding.utf8)!, withName: "Name" as String)
-                multipartFormData.append(String(addCateRequest.levelId).data(using: String.Encoding.utf8)!, withName: "LevelId" as String)
+                multipartFormData.append(String(addCateRequest.isDifficult).data(using: String.Encoding.utf8)!, withName: "IsDifficult" as String)
             }, usingThreshold: UInt64.init(), with: request){ (result) in
                 switch result{
                 case .success(let upload, _, _):

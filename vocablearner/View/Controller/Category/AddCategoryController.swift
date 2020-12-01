@@ -168,7 +168,7 @@ extension AddCategoryController {
         case AddCategoryTableCell_ENUM.NameCellID.cellID:
             self.addCateRequest.name = textField.text!
         default:
-            self.addCateRequest.levelId = Int(textField.text!)!
+            self.addCateRequest.isDifficult = textField.text! == "True" ? true : false
         }
         dismissKeyboard()
     }
@@ -291,20 +291,25 @@ extension AddCategoryController {
         let nameCell = self.cellDict[AddCategoryTableCell_ENUM.NameCellID.cellID] as! AddCateNameCell
         let levelCell = self.cellDict[AddCategoryTableCell_ENUM.LevelCellID.cellID] as! AddCateLevelCell
         
-        let validation = Validation()
-        
-        if validation.validateAllField(nameCell: nameCell, levelCell: levelCell) == false {
-            alertValidation(yesOption: true, noOption: false, message: "a", cellId: "", parentController: self)
+        if nameCell.nameTF.text == "" {
+            alertValidation(yesOption: true, noOption: false, message: "Name Field is required")
             return false
         }
+        self.addCateRequest.name = nameCell.nameTF.text!
+        
+        if levelCell.levelTF.text == "" {
+            alertValidation(yesOption: true, noOption: false, message: "Difficult Field is required")
+            return false
+        }
+        if levelCell.levelTF.text == "True" {
+            self.addCateRequest.isDifficult = true
+        }
         else {
-            self.addCateRequest.name = nameCell.nameTF.text!
-            self.addCateRequest.levelId = LevelOptions.pickerId[levelCell.levelTF.text!]!
+            self.addCateRequest.isDifficult = false
         }
         
-        if validation.validateAddCateImageCell(cell: imageCell) == false {
+        if imageCell.info == nil || imageCell.info?[UIImagePickerController.InfoKey.imageURL] == nil {
             self.addCateRequest.imageURL = nil
-            alertValidation(yesOption: true, noOption: true, message: "B", cellId: AddCategoryTableCell_ENUM.ImageCellID.cellID, parentController: self)
         }
         else {
             let stringNSURL = (imageCell.info![UIImagePickerController.InfoKey.imageURL] as! NSURL).absoluteString!
@@ -315,22 +320,17 @@ extension AddCategoryController {
         return true
     }
     
-    func alertValidation(yesOption: Bool, noOption: Bool, message: String, cellId: String, parentController: AddCategoryController) -> Void {
+    func alertValidation(yesOption: Bool, noOption: Bool, message: String) -> Void {
         
         // create the alert
         let alert = UIAlertController(title: "Notice", message: message, preferredStyle: UIAlertController.Style.alert)
         
         // add the actions (buttons)
         if yesOption {
-            alert.addAction(UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler: { action in
-                if cellId == AddCategoryTableCell_ENUM.ImageCellID.cellID {
-                    parentController.uploadAddCategory(addCateRequest: parentController.addCateRequest)
-                }
-            }))
+            alert.addAction(UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler:nil))
         }
         if noOption {
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {action in
-            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         }
         
         // show the alert

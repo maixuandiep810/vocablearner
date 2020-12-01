@@ -29,6 +29,8 @@ struct API {
     static let kTestSettingUrl = "/api/usersetting/testsetting/%@"
     
     static let kTestGetAudioUrl = "https://file-examples-com.github.io/uploads/2017/11/file_example_WAV_1MG.wav"
+    
+    static let IsDifficultParam_ALL = "0"
 }
 
 struct DocumentUrl {
