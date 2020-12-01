@@ -35,6 +35,12 @@ extension CategoryCell {
         self.layer.borderColor = UIConfig.categoryCellBorderColor
         self.layer.borderWidth = UIConfig.categoryCellBorderWidth
         
+        if data!.isTested == false {
+            self.testButton.isHidden = true
+        }
+        else {
+            self.testButton.isHidden = false
+        }
         self.testButton.layer.masksToBounds = true
         self.testButton.layer.cornerRadius = 10
         self.testButton.layer.maskedCorners = [.layerMinXMaxYCorner]

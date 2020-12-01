@@ -70,3 +70,21 @@ extension VocabularyController {
         return cell
     }
 }
+
+
+
+
+
+
+
+    func loadCategoryByLevel(levelId: String) {
+        BaseClient.shared.getCategoryByLevelWithUrl(levelId: levelId,
+            completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+                if(isSuccess!) {
+                    self.listCategoryModel = value as! List<CategoryModel>
+                    self.categoryClt.reloadData()
+                }
+            }
+            
+        )
+    }

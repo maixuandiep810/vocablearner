@@ -23,7 +23,7 @@ struct API {
     static let kVocabularyUrl = "/api/vocabulary"
     static let kVocabularyByCategoryIdUrl = "/api/vocabulary/%@"
     static let kCheckPronunciationByVocabularyIdUrl = "/api/file/check_pronunciation/%@"
-    static let kCategoryUrl = "/api/category"
+    static let kCategoryUrl = "/api/category/%@/%@/%@/%@"
     static let kCategoryByLevelUrl = "/api/category/level/%@"
     static let kFinishTestUrl = "/api/test/finish"
     static let kTestSettingUrl = "/api/usersetting/testsetting/%@"

@@ -87,7 +87,7 @@ extension TestController {
     
     
     func loadVocabulary() {
-        BaseClient.shared.getVocabularyByCategoryIdWithUrl(categoryId: String(categoryModel.id),
+        BaseClient.shared.getVocabularyByCategoryIdWithUrl(categoryId: String(categoryModel.categoryId),
             completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 if(isSuccess!) {
                     self.listVocabularyModel = value as! List<VocabularyModel>

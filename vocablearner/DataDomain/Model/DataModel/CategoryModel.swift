@@ -33,7 +33,7 @@ class CategoryModel: Object, Mappable {
     func mapping(map: Map) {
         id                              <- map["Id"]
         userId                          <- map["UserId"]
-        categoryId                      <- map["categoryId"]
+        categoryId                      <- map["CategoryId"]
         name                            <- map["Name"]
         imageUrl                        <- map["ImageUrl"]
         levelId                         <- map["LevelId"]

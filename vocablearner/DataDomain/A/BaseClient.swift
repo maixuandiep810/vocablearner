@@ -29,7 +29,7 @@ class BaseClient: NSObject {
         case getVocabularyByCategoryId(categoryId: String)
         case checkPronunciation(vocabularyId: String)
         
-        case getCategory
+        case getCategory(userId: String, levelIdValue: String, isDifficultValue: String, isTodoTestValuecategoryId: String)
         case getCategoryByLevel(levelId: String)
         case addCategory(addCateRequest: AddCateRequest)
         
@@ -50,7 +50,7 @@ class BaseClient: NSObject {
             case .getVocabularyByCategoryId(_): return HTTPMethod.get
             case .checkPronunciation(_): return HTTPMethod.post
                 
-            case .getCategory: return HTTPMethod.get
+            case .getCategory(_, _, _, _): return HTTPMethod.get
             case .getCategoryByLevel(_): return HTTPMethod.get
             case .addCategory(_): return HTTPMethod.post
                 
@@ -76,8 +76,8 @@ class BaseClient: NSObject {
             case .checkPronunciation(let vocabularyId):
                 return String(format: API.kCheckPronunciationByVocabularyIdUrl, vocabularyId)
                 
-            case .getCategory:
-                return String(format: API.kCategoryUrl)
+            case .getCategory(let userId, let levelIdValue, let isDifficultValue, let isTodoTestValue):
+                return String(format: API.kCategoryUrl, userId, levelIdValue, isDifficultValue, isTodoTestValue)
             case .getCategoryByLevel(let levelId):
                 return String(format: API.kCategoryByLevelUrl, levelId)
             case .addCategory:
@@ -129,7 +129,7 @@ class BaseClient: NSObject {
                 urlHttpRequest.setValue(Header.MultipartFormdata, forHTTPHeaderField: Header.ContentType)
                 return urlHttpRequest
                 
-            case .getCategory:
+            case .getCategory(_, _, _, _):
                 return urlHttpRequest
             case .getCategoryByLevel(_):
                 return urlHttpRequest

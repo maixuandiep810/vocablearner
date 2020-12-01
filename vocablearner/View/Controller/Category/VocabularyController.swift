@@ -10,7 +10,7 @@ import RealmSwift
 import SDWebImage
 
 class VocabularyController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     // MARK: Properties
     
     @IBOutlet weak var vocabularyClt: UICollectionView!
@@ -26,8 +26,8 @@ class VocabularyController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-// TODO: fix exactly title when back to parent controller
-//        self.navigationController?.navigationBar.topItem?.title = categoryModel.name
+        // TODO: fix exactly title when back to parent controller
+        //        self.navigationController?.navigationBar.topItem?.title = categoryModel.name
         loadVocabulary()
     }
 }
@@ -35,19 +35,20 @@ class VocabularyController: UIViewController, UICollectionViewDelegate, UICollec
 
 
 extension VocabularyController {
-
+    
     // MARK: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.listVocabularyModel.count + 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.row {
         case self.listVocabularyModel.count:
             let cell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.AddVocabCellID, for: indexPath)
+            cell.isHidden = !self.categoryModel.isCustomCategory
             return cell
         default:
-                    let cell: VocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.VocabularyCellID, for: indexPath) as! VocabularyCell
+            let cell: VocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.VocabularyCellID, for: indexPath) as! VocabularyCell
             cell.data = self.listVocabularyModel[indexPath.row]
             return cell
         }
@@ -60,11 +61,11 @@ extension VocabularyController {
         default:
             //        let cell: VocabularyCell = self.vocabularyClt.cellForItem(at: indexPath) as! VocabularyCell
             gotoLearnVocabController(indexPath: indexPath)
-            //        if let listVocabularyModel = self.listVocabularyModel {
-            //            controller.listVocabularyModel = listVocabularyModel
-            //
-            //            self.navigationController?.pushViewController(controller, animated: true)
-            //        }
+        //        if let listVocabularyModel = self.listVocabularyModel {
+        //            controller.listVocabularyModel = listVocabularyModel
+        //
+        //            self.navigationController?.pushViewController(controller, animated: true)
+        //        }
         }
     }
     
@@ -72,15 +73,15 @@ extension VocabularyController {
     
     func loadVocabulary() {
         BaseClient.shared.getVocabularyByCategoryIdWithUrl(categoryId: String(categoryModel.id),
-            completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-                if(isSuccess!) {
-                    self.listVocabularyModel = value as! List<VocabularyModel>
-                    self.vocabularyClt.reloadData()
-                }
-            }
+                                                           completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+                                                            if(isSuccess!) {
+                                                                self.listVocabularyModel = value as! List<VocabularyModel>
+                                                                self.vocabularyClt.reloadData()
+                                                            }
+                                                           }
         )
     }
- 
+    
     func gotoLearnVocabController(indexPath: IndexPath) -> Void {
         let controller: LearnVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.LearnVocabularyControllerID) as! LearnVocabularyController
         controller.listVocabularyModel = self.listVocabularyModel
@@ -93,5 +94,5 @@ extension VocabularyController {
         controller.categoryModel = self.categoryModel
         self.navigationController?.pushViewController(controller, animated: true)
     }
-
+    
 }

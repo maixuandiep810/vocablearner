@@ -20,6 +20,7 @@ struct StoryboardId {
     static let AddCategoryControllerID = "AddCategoryControllerID"
     static let AddVocabularyControllerID = "AddVocabularyControllerID"
     static let UserSettingControllerID = "UserSettingControllerID"
+    static let TestSettingControllerID = "TestSettingControllerID"
 
     // Table
     static let LearnVocabularyTableID = "LearnVocabularyTableID"
@@ -189,9 +190,10 @@ enum AddVocabularyTableCell_ENUM: Int {
 
 
 struct LevelOptions {
-    static let pickerData = ["All", "A1", "A2", "B1", "B2", "C1", "C2"]
-    static let AddCatePickerData = ["A1", "A2", "B1", "B2", "C1", "C2"]
-    static let pickerId = ["All": 0, "A1": 1, "A2": 2, "B1": 3, "B2": 4, "C1": 5, "C2": 6]
+    static let pickerData = ["All", "A1", "A2", "B1", "B2", "C1", "C2", "Difficult", "Todo Test", "Test"]
+    static let AddCate_IsDifficult_PK_Data = ["True", "False"]
+    static let AddCate_IsDifficult_PK_Value = ["True": true, "False": false]
+    static let pickerId = ["All": 0, "A1": 1, "A2": 2, "B1": 3, "B2": 4, "C1": 5, "C2": 6, "Difficult": 7, "Todo Test": 8, "Test": 9]
 }
 
 struct TopicDayOptions {

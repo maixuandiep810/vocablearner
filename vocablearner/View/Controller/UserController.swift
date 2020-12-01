@@ -34,7 +34,7 @@ class UserController: UIViewController {
     
     // MARK: IBActions
     @IBAction func settingTouchUpInSide(_ sender: Any) {
-        gotoTestSettingController()
+        gotoUserSettingController()
     }
     
     
@@ -61,7 +61,7 @@ extension UserController {
     }
     
     
-    func gotoTestSettingController() -> Void {
+    func gotoUserSettingController() -> Void {
         let controller: UserSettingController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.UserSettingControllerID) as! UserSettingController
         self.navigationController?.pushViewController(controller, animated: true)
     }

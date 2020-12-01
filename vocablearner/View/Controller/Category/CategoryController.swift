@@ -27,7 +27,7 @@ class CategoryController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.topItem?.title = StoryboardConstVar.CategoryControllerNavTitle
-        loadCategory()
+        loadCategory(pickerString: CurrentViewSetting.shared.pickerIdString)
     }
     
     
@@ -76,6 +76,7 @@ extension CategoryController {
         if (kind == UICollectionView.elementKindSectionHeader) {
             let headerView: CategoryHeaderCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: StoryboardId.AddCustomTopicHeaderID, for: indexPath) as! CategoryHeaderCell
             self.categoryHeaderCell = headerView
+            self.categoryHeaderCell?.levelTF.text = CurrentViewSetting.shared.pickerIdString
             configUICategoryHeaderCell()
             return headerView
         }
@@ -103,25 +104,62 @@ extension CategoryController {
     
     // MARK: Private Methods
     
-    func loadCategory() {
-        BaseClient.shared.getCategoryWithUrl(
-            completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-                if(isSuccess!) {
-                    self.listCategoryModel = value as! List<CategoryModel>
-                    self.categoryClt.reloadData()
-                }
-            }
-        )
+    func loadCategory(pickerString: String) {
+        
+        var levelIdValue = ""
+        var isDifficultValue = "2"
+        var isTodoTestValue = "2"
+        
+        switch LevelOptions.pickerId[pickerString]! {
+        case LevelOptions.pickerId["All"]:
+            levelIdValue = String(0)
+            break
+        case LevelOptions.pickerId["A1"]:
+            levelIdValue = String(LevelOptions.pickerId[pickerString]!)
+            break
+        case LevelOptions.pickerId["A2"]:
+            levelIdValue = String(LevelOptions.pickerId[pickerString]!)
+            break
+        case LevelOptions.pickerId["B1"]:
+            levelIdValue = String(LevelOptions.pickerId[pickerString]!)
+            break
+        case LevelOptions.pickerId["B2"]:
+            levelIdValue = String(LevelOptions.pickerId[pickerString]!)
+            break
+        case LevelOptions.pickerId["C1"]:
+            levelIdValue = String(LevelOptions.pickerId[pickerString]!)
+            break
+        case LevelOptions.pickerId["C2"]:
+            levelIdValue = String(LevelOptions.pickerId[pickerString]!)
+            break
+        case LevelOptions.pickerId["Difficult"]:
+            levelIdValue = String(0)
+            isDifficultValue = String(1)
+            break
+        case LevelOptions.pickerId["Todo Test"]:
+            levelIdValue = String(0)
+            isDifficultValue = String(2)
+            isTodoTestValue = String(1)
+            break
+        case LevelOptions.pickerId["Test"]:
+            levelIdValue = String(0)
+            isDifficultValue = String(2)
+            isTodoTestValue = String(0)
+            break
+        default:
+            break
+        }
+        self.loadCategory(userId: String(CurrentUser.shared.user!.id), levelIdValue: levelIdValue, isDifficultValue: isDifficultValue, isTodoTestValue: isTodoTestValue)
     }
-    func loadCategoryByLevel(levelId: String) {
-        BaseClient.shared.getCategoryByLevelWithUrl(levelId: levelId,
+    
+    func loadCategory(userId: String, levelIdValue: String, isDifficultValue: String, isTodoTestValue: String) {
+        BaseClient.shared.getCategoryWithUrl(userId: userId, levelIdValue: levelIdValue, isDifficultValue: isDifficultValue, isTodoTestValue: isTodoTestValue,
             completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 if(isSuccess!) {
                     self.listCategoryModel = value as! List<CategoryModel>
                     self.categoryClt.reloadData()
                 }
             }
-            
         )
     }
     
@@ -155,18 +193,16 @@ extension CategoryController {
         
         self.categoryHeaderCell!.levelTF.inputView = self.levelPK!
         self.categoryHeaderCell!.levelTF.inputAccessoryView = toolBar
-        self.categoryHeaderCell!.levelTF.text = LevelOptions.pickerData[0]
+        self.categoryHeaderCell!.levelTF.text = CurrentViewSetting.shared.pickerIdString
     }
-    
+      
     
     // MARK: Target Action
     
     @objc func levelPickerDone() -> Void {
         self.categoryHeaderCell!.levelTF.resignFirstResponder()
-        let levelTFText = self.categoryHeaderCell!.levelTF.text
-//        String(LevelOptions.pickerId[levelTFText])!
-        let levelId = String(LevelOptions.pickerId[levelTFText!]!)
-        self.loadCategoryByLevel(levelId: levelId)
+        CurrentViewSetting.shared.pickerIdString = self.categoryHeaderCell!.levelTF.text!
+        loadCategory(pickerString: CurrentViewSetting.shared.pickerIdString)
     }
     @objc func levelPickerCancel() -> Void {
         self.categoryHeaderCell!.levelTF.resignFirstResponder()

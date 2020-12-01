@@ -13,9 +13,8 @@ class TestSettingCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var levelLB: UILabel!
     @IBOutlet weak var topicDayTF: UITextField!
-    @IBOutlet weak var timeLB: UILabel!
     var dayPK: UIPickerView?
-    var parentController: UserSettingController?
+    var parentController: TestSettingController?
     
     var data: TestSettingModel? {
         didSet {
@@ -40,7 +39,6 @@ class TestSettingCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSo
     func didSetData(data: TestSettingModel) -> Void {
         levelLB.text = data.Name
         topicDayTF.text = String(data.Value)
-        timeLB.text = String(data.Time)
     }
     
     // MARK: UIPickerViewDelegate, UIPickerViewDataSource

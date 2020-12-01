@@ -108,7 +108,7 @@ extension AddCategoryController {
             return AddCategoryTableCell_ENUM.LevelCellID.heightCell
             
         default:
-            return CGFloat(1000)
+            return CGFloat(100)
         }
     }
     
@@ -140,17 +140,17 @@ extension AddCategoryController {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return LevelOptions.AddCatePickerData.count
+        return LevelOptions.AddCate_IsDifficult_PK_Data.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return LevelOptions.AddCatePickerData[row]
+        return LevelOptions.AddCate_IsDifficult_PK_Data[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         let cell = self.cellDict[AddCategoryTableCell_ENUM.LevelCellID.cellID] as! AddCateLevelCell
-        cell.levelTF.text = LevelOptions.pickerData[row]
+        cell.levelTF.text = LevelOptions.AddCate_IsDifficult_PK_Data[row]
     }
     
     
@@ -264,7 +264,7 @@ extension AddCategoryController {
         
         cell.levelTF.inputView = self.levelPK!
         cell.levelTF.inputAccessoryView = toolBar
-        cell.levelTF.text = LevelOptions.AddCatePickerData[0]
+        cell.levelTF.text = LevelOptions.AddCate_IsDifficult_PK_Data[0]
     }
     
     

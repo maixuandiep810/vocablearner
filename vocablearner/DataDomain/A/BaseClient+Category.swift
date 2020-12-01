@@ -13,10 +13,10 @@ import RealmSwift
 
 extension BaseClient {
     
-    func getCategoryWithUrl(completion:@escaping ServiceResponse) {
+    func getCategoryWithUrl(userId: String, levelIdValue: String, isDifficultValue: String, isTodoTestValue: String, completion:@escaping ServiceResponse) {
         DispatchQueue.global(qos: .background).async {
             // Run on background thread
-            let request = Services.getCategory as URLRequestConvertible
+            let request = Services.getCategory(userId: userId, levelIdValue: levelIdValue, isDifficultValue: isDifficultValue, isTodoTestValuecategoryId: isTodoTestValue) as URLRequestConvertible
             Alamofire.request(request)
                 .responseObject { (response: DataResponse<CategoryResponse>) in
                     switch response.result {

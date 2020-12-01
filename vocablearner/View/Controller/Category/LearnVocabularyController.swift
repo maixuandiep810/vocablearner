@@ -22,33 +22,33 @@ import AVFoundation
 
 
 class LearnVocabularyController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
-
+    
     // MARK: Properties
-
+    
     @IBOutlet weak var vocabularyClt: UICollectionView!
-        var categoryModel = CategoryModel()
+    var categoryModel = CategoryModel()
     var listVocabularyModel = List<VocabularyModel>()
     var currentIndex = 0
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer?
-
-
+    
+    
     // MARK: Life - cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         recordingSession = AVAudioSession.sharedInstance()
         do {
-//            let url = NSURL(string: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3") as! URL
-//            try audioPlayer = AVAudioPlayer.
-//            audioPlayer?.delegate = self
-//            audioPlayer?.prepareToPlay()
+            //            let url = NSURL(string: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3") as! URL
+            //            try audioPlayer = AVAudioPlayer.
+            //            audioPlayer?.delegate = self
+            //            audioPlayer?.prepareToPlay()
         } catch let error as NSError {
             print("audioPlayer error \(error.localizedDescription)")
         }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configUI()
@@ -57,7 +57,7 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
     override func viewDidAppear(_ animated: Bool) {
         gotoCurrentCellSelected(animated: true)
     }
-       
+    
     
     // MARK: Outlet Actions
     @IBAction func AudioButtonTouchUpInside(_ sender: Any) {
@@ -90,20 +90,20 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
 
 
 extension LearnVocabularyController {
-
+    
     // MARK: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.listVocabularyModel.count + 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.row {
         case self.listVocabularyModel.count:
             let cell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.LearnVocabularyCellID, for: indexPath)
             return cell
         default:
-                    let cell: LearnVocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.LearnVocabularyCellID, for: indexPath) as! LearnVocabularyCell
+            let cell: LearnVocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.LearnVocabularyCellID, for: indexPath) as! LearnVocabularyCell
             cell.resetData()
             cell.data = self.listVocabularyModel[indexPath.row]
             return cell
@@ -151,14 +151,14 @@ extension LearnVocabularyController {
             checkAudioButton.setImage(image, for: .normal)
         }
         let audioFilename = DocumentManager.shared.getDocumentsDirectory().appendingPathComponent(DocumentUrl.defaultAudioUrl)
-
+        
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
-
+        
         do {
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             audioRecorder.delegate = self
@@ -171,7 +171,7 @@ extension LearnVocabularyController {
     func finishRecording(checkAudioButton: UIButton!, success: Bool) {
         audioRecorder.stop()
         audioRecorder = nil
-
+        
         if let image = UIImage(named: "start_record.png") {
             checkAudioButton.setImage(image, for: .normal)
         }
@@ -197,33 +197,33 @@ extension LearnVocabularyController {
     
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully
-                    flag: Bool) {
+                                        flag: Bool) {
     }
-
+    
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer,
-                    error: Error?) {
+                                        error: Error?) {
     }
-
+    
     func audioPlayerBeginInterruption(_ player: AVAudioPlayer) {
     }
-
+    
     func audioPlayerEndInterruption(player: AVAudioPlayer) {
     }
     
     
     func finishTest(addFinishRequest: AddFinishRequest) {
         BaseClient.shared.addFinishTestByUrl (addFinishRequest: addFinishRequest,
-            completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-                if(isSuccess!) {
-                    self.gotoCategoryController()
-                }
-            }
-
+                                              completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+                                                if(isSuccess!) {
+                                                    self.gotoCategoryController()
+                                                }
+                                              }
+                                              
         )
     }
     
     func gotoCategoryController() -> Void {
-    
+        
         let controller = (self.navigationController?.viewControllers[0])!
         self.navigationController?.popToViewController(controller, animated: true)    }
 }
