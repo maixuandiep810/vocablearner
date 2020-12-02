@@ -206,6 +206,8 @@ extension AddCategoryController {
     @objc func addTapped() -> Void {
         
         if getData() {
+            addCateRequest.userId = String(CurrentUser.shared.user!.id)
+            addCateRequest.description = ""
             uploadAddCategory(addCateRequest: addCateRequest)
         }
     }
@@ -343,9 +345,12 @@ extension AddCategoryController {
         { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
             if(isSuccess!) {
                 let alert = UIAlertController(title: "Yes", message: "Yes", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+                    action in
+                    self.gotoCategoryController()
+                }))
                 self.present(alert, animated: true)
-                self.gotoCategoryController()
+                
             } else {
                 let alert = UIAlertController(title: "No", message: "No", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
@@ -354,3 +359,4 @@ extension AddCategoryController {
         }
     }
 }
+		

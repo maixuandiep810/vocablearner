@@ -107,8 +107,8 @@ extension CategoryController {
     func loadCategory(pickerString: String) {
         
         var levelIdValue = ""
-        var isDifficultValue = "2"
-        var isTodoTestValue = "2"
+        var isDifficultValue = "0"
+        var isTodoTestValue = "0"
         
         switch LevelOptions.pickerId[pickerString]! {
         case LevelOptions.pickerId["All"]:
@@ -138,7 +138,7 @@ extension CategoryController {
             break
         case LevelOptions.pickerId["Todo Test"]:
             levelIdValue = String(0)
-            isDifficultValue = String(2)
+            isDifficultValue = String(0)
             isTodoTestValue = String(1)
             break
         case LevelOptions.pickerId["Test"]:
@@ -156,7 +156,7 @@ extension CategoryController {
         BaseClient.shared.getCategoryWithUrl(userId: userId, levelIdValue: levelIdValue, isDifficultValue: isDifficultValue, isTodoTestValue: isTodoTestValue,
             completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 if(isSuccess!) {
-                    self.listCategoryModel = value as! List<CategoryModel>
+	                    self.listCategoryModel = value as! List<CategoryModel>
                     self.categoryClt.reloadData()
                 }
             }

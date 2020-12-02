@@ -10,7 +10,9 @@ import UIKit
 // User Model
 // = user information
 class AddCateRequest {
+    var userId = ""
     var name = ""
     var isDifficult = false
     var imageURL = URL(string: "")
+    var description = ""
 }

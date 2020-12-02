@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "EE61E94C-85AF-47C0-884E-A3AA54025119"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9AE225E-A43F-46C0-8BD3-CE86FABC4C54"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vocablearner/DataDomain/A/BaseClient+Category.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "addCategory(addCateRequest:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6092F94E-4281-4CD1-946E-7BD45942A9B3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vocablearner/DataDomain/A/BaseClient+Category.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "addCategory(addCateRequest:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6092F94E-4281-4CD1-946E-7BD45942A9B3 - e9e7b5db30095a05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "vocablearner.BaseClient.addCategory(addCateRequest: vocablearner.AddCateRequest, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;__C.NSError&gt;, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "vocablearner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/p/Documents/source/vocablearner/vocablearner/DataDomain/A/BaseClient+Category.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "266">
+               </Location>
+               <Location
+                  uuid = "6092F94E-4281-4CD1-946E-7BD45942A9B3 - 4067c47d393117a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in vocablearner.BaseClient.addCategory(addCateRequest: vocablearner.AddCateRequest, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;__C.NSError&gt;, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "vocablearner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/p/Documents/source/vocablearner/vocablearner/DataDomain/A/BaseClient+Category.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -44,7 +44,7 @@ class BaseClient: NSObject {
         {
             switch self {
             case .login(_, _): return HTTPMethod.post
-            case .logout(_): return HTTPMethod.get
+            case .logout(_): return HTTPMethod.get		
                 
             case .getVocabulary: return HTTPMethod.get
             case .getVocabularyByCategoryId(_): return HTTPMethod.get
@@ -77,13 +77,13 @@ class BaseClient: NSObject {
                 return String(format: API.kCheckPronunciationByVocabularyIdUrl, vocabularyId)
                 
             case .getCategory(let userId, let levelIdValue, let isDifficultValue, let isTodoTestValue):
-                return String(format: API.kCategoryUrl, userId, levelIdValue, isDifficultValue, isTodoTestValue)
+                return String(format: API.kCategoryByQueryUrl, userId, levelIdValue, isDifficultValue, isTodoTestValue)
             case .getCategoryByLevel(let levelId):
                 return String(format: API.kCategoryByLevelUrl, levelId)
             case .addCategory:
                 return String(format: API.kCategoryUrl)
                 
-            case .addFinishTest:
+            case .addFinishTest:			
                 return String(format: API.kFinishTestUrl)
         
             case .getTestSetting(let userId):

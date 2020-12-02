@@ -33,7 +33,7 @@ extension BaseClient {
                         }
                         break
                     }
-                }
+            }
         }
     }
     
@@ -58,14 +58,14 @@ extension BaseClient {
                         }
                         break
                     }
-                }
+            }
         }
     }
     
     func addCategory(addCateRequest: AddCateRequest, completion:@escaping ServiceResponse) {
         
         DispatchQueue.global(qos: .background).async {
-
+            
             let request = Services.addCategory(addCateRequest: addCateRequest) as URLRequestConvertible
             Alamofire.upload(multipartFormData: { (multipartFormData) in
                 if let urlImage = addCateRequest.imageURL {
@@ -74,34 +74,30 @@ extension BaseClient {
                 else {
                     multipartFormData.append(addCateRequest.name.data(using: String.Encoding.utf8)!, withName: "Image" as String)
                 }
+                
+                multipartFormData.append(addCateRequest.userId.data(using: String.Encoding.utf8)!, withName: "UserId" as String)
                 multipartFormData.append(addCateRequest.name.data(using: String.Encoding.utf8)!, withName: "Name" as String)
                 multipartFormData.append(String(addCateRequest.isDifficult).data(using: String.Encoding.utf8)!, withName: "IsDifficult" as String)
+                multipartFormData.append(String(addCateRequest.description).data(using: String.Encoding.utf8)!, withName: "Description" as String)
             }, usingThreshold: UInt64.init(), with: request){ (result) in
                 switch result{
                 case .success(let upload, _, _):
-                    print("aaa")
                     upload.responseJSON { response in
-                        print("Succesfully uploaded  = \(response)")
+                        print("")
+                        DispatchQueue.main.async {
+                            completion(true, nil, nil)
+                        }
                     }
-                //                        upload.responseObject { (response: DataResponse<VocabularyResponse>) in
-                //                            switch response.result {
-                //                            case let .success(data):
-                //                                let listVocabModelData = data.data as? ListVocabularyModelData
-                //                                let listVocabModel = listVocabModelData?.list
-                //                                completion(true, nil, listVocabModel);
-                //                                break
-                //                            case let .failure(error):
-                //                                completion(false, error as NSError?,_;
-                //                                break
-                //                            }
-                //                        }
                 case .failure( _):
-                    print("bbbb")
+                    DispatchQueue.main.async {
+                        completion(false, nil, nil)
+                    }
+                    print("")
                 }
             }
         }
     }
-       
+    
 }
 
 
