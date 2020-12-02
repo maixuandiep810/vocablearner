@@ -61,24 +61,24 @@ extension VocabularyController {
         default:
             //        let cell: VocabularyCell = self.vocabularyClt.cellForItem(at: indexPath) as! VocabularyCell
             gotoLearnVocabController(indexPath: indexPath)
-        //        if let listVocabularyModel = self.listVocabularyModel {
-        //            controller.listVocabularyModel = listVocabularyModel
-        //
-        //            self.navigationController?.pushViewController(controller, animated: true)
-        //        }
+            //        if let listVocabularyModel = self.listVocabularyModel {
+            //            controller.listVocabularyModel = listVocabularyModel
+            //
+            //            self.navigationController?.pushViewController(controller, animated: true)
+            //        }
         }
     }
     
     // MARK: Private Methods
     
     func loadVocabulary() {
-        BaseClient.shared.getVocabularyByCategoryIdWithUrl(categoryId: String(categoryModel.id),
+        BaseClient.shared.getVocabularyByCategoryIdWithUrl(categoryId: String(categoryModel.categoryId),
                                                            completion:{ (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                                                             if(isSuccess!) {
                                                                 self.listVocabularyModel = value as! List<VocabularyModel>
                                                                 self.vocabularyClt.reloadData()
                                                             }
-                                                           }
+        }
         )
     }
     

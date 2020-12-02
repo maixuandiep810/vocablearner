@@ -67,6 +67,7 @@ extension BaseClient {
         DispatchQueue.global(qos: .background).async {
             
             let request = Services.addCategory(addCateRequest: addCateRequest) as URLRequestConvertible
+            
             Alamofire.upload(multipartFormData: { (multipartFormData) in
                 if let urlImage = addCateRequest.imageURL {
                     multipartFormData.append(urlImage, withName: "Image")

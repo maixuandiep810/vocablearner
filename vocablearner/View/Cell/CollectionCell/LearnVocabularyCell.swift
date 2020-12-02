@@ -40,6 +40,7 @@ extension LearnVocabularyCell {
             if(data!.imageUrl.count > 0 && data!.imageView == nil){
                 cell.vocabularyImage.sd_setImage(with: URL(string: "\(API.kFileUrl + data!.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
             }
+            cell.meaningLB.text = data!.meaning
             return cell
         case LearnVocabularyTableCell_ENUM.AudioCellID.rawValue:
             let cell: AudioCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.AudioCellID.cellID) as! AudioCell

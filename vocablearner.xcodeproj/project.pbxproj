@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2CD74225773A2500968554 /* AddVocabularyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD74125773A2500968554 /* AddVocabularyRequest.swift */; };
 		0FAF03B9256B1F420002B230 /* BaseClient+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */; };
 		0FAF03BB256B1FC40002B230 /* AddFinishRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */; };
 		0FAF03BD256B245D0002B230 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BC256B245D0002B230 /* SuccessResponse.swift */; };
@@ -106,6 +107,7 @@
 
 /* Begin PBXFileReference section */
 		0BA6D819B037FC5695745272 /* Pods-vocablearnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearnerTests.debug.xcconfig"; path = "Target Support Files/Pods-vocablearnerTests/Pods-vocablearnerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F2CD74125773A2500968554 /* AddVocabularyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabularyRequest.swift; sourceTree = "<group>"; };
 		0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Test.swift"; sourceTree = "<group>"; };
 		0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFinishRequest.swift; sourceTree = "<group>"; };
 		0FAF03BC256B245D0002B230 /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 				0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */,
 				0FAF03BC256B245D0002B230 /* SuccessResponse.swift */,
 				5CC00701256DFD4600F83793 /* TestSettingResponse.swift */,
+				0F2CD74125773A2500968554 /* AddVocabularyRequest.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				5C2E0161254ABD760000E18B /* TestBaseResponse.swift in Sources */,
 				5C9E83542542B4CA00A032E6 /* VocabularyResponse.swift in Sources */,
 				5C23D7FF254173A400FF5B8B /* CurrentUser.swift in Sources */,
+				0F2CD74225773A2500968554 /* AddVocabularyRequest.swift in Sources */,
 				5C9E4F81254014A400948C49 /* CommonResources.swift in Sources */,
 				5C9E4F8A2540153600948C49 /* ListTransform.swift in Sources */,
 				5C22F5AC2564B13D00577558 /* CategoryHeaderCell.swift in Sources */,

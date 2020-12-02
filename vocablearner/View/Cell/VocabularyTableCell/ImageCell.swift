@@ -10,6 +10,8 @@ import UIKit
 class ImageCell: UITableViewCell {
     
     @IBOutlet weak var vocabularyImage: UIImageView!
+    @IBOutlet weak var meaningLB: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

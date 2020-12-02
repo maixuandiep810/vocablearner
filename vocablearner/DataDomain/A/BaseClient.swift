@@ -27,6 +27,7 @@ class BaseClient: NSObject {
         
         case getVocabulary
         case getVocabularyByCategoryId(categoryId: String)
+        case addVocabularyByCategoryId(addVocabularyRequest: AddVocabularyRequest)
         case checkPronunciation(vocabularyId: String)
         
         case getCategory(userId: String, levelIdValue: String, isDifficultValue: String, isTodoTestValuecategoryId: String)
@@ -48,6 +49,7 @@ class BaseClient: NSObject {
                 
             case .getVocabulary: return HTTPMethod.get
             case .getVocabularyByCategoryId(_): return HTTPMethod.get
+            case .addVocabularyByCategoryId(_): return HTTPMethod.post
             case .checkPronunciation(_): return HTTPMethod.post
                 
             case .getCategory(_, _, _, _): return HTTPMethod.get
@@ -55,7 +57,7 @@ class BaseClient: NSObject {
             case .addCategory(_): return HTTPMethod.post
                 
             case .addFinishTest(_): return HTTPMethod.post
-            
+                
             case .getTestSetting(_): return HTTPMethod.get
             }
             
@@ -73,6 +75,8 @@ class BaseClient: NSObject {
                 return String(format: API.kVocabularyUrl)
             case .getVocabularyByCategoryId(let categoryId):
                 return String(format: API.kVocabularyByCategoryIdUrl, categoryId)
+            case .addVocabularyByCategoryId(_):
+                return String(format: API.kVocabularyUrl)
             case .checkPronunciation(let vocabularyId):
                 return String(format: API.kCheckPronunciationByVocabularyIdUrl, vocabularyId)
                 
@@ -85,7 +89,7 @@ class BaseClient: NSObject {
                 
             case .addFinishTest:			
                 return String(format: API.kFinishTestUrl)
-        
+                
             case .getTestSetting(let userId):
                 return String(format: API.kTestSettingUrl, userId)
             }
@@ -124,6 +128,8 @@ class BaseClient: NSObject {
             case .getVocabulary:
                 return urlHttpRequest
             case .getVocabularyByCategoryId(_):
+                return urlHttpRequest
+            case .addVocabularyByCategoryId(_):
                 return urlHttpRequest
             case .checkPronunciation(_):
                 urlHttpRequest.setValue(Header.MultipartFormdata, forHTTPHeaderField: Header.ContentType)
