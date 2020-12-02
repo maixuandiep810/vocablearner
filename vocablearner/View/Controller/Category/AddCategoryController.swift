@@ -30,6 +30,8 @@ class AddCategoryController: UIViewController, UITableViewDataSource, UITableVie
         configViewDidLoad()
         self.cateboryTBL.beginUpdates()
         self.cateboryTBL.endUpdates()
+        configKeyBoard()
+        configTapTextField()
     }
     override func viewWillAppear(_ animated: Bool) {
         configUIWillAppear()
@@ -201,6 +203,27 @@ extension AddCategoryController {
     }
     
     
+    // MARK: ConfigUIs
+    
+    func configKeyBoard() -> Void {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    func configTapTextField() {
+        
+        // Init tap gesture
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                 action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    
     // MARK: Target Actions
     
     @objc func addTapped() -> Void {
@@ -215,6 +238,24 @@ extension AddCategoryController {
         
         gotoCategoryController()
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -280,7 +321,7 @@ extension AddCategoryController {
     
     
     
-    // MARK: Properties
+    // MARK: Privates
     
     func gotoCategoryController() -> Void {
     
@@ -320,24 +361,6 @@ extension AddCategoryController {
         }
         
         return true
-    }
-    
-    func alertValidation(yesOption: Bool, noOption: Bool, message: String) -> Void {
-        
-        // create the alert
-        let alert = UIAlertController(title: "Notice", message: message, preferredStyle: UIAlertController.Style.alert)
-        
-        // add the actions (buttons)
-        if yesOption {
-            alert.addAction(UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler:nil))
-        }
-        if noOption {
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-        }
-        
-        // show the alert
-        self.present(alert, animated: true, completion: {
-        })
     }
     
     func uploadAddCategory(addCateRequest: AddCateRequest) -> Void {

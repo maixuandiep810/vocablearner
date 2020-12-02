@@ -13,6 +13,8 @@ class CurrentViewSetting: NSObject {
     // CategoryController
     var pickerIdString = "Todo Test"
     
+    var stringTransfer = ""
+    
     //Singleton
     static let shared = CurrentViewSetting()
     

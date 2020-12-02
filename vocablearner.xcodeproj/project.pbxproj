@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0F2CD74225773A2500968554 /* AddVocabularyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD74125773A2500968554 /* AddVocabularyRequest.swift */; };
+		0F2CD7842577F05700968554 /* AddVocabWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD7832577F05700968554 /* AddVocabWordCell.swift */; };
+		0F2CD7862577F07400968554 /* AddVocabMeaningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD7852577F07400968554 /* AddVocabMeaningCell.swift */; };
+		0F2CD7882577F09700968554 /* AddVocabAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD7872577F09700968554 /* AddVocabAudioCell.swift */; };
+		0F2CD78A2577F0BE00968554 /* AddVocabIpaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD7892577F0BE00968554 /* AddVocabIpaCell.swift */; };
+		0F2CD78C2577F0D800968554 /* AddVocabDefinitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD78B2577F0D800968554 /* AddVocabDefinitionCell.swift */; };
 		0FAF03B9256B1F420002B230 /* BaseClient+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */; };
 		0FAF03BB256B1FC40002B230 /* AddFinishRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */; };
 		0FAF03BD256B245D0002B230 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BC256B245D0002B230 /* SuccessResponse.swift */; };
@@ -108,6 +113,11 @@
 /* Begin PBXFileReference section */
 		0BA6D819B037FC5695745272 /* Pods-vocablearnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vocablearnerTests.debug.xcconfig"; path = "Target Support Files/Pods-vocablearnerTests/Pods-vocablearnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F2CD74125773A2500968554 /* AddVocabularyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabularyRequest.swift; sourceTree = "<group>"; };
+		0F2CD7832577F05700968554 /* AddVocabWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabWordCell.swift; sourceTree = "<group>"; };
+		0F2CD7852577F07400968554 /* AddVocabMeaningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabMeaningCell.swift; sourceTree = "<group>"; };
+		0F2CD7872577F09700968554 /* AddVocabAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabAudioCell.swift; sourceTree = "<group>"; };
+		0F2CD7892577F0BE00968554 /* AddVocabIpaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabIpaCell.swift; sourceTree = "<group>"; };
+		0F2CD78B2577F0D800968554 /* AddVocabDefinitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabDefinitionCell.swift; sourceTree = "<group>"; };
 		0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Test.swift"; sourceTree = "<group>"; };
 		0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFinishRequest.swift; sourceTree = "<group>"; };
 		0FAF03BC256B245D0002B230 /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
@@ -478,6 +488,11 @@
 			isa = PBXGroup;
 			children = (
 				5CB7B0A72564F694007011FE /* AddVocabImageCell.swift */,
+				0F2CD7832577F05700968554 /* AddVocabWordCell.swift */,
+				0F2CD7852577F07400968554 /* AddVocabMeaningCell.swift */,
+				0F2CD7872577F09700968554 /* AddVocabAudioCell.swift */,
+				0F2CD7892577F0BE00968554 /* AddVocabIpaCell.swift */,
+				0F2CD78B2577F0D800968554 /* AddVocabDefinitionCell.swift */,
 			);
 			path = AddVocabularyTableCell;
 			sourceTree = "<group>";
@@ -779,7 +794,9 @@
 				5C77E92D255254AD00A86469 /* CheckAudioCell.swift in Sources */,
 				5C63C6AE255A3F07007DB2CC /* TestCell.swift in Sources */,
 				0FAF03BB256B1FC40002B230 /* AddFinishRequest.swift in Sources */,
+				0F2CD78A2577F0BE00968554 /* AddVocabIpaCell.swift in Sources */,
 				5CB7B0AD2564F6A9007011FE /* AddCateImageCell.swift in Sources */,
+				0F2CD7862577F07400968554 /* AddVocabMeaningCell.swift in Sources */,
 				5C9E4FA6254024C400948C49 /* DataManager.swift in Sources */,
 				5C0BB7FB25676BBE00FC4996 /* ValidationHelper.swift in Sources */,
 				5CD4A13C2559235100621E40 /* DocumentManager.swift in Sources */,
@@ -823,6 +840,7 @@
 				5CDE88782547C93400F8851A /* CategoryResponse.swift in Sources */,
 				5C4ADC6E254C143800A6B445 /* LearnVocabularyController.swift in Sources */,
 				5C9E4FC22540282300948C49 /* UserInfoResponse.swift in Sources */,
+				0F2CD78C2577F0D800968554 /* AddVocabDefinitionCell.swift in Sources */,
 				5C63C6B6255A4452007DB2CC /* TestController.swift in Sources */,
 				5C9E4F772540121D00948C49 /* BaseUrl.swift in Sources */,
 				5CB7B0B72564F7BB007011FE /* AddCateNameCell.swift in Sources */,
@@ -836,12 +854,14 @@
 				5CC006F8256DF99200F83793 /* TestSettingCell.swift in Sources */,
 				5C9E4F882540153600948C49 /* ServerKey.swift in Sources */,
 				5C23D7EA25412BEF00FF5B8B /* BaseClient+User.swift in Sources */,
+				0F2CD7882577F09700968554 /* AddVocabAudioCell.swift in Sources */,
 				5CA34CC0254F9A8C009BBE34 /* LearnVocabularyCell.swift in Sources */,
 				5CB7B0A82564F694007011FE /* AddVocabImageCell.swift in Sources */,
 				5C63C6A9255A3CC9007DB2CC /* OptionView.swift in Sources */,
 				5C9E4FB82540258B00948C49 /* BaseResponse.swift in Sources */,
 				5CC00707256DFECA00F83793 /* BaseClient+TestSetting.swift in Sources */,
 				5CB7B0BC2564F7CE007011FE /* AddCateLevelCell.swift in Sources */,
+				0F2CD7842577F05700968554 /* AddVocabWordCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

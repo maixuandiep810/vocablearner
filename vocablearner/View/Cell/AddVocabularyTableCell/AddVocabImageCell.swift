@@ -10,6 +10,7 @@ import UIKit
 class AddVocabImageCell: UITableViewCell {
     
     @IBOutlet weak var vocabularyImage: UIImageView!
+    var info: [UIImagePickerController.InfoKey: Any]?
     
     override func awakeFromNib() {
         super.awakeFromNib()

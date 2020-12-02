@@ -18,13 +18,34 @@ extension UIViewController {
     
     func resetRoot(id: String) {
         guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: id) as? UIViewController
-        else {
-            return
+            else {
+                return
         }
         UIApplication.shared.windows.first?.rootViewController = rootVC
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
-
+    
+    
+    
+    func alertValidation(yesOption: Bool, noOption: Bool, message: String) -> Void {
+        
+        // create the alert
+        let alert = UIAlertController(title: "Notice", message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        // add the actions (buttons)
+        if yesOption {
+            alert.addAction(UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler:nil))
+        }
+        if noOption {
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        }
+        
+        // show the alert
+        self.present(alert, animated: true, completion: {
+        })
+    }
+    
+    
 }
 
 

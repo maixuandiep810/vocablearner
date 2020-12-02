@@ -21,7 +21,12 @@ struct StoryboardId {
     static let AddVocabularyControllerID = "AddVocabularyControllerID"
     static let UserSettingControllerID = "UserSettingControllerID"
     static let TestSettingControllerID = "TestSettingControllerID"
+    static let IpaKeyboardControllerID = "IpaKeyboardControllerID"
 
+    
+    //
+    static let SugueIpaKeyboardController = "SugueIpaKeyboardController"
+    
     // Table
     static let LearnVocabularyTableID = "LearnVocabularyTableID"
     
@@ -140,18 +145,21 @@ enum AddCategoryTableCell_ENUM: Int {
 enum AddVocabularyTableCell_ENUM: Int {
     
     case ImageCellID = 0
-    case NameCellID = 1
-    case IPACellID = 2
-    case AudioCellID = 3
-    case DefinitionCellID = 4
+    case WordCellID = 1
+    case MeaningCellID = 2
+    case IPACellID = 3
+    case AudioCellID = 4
+    case DefinitionCellID = 5
     case Default = 9
     
     var cellID: String {
         switch self {
         case .ImageCellID:
             return "ImageCellID"
-        case .NameCellID:
-            return "NameCellID"
+        case .WordCellID:
+            return "WordCellID"
+        case .MeaningCellID:
+            return "MeaningCellID"
         case .IPACellID:
             return "IPACellID"
         case .AudioCellID:
@@ -169,17 +177,20 @@ enum AddVocabularyTableCell_ENUM: Int {
         case .ImageCellID:
             height = 360
             return height
-        case .NameCellID:
+        case .WordCellID:
+            height = 100
+            return height
+        case .MeaningCellID:
             height = 100
             return height
         case .IPACellID:
             height = 100
             return height
         case .AudioCellID:
-            height = 120
+            height = 170
             return height
         case .DefinitionCellID:
-            height = 120
+            height = 250
             return height
         case .Default:
             height = 100
@@ -201,6 +212,6 @@ struct TopicDayOptions {
 }
 
 struct IpaKeyBoard {
-    static let value = [0: "ʌ", 1: "ɑ:", 2: "æ", 3: "e", 4: "ə", 5: "ɜ:", 6: "ɪ", 7: "i:", 8: "ɒ", 9: "ɔ:", 10: "ʊ", 11: "u:", 12: "aɪ", 13: "aʊ", 14: "eɪ", 15: "oʊ", 16: "ɔɪ", 17: "eə", 18: "ɪə", 19: "ʊə", 20: "b", 21: "d", 22: "f", 23: "g", 24: "h", 25: "j", 26: "k", 27: "l", 28: "m", 29: "n", 30: "ŋ", 31: "p", 32: "r", 33: "s", 34: "ʃ", 35: "t", 36: "tʃ", 37: "θ", 38: "ð", 39: "v", 40: "w", 41: "z", 42: "ʒ", 43: "dʒ"]
+    static let value = [0: "ʌ", 1: "ɑ:", 2: "æ", 3: "e", 4: "ə", 5: "ɜ:", 6: "ɪ", 7: "i:", 8: "ɒ", 9: "ɔ:", 10: "ʊ", 11: "u:", 12: "aɪ", 13: "aʊ", 14: "eɪ", 15: "oʊ", 16: "ɔɪ", 17: "eə", 18: "ɪə", 19: "ʊə", 20: "b", 21: "d", 22: "f", 23: "g", 24: "h", 25: "j", 26: "k", 27: "l", 28: "m", 29: "n", 30: "ŋ", 31: "p", 32: "r", 33: "s", 34: "ʃ", 35: "t", 36: "tʃ", 37: "θ", 38: "ð", 39: "v", 40: "w", 41: "z", 42: "ʒ", 43: "dʒ", 44: "<-"]
 }
 	
