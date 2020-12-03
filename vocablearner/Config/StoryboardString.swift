@@ -13,9 +13,11 @@ struct StoryboardId {
     // ControllerID
     static let LoginControllerID = "LoginControllerID"
     static let ParentControllerID = "ParentControllerID"
+    
     static let CategoryControllerID = "CategoryControllerID"
     static let VocabularyControllerID = "VocabularyControllerID"
     static let LearnVocabularyControllerID = "LearnVocabularyControllerID"
+    
     static let TestControllerID = "TestControllerID"
     static let AddCategoryControllerID = "AddCategoryControllerID"
     static let AddVocabularyControllerID = "AddVocabularyControllerID"
@@ -32,11 +34,12 @@ struct StoryboardId {
     
     // Cell
     static let CategoryCellID = "CategoryCellID"
-    static let VocabularyCellID = "VocabularyCellID"
+    static let CircleVocabularyCellID = "CircleVocabularyCellID"
+    static let CrudVocabularyCellID = "CrudVocabularyCellID"
+    static let AddVocabularyCellID = "AddVocabularyCellID"
     static let LearnVocabularyCellID = "LearnVocabularyCellID"
     static let TestCellID = "TestCellID"
     static let AddCustomTopicHeaderID = "AddCustomTopicHeaderID"
-    static let AddVocabCellID = "AddVocabCellID"
     static let FinishCellID = "FinishCellID"
     static let KeyBoardCellID = "KeyBoardCellID"
     static let TestSettingCellID = "TestSettingCellID"

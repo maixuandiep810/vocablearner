@@ -263,8 +263,41 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="VocabularyCellID" reuseIdentifier="VocabularyCellID" id="5I2-tj-wYv" customClass="VocabularyCell" customModule="vocablearner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CrudVocabularyCellID" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CrudVocabularyCellID" id="gki-RK-DkJ" customClass="CrudVocabularyCell" customModule="vocablearner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EN5-TE-Vw4">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYz-Ek-xGx">
+                                                    <rect key="frame" x="19" y="16" width="100" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                    <state key="normal" title="Detail">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc3-HM-QoX">
+                                                    <rect key="frame" x="127" y="16" width="100" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                    <state key="normal" title="Chart">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="374" height="80"/>
+                                        <connections>
+                                            <outlet property="chartBTN" destination="Hc3-HM-QoX" id="6YH-7R-ULT"/>
+                                            <outlet property="detailBTN" destination="WYz-Ek-xGx" id="2rM-l0-JRw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CircleVocabularyCellID" reuseIdentifier="CircleVocabularyCellID" id="5I2-tj-wYv" customClass="CircleVocabularyCell" customModule="vocablearner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="105" width="170" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OkA-e0-vvn">
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
@@ -316,8 +349,8 @@
                                             <outlet property="vocabularyLabel" destination="lvE-74-TXi" id="1sR-pk-xId"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="AddVocabCellID" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddVocabCellID" id="LUq-Rd-2dv">
-                                        <rect key="frame" x="204" y="0.0" width="170" height="170"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="AddVocabularyCellID" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddVocabularyCellID" id="LUq-Rd-2dv" customClass="AddVocabularyCell" customModule="vocablearner" customModuleProvider="target">
+                                        <rect key="frame" x="180" y="105" width="170" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3GP-D8-de0">
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
@@ -795,7 +828,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDS-3N-8gi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5039" y="2018"/>
+            <point key="canvasLocation" x="5029" y="1981"/>
         </scene>
         <!--Test Controller-->
         <scene sceneID="OlQ-9B-uV5">
@@ -1022,7 +1055,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6T-NL-nVF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5215.9420289855079" y="429.61956521739131"/>
+            <point key="canvasLocation" x="6949" y="430"/>
         </scene>
         <!--Learn Vocabulary Controller-->
         <scene sceneID="bj7-U6-3wg">
@@ -1258,7 +1291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oi9-Fk-G9V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4498.5507246376819" y="429.61956521739131"/>
+            <point key="canvasLocation" x="4561" y="430"/>
         </scene>
         <!--Add Vocabulary Controller-->
         <scene sceneID="hAr-Ex-f2w">

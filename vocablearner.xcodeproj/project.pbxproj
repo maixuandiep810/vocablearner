@@ -13,6 +13,8 @@
 		0F2CD7882577F09700968554 /* AddVocabAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD7872577F09700968554 /* AddVocabAudioCell.swift */; };
 		0F2CD78A2577F0BE00968554 /* AddVocabIpaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD7892577F0BE00968554 /* AddVocabIpaCell.swift */; };
 		0F2CD78C2577F0D800968554 /* AddVocabDefinitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD78B2577F0D800968554 /* AddVocabDefinitionCell.swift */; };
+		0F2CD78E25792D0400968554 /* CrudVocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD78D25792D0400968554 /* CrudVocabularyCell.swift */; };
+		0F2CD79025792F2000968554 /* AddVocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD78F25792F2000968554 /* AddVocabularyCell.swift */; };
 		0FAF03B9256B1F420002B230 /* BaseClient+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */; };
 		0FAF03BB256B1FC40002B230 /* AddFinishRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */; };
 		0FAF03BD256B245D0002B230 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BC256B245D0002B230 /* SuccessResponse.swift */; };
@@ -49,7 +51,7 @@
 		5C77E9282552549800A86469 /* AudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C77E9272552549800A86469 /* AudioCell.swift */; };
 		5C77E92D255254AD00A86469 /* CheckAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C77E92C255254AD00A86469 /* CheckAudioCell.swift */; };
 		5C9DECEE254A5D6D00DC182F /* MyNote.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C9DECED254A5D6D00DC182F /* MyNote.txt */; };
-		5C9DECFC254A795600DC182F /* VocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DECFB254A795600DC182F /* VocabularyCell.swift */; };
+		5C9DECFC254A795600DC182F /* CircleVocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DECFB254A795600DC182F /* CircleVocabularyCell.swift */; };
 		5C9E4F772540121D00948C49 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F762540121D00948C49 /* BaseUrl.swift */; };
 		5C9E4F7C2540141500948C49 /* StoryboardString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F7B2540141500948C49 /* StoryboardString.swift */; };
 		5C9E4F81254014A400948C49 /* CommonResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E4F80254014A400948C49 /* CommonResources.swift */; };
@@ -118,6 +120,8 @@
 		0F2CD7872577F09700968554 /* AddVocabAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabAudioCell.swift; sourceTree = "<group>"; };
 		0F2CD7892577F0BE00968554 /* AddVocabIpaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabIpaCell.swift; sourceTree = "<group>"; };
 		0F2CD78B2577F0D800968554 /* AddVocabDefinitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabDefinitionCell.swift; sourceTree = "<group>"; };
+		0F2CD78D25792D0400968554 /* CrudVocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudVocabularyCell.swift; sourceTree = "<group>"; };
+		0F2CD78F25792F2000968554 /* AddVocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabularyCell.swift; sourceTree = "<group>"; };
 		0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Test.swift"; sourceTree = "<group>"; };
 		0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFinishRequest.swift; sourceTree = "<group>"; };
 		0FAF03BC256B245D0002B230 /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
@@ -160,7 +164,7 @@
 		5C77E9272552549800A86469 /* AudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCell.swift; sourceTree = "<group>"; };
 		5C77E92C255254AD00A86469 /* CheckAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAudioCell.swift; sourceTree = "<group>"; };
 		5C9DECED254A5D6D00DC182F /* MyNote.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyNote.txt; sourceTree = "<group>"; };
-		5C9DECFB254A795600DC182F /* VocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyCell.swift; sourceTree = "<group>"; };
+		5C9DECFB254A795600DC182F /* CircleVocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleVocabularyCell.swift; sourceTree = "<group>"; };
 		5C9E4F762540121D00948C49 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
 		5C9E4F7B2540141500948C49 /* StoryboardString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardString.swift; sourceTree = "<group>"; };
 		5C9E4F80254014A400948C49 /* CommonResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResources.swift; sourceTree = "<group>"; };
@@ -373,10 +377,12 @@
 			isa = PBXGroup;
 			children = (
 				5C18CCE32547BF15004934C5 /* CategoryCell.swift */,
-				5C9DECFB254A795600DC182F /* VocabularyCell.swift */,
+				5C9DECFB254A795600DC182F /* CircleVocabularyCell.swift */,
 				5CA34CBF254F9A8C009BBE34 /* LearnVocabularyCell.swift */,
 				5C63C6AD255A3F07007DB2CC /* TestCell.swift */,
 				5C22F5AB2564B13D00577558 /* CategoryHeaderCell.swift */,
+				0F2CD78D25792D0400968554 /* CrudVocabularyCell.swift */,
+				0F2CD78F25792F2000968554 /* AddVocabularyCell.swift */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -806,14 +812,16 @@
 				5C193550255D34EB008869B4 /* AddCategoryController.swift in Sources */,
 				5CDE88852547D97100F8851A /* UIConfig.swift in Sources */,
 				5CC26EFF2576282200D9E378 /* CurrentViewSetting.swift in Sources */,
+				0F2CD78E25792D0400968554 /* CrudVocabularyCell.swift in Sources */,
 				5C9E8345254295F600A032E6 /* UserController.swift in Sources */,
 				5C9E83592542DE0C00A032E6 /* BaseClient+Vocabulary.swift in Sources */,
-				5C9DECFC254A795600DC182F /* VocabularyCell.swift in Sources */,
+				5C9DECFC254A795600DC182F /* CircleVocabularyCell.swift in Sources */,
 				5C18CCE42547BF15004934C5 /* CategoryCell.swift in Sources */,
 				5CC006F3256DF37500F83793 /* TestSettingController.swift in Sources */,
 				5C11BB63253FF38B00AB4D3B /* AppDelegate.swift in Sources */,
 				5C2E0161254ABD760000E18B /* TestBaseResponse.swift in Sources */,
 				5C9E83542542B4CA00A032E6 /* VocabularyResponse.swift in Sources */,
+				0F2CD79025792F2000968554 /* AddVocabularyCell.swift in Sources */,
 				5C23D7FF254173A400FF5B8B /* CurrentUser.swift in Sources */,
 				0F2CD74225773A2500968554 /* AddVocabularyRequest.swift in Sources */,
 				5C9E4F81254014A400948C49 /* CommonResources.swift in Sources */,

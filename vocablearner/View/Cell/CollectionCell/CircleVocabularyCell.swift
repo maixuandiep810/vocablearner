@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class VocabularyCell: UICollectionViewCell {
+class CircleVocabularyCell: UICollectionViewCell {
     
     // MARK: Properties
     

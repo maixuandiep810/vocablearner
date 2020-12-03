@@ -38,17 +38,20 @@ extension VocabularyController {
     
     // MARK: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.listVocabularyModel.count + 1
+        return self.listVocabularyModel.count + 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.row {
-        case self.listVocabularyModel.count:
-            let cell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.AddVocabCellID, for: indexPath)
+            case 0:
+                let cell: CrudVocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.CrudVocabularyCellID, for: indexPath) as! CrudVocabularyCell
+                return cell
+        case self.listVocabularyModel.count + 1:
+            let cell: AddVocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.AddVocabularyCellID, for: indexPath) as! AddVocabularyCell
             cell.isHidden = !self.categoryModel.isCustomCategory
             return cell
         default:
-            let cell: VocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.VocabularyCellID, for: indexPath) as! VocabularyCell
+            let cell: CircleVocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.CircleVocabularyCellID, for: indexPath) as! CircleVocabularyCell
             cell.data = self.listVocabularyModel[indexPath.row]
             return cell
         }

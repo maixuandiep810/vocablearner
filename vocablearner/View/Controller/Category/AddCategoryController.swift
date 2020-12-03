@@ -13,13 +13,16 @@ class AddCategoryController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: Properties
     
     @IBOutlet weak var cateboryTBL: UITableView!
-    
+        
     var levelPK: UIPickerView?
     var indexPathDict: [String:IndexPath] = Dictionary()
     var cellDict: [String: Any] = Dictionary()
     var imageCell: AddCateImageCell?
     var nameCell: AddCateNameCell?
     var levelCell: AddCateLevelCell?
+    
+    var categoryModel: CategoryModel?
+    var isDetail = false
     var isFirstLoad = true
     let addCateRequest = AddCateRequest()
     
@@ -30,14 +33,14 @@ class AddCategoryController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        configViewDidLoad()
+        configUIViewDidLoad()
         self.cateboryTBL.beginUpdates()
         self.cateboryTBL.endUpdates()
         configKeyBoard()
         configTapTextField()
     }
     override func viewWillAppear(_ animated: Bool) {
-        configUIWillAppear()
+        configUIViewWillAppear()
     }
     
     
@@ -220,13 +223,23 @@ extension AddCategoryController {
     }
     
     
-    func configUIWillAppear() -> Void {
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTapped))
+    func configUIViewWillAppear() -> Void {
+                
+        if isDetail {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .plain, target: self, action: #selector(updateTapped))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Category", style: .plain, target: self, action: #selector(returnTapped))
+        }
+        else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTapped))
+        }
     }
     
-    func configViewDidLoad() {
+    func configUIViewDidLoad() {
+        
+        if isDetail {
+            loadUIDetail()
+        }
         
         // Init tap gesture
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
@@ -265,7 +278,18 @@ extension AddCategoryController {
         present(imagePickerController, animated: true, completion: nil)
     }
     
-    
+    func loadUIDetail() -> Void {
+        
+        guard let data = categoryModel else {return}
+        
+        if(data.imageUrl.count > 0 && data.imageView == nil){
+            imageCell?.vocabularyImage.sd_setImage(with: URL(string: "\(API.kFileUrl + data.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
+        }
+        
+        nameCell?.nameTF.text = data.name
+        levelCell?.levelTF.text = String(data.isDifficult)
+        
+    }
     
     
     
@@ -273,6 +297,16 @@ extension AddCategoryController {
     
     // MARK: Target Actions
     
+    @objc func updateTapped() -> Void {
+        
+        gotoCategoryController()
+    }
+
+    @objc func returnTapped() -> Void {
+        
+        gotoCategoryController()
+    }
+
     
     @objc func addTapped() -> Void {
         

@@ -23,7 +23,7 @@ class CategoryModel: Object, Mappable {
     @objc dynamic var isTested = false
     @objc dynamic var days = 0
 
-
+    var imageView: UIImageView?
     
     
     required convenience init?(map: Map) {
