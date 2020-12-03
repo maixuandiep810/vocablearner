@@ -88,10 +88,10 @@ extension BaseClient {
                     multipartFormData.append("".data(using: String.Encoding.utf8)!, withName: "Audio" as String)
                 }
                 
-                multipartFormData.append(addVocabularyRequest.word.data(using: String.Encoding.utf8)!, withName: "Word" as String)
-                multipartFormData.append(addVocabularyRequest.meaning.data(using: String.Encoding.utf8)!, withName: "Meaning" as String)
-                multipartFormData.append(addVocabularyRequest.sentence.data(using: String.Encoding.utf8)!, withName: "Sentence" as String)
-                multipartFormData.append(addVocabularyRequest.definition.data(using: String.Encoding.utf8)!, withName: "Definition" as String)
+                multipartFormData.append(addVocabularyRequest.word!.data(using: String.Encoding.utf8)!, withName: "Word" as String)
+                multipartFormData.append(addVocabularyRequest.meaning!.data(using: String.Encoding.utf8)!, withName: "Meaning" as String)
+                multipartFormData.append(addVocabularyRequest.sentence!.data(using: String.Encoding.utf8)!, withName: "Sentence" as String)
+                multipartFormData.append(addVocabularyRequest.definition!.data(using: String.Encoding.utf8)!, withName: "Definition" as String)
             }, usingThreshold: UInt64.init(), with: request){ (result) in
                 switch result{
                 case .success(let upload, _, _):

@@ -7,14 +7,12 @@
 
 import UIKit
 
-class AddCateLevelCell: UITableViewCell, UITextFieldDelegate {
+class AddCateLevelCell: UITableViewCell {
     
     @IBOutlet weak var levelTF: UITextField!
-    weak var delegate: AddCateTextFieldDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,22 +22,30 @@ class AddCateLevelCell: UITableViewCell, UITextFieldDelegate {
 }
 
 extension AddCateLevelCell {
+    
     func configViewUI() -> Void {
-        self.levelTF.delegate = self
+
         self.levelTF.layer.borderWidth = UIConfig.defaultBorderWidth
         self.levelTF.layer.borderColor = UIConfig.defaultBorderColor
         self.levelTF.layer.masksToBounds = true
         self.levelTF.layer.cornerRadius = 10
     }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.LevelCellID.cellID, textField: levelTF)
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.delegate?.AddCateTextFieldShouldReturn(cellID: AddCategoryTableCell_ENUM.LevelCellID.cellID, textField: levelTF)
-        return false
-    }
 }
+
+
+
+
+
+//func textFieldDidBeginEditing(_ textField: UITextField) {
+//    self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.LevelCellID.cellID, textField: levelTF)
+//}
+//func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//    self.delegate?.AddCateTextFieldShouldReturn(cellID: AddCategoryTableCell_ENUM.LevelCellID.cellID, textField: levelTF)
+//    return false
+//}
+
+
+
 
 
 //

@@ -7,14 +7,12 @@
 
 import UIKit
 
-class AddCateNameCell: UITableViewCell, UITextFieldDelegate {
+class AddCateNameCell: UITableViewCell {
 
     @IBOutlet weak var nameTF: UITextField!
-    weak var delegate: AddCateTextFieldDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,19 +22,27 @@ class AddCateNameCell: UITableViewCell, UITextFieldDelegate {
 }
 
 extension AddCateNameCell {
+    
     func configViewUI() -> Void {
-        self.nameTF.delegate = self
+        
         self.nameTF.layer.borderWidth = UIConfig.defaultBorderWidth
         self.nameTF.layer.borderColor = UIConfig.defaultBorderColor
         self.nameTF.layer.masksToBounds = true
         self.nameTF.layer.cornerRadius = 10
     }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.NameCellID.cellID, textField: nameTF)
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.delegate?.AddCateTextFieldShouldReturn(cellID: AddCategoryTableCell_ENUM.NameCellID.cellID, textField: nameTF)
-        return false
-    }
 }
+
+
+
+
+
+
+
+
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        self.delegate?.AddCateTextFieldBeginEditing(cellID: AddCategoryTableCell_ENUM.NameCellID.cellID, textField: nameTF)
+//    }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        self.delegate?.AddCateTextFieldShouldReturn(cellID: AddCategoryTableCell_ENUM.NameCellID.cellID, textField: nameTF)
+//        return false
+//    }

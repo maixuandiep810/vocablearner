@@ -26,18 +26,28 @@ extension UIViewController {
     }
     
     
+    func alertValidation(yesOption: Bool, noOption: Bool, message: String) {
+        alertValidation(yesOption: yesOption, noOption: noOption, message: message, completionYes: {}, completionNo: {})
+    }
     
-    func alertValidation(yesOption: Bool, noOption: Bool, message: String) -> Void {
+    
+    func alertValidation(yesOption: Bool, noOption: Bool, message: String, completionYes: @escaping ()->Void, completionNo: @escaping ()->Void) -> Void {
         
         // create the alert
         let alert = UIAlertController(title: "Notice", message: message, preferredStyle: UIAlertController.Style.alert)
         
         // add the actions (buttons)
         if yesOption {
-            alert.addAction(UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler:nil))
+            alert.addAction(UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler: {
+                action in
+                completionYes()
+            }))
         }
         if noOption {
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
+                action in
+                completionNo()
+            }))
         }
         
         // show the alert

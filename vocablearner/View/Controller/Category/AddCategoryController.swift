@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddCategoryController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AddCateTextFieldDelegate {
+class AddCategoryController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     // MARK: Properties
@@ -17,6 +17,9 @@ class AddCategoryController: UIViewController, UITableViewDataSource, UITableVie
     var levelPK: UIPickerView?
     var indexPathDict: [String:IndexPath] = Dictionary()
     var cellDict: [String: Any] = Dictionary()
+    var imageCell: AddCateImageCell?
+    var nameCell: AddCateNameCell?
+    var levelCell: AddCateLevelCell?
     var isFirstLoad = true
     let addCateRequest = AddCateRequest()
     
@@ -47,7 +50,20 @@ class AddCategoryController: UIViewController, UITableViewDataSource, UITableVie
     
 }
 
+
+
+
+
+
+
+
+
 extension AddCategoryController {
+    
+    
+
+    
+    
     
     
     
@@ -68,30 +84,26 @@ extension AddCategoryController {
         case AddCategoryTableCell_ENUM.ImageCellID.rawValue:
             let cell: AddCateImageCell = self.cateboryTBL.dequeueReusableCell(withIdentifier: AddCategoryTableCell_ENUM.ImageCellID.cellID) as! AddCateImageCell
             self.indexPathDict[AddCategoryTableCell_ENUM.ImageCellID.cellID] = indexPath
-            self.cellDict[AddCategoryTableCell_ENUM.ImageCellID.cellID] = cell
+            imageCell = cell
             return cell
             
         case AddCategoryTableCell_ENUM.NameCellID.rawValue:
             let cell: AddCateNameCell = self.cateboryTBL.dequeueReusableCell(withIdentifier: AddCategoryTableCell_ENUM.NameCellID.cellID) as! AddCateNameCell
             cell.configViewUI()
-            cell.delegate = self
             self.indexPathDict[AddCategoryTableCell_ENUM.NameCellID.cellID] = indexPath
-            self.cellDict[AddCategoryTableCell_ENUM.NameCellID.cellID] = cell
+            nameCell = cell
             return cell
             
         case AddCategoryTableCell_ENUM.LevelCellID.rawValue:
             let cell: AddCateLevelCell = self.cateboryTBL.dequeueReusableCell(withIdentifier: AddCategoryTableCell_ENUM.LevelCellID.cellID) as! AddCateLevelCell
-            cell.delegate = self
             cell.configViewUI()
             self.indexPathDict[AddCategoryTableCell_ENUM.LevelCellID.cellID] = indexPath
-            self.cellDict[AddCategoryTableCell_ENUM.LevelCellID.cellID] = cell
+            levelCell = cell
             configUILevelCell()
             return cell
             
         default:
             let cell = self.cateboryTBL.dequeueReusableCell(withIdentifier: AddCategoryTableCell_ENUM.Default.cellID)!
-            self.indexPathDict[AddCategoryTableCell_ENUM.Default.cellID] = indexPath
-            self.cellDict[AddCategoryTableCell_ENUM.Default.cellID] = cell
             return cell
         }
     }
@@ -156,28 +168,6 @@ extension AddCategoryController {
     }
     
     
-    
-    // MARK: AddCateTextFieldDelegate
-    
-    func AddCateTextFieldBeginEditing(cellID: String, textField: UITextField) {
-        
-        self.cateboryTBL.scrollToRow(at: self.indexPathDict[cellID]!, at: .top, animated: true)
-    }
-    
-    func AddCateTextFieldShouldReturn(cellID: String, textField: UITextField) {
-        
-        switch cellID {
-        case AddCategoryTableCell_ENUM.NameCellID.cellID:
-            self.addCateRequest.name = textField.text!
-        default:
-            self.addCateRequest.isDifficult = textField.text! == "True" ? true : false
-        }
-        dismissKeyboard()
-    }
-    
-    
-    
-    
     // MARK: UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -203,6 +193,12 @@ extension AddCategoryController {
     }
     
     
+    
+    
+    
+    
+    
+    
     // MARK: ConfigUIs
     
     func configKeyBoard() -> Void {
@@ -224,20 +220,80 @@ extension AddCategoryController {
     }
     
     
+    func configUIWillAppear() -> Void {
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTapped))
+    }
+    
+    func configViewDidLoad() {
+        
+        // Init tap gesture
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func configUILevelCell() -> Void {
+        
+        let cell = self.levelCell as! AddCateLevelCell
+        self.levelPK = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
+        self.levelPK!.delegate = self
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(CategoryController.levelPickerDone))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(CategoryController.levelPickerCancel))
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        cell.levelTF.inputView = self.levelPK!
+        cell.levelTF.inputAccessoryView = toolBar
+        cell.levelTF.text = LevelOptions.AddCate_IsDifficult_PK_Data[0]
+    }
+    
+    
+    func configUITapGesture() -> Void {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
+    
+    
     // MARK: Target Actions
+    
     
     @objc func addTapped() -> Void {
         
-        if getData() {
+        if getData() && validationRequired() {
             addCateRequest.userId = String(CurrentUser.shared.user!.id)
             addCateRequest.description = ""
-            uploadAddCategory(addCateRequest: addCateRequest)
+            addCateRequest.description = addCateRequest.description == nil ? "" : addCateRequest.description
+            alertValidation(yesOption: true, noOption: true, message: "Add \n    a topic", completionYes: {
+                self.uploadAddCategory(addCateRequest: self.addCateRequest)
+            }, completionNo: {
+                
+            })
+            
         }
     }
+    
     @objc func cancelTapped() -> Void {
         
         gotoCategoryController()
     }
+    
     
     @objc func keyboardWillShow(notification: NSNotification) {
         
@@ -272,52 +328,14 @@ extension AddCategoryController {
         cell.levelTF.resignFirstResponder()
     }
     
-    // MARK: ConfigUI
     
-    func configUIWillAppear() -> Void {
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTapped))
-    }
-    
-    func configViewDidLoad() {
-        
-        // Init tap gesture
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    func configUILevelCell() -> Void {
-        
-        let cell = self.cellDict[AddCategoryTableCell_ENUM.LevelCellID.cellID] as! AddCateLevelCell
-        self.levelPK = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
-        self.levelPK!.delegate = self
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(CategoryController.levelPickerDone))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(CategoryController.levelPickerCancel))
-        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        cell.levelTF.inputView = self.levelPK!
-        cell.levelTF.inputAccessoryView = toolBar
-        cell.levelTF.text = LevelOptions.AddCate_IsDifficult_PK_Data[0]
-    }
+
     
     
-    func configUITapGesture() -> Void {
-        
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-    }
+    
+    
+    
+    
     
     
     
@@ -330,39 +348,45 @@ extension AddCategoryController {
     
     func getData() -> Bool {
         
-        let imageCell = self.cellDict[AddCategoryTableCell_ENUM.ImageCellID.cellID] as! AddCateImageCell
-        let nameCell = self.cellDict[AddCategoryTableCell_ENUM.NameCellID.cellID] as! AddCateNameCell
-        let levelCell = self.cellDict[AddCategoryTableCell_ENUM.LevelCellID.cellID] as! AddCateLevelCell
-        
-        if nameCell.nameTF.text == "" {
-            alertValidation(yesOption: true, noOption: false, message: "Name Field is required")
+        if imageCell == nil || nameCell == nil || levelCell == nil {
             return false
         }
-        self.addCateRequest.name = nameCell.nameTF.text!
         
-        if levelCell.levelTF.text == "" {
-            alertValidation(yesOption: true, noOption: false, message: "Difficult Field is required")
-            return false
-        }
-        if levelCell.levelTF.text == "True" {
+        
+        self.addCateRequest.name = self.nameCell!.nameTF.text!
+        
+        if self.levelCell!.levelTF.text == "True" {
             self.addCateRequest.isDifficult = true
         }
         else {
             self.addCateRequest.isDifficult = false
         }
         
-        if imageCell.info == nil || imageCell.info?[UIImagePickerController.InfoKey.imageURL] == nil {
+
+        if self.imageCell!.info == nil || self.imageCell!.info?[UIImagePickerController.InfoKey.imageURL] == nil {
             self.addCateRequest.imageURL = nil
         }
         else {
-            let stringNSURL = (imageCell.info![UIImagePickerController.InfoKey.imageURL] as! NSURL).absoluteString!
+            let stringNSURL = (self.imageCell!.info![UIImagePickerController.InfoKey.imageURL] as! NSURL).absoluteString!
             let valueURL = URL(string: stringNSURL)!
             self.addCateRequest.imageURL = valueURL
+        }
+        
+        
+        return true
+    }
+    
+    func validationRequired() -> Bool {
+        
+        if self.addCateRequest.name == nil || self.addCateRequest.name!.isEmpty {
+            alertValidation(yesOption: true, noOption: false, message: "Name Field is required")
+            return false
         }
         
         return true
     }
     
+
     func uploadAddCategory(addCateRequest: AddCateRequest) -> Void {
         BaseClient.shared.addCategory(addCateRequest: addCateRequest)
         { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in

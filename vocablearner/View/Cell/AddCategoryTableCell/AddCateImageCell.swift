@@ -25,7 +25,9 @@ class AddCateImageCell: UITableViewCell {
 }
 
 extension AddCateImageCell {
+    
     func configViewUI() -> Void {
+    
         self.vocabularyImage.layer.borderWidth = UIConfig.defaultBorderWidth
         self.vocabularyImage.layer.borderColor = UIConfig.defaultBorderColor
         self.vocabularyImage.layer.masksToBounds = true

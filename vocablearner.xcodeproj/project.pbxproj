@@ -75,7 +75,7 @@
 		5CB7B0B22564F764007011FE /* AddCateDefinitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7B0B12564F764007011FE /* AddCateDefinitionCell.swift */; };
 		5CB7B0B72564F7BB007011FE /* AddCateNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7B0B62564F7BB007011FE /* AddCateNameCell.swift */; };
 		5CB7B0BC2564F7CE007011FE /* AddCateLevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7B0BB2564F7CE007011FE /* AddCateLevelCell.swift */; };
-		5CB7B0C1256606AE007011FE /* AddCateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7B0C0256606AE007011FE /* AddCateProtocol.swift */; };
+		5CB7B0C1256606AE007011FE /* AddCateProtocol.swiftzzz in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7B0C0256606AE007011FE /* AddCateProtocol.swiftzzz */; };
 		5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCEFE52555358B0090E74F /* DefinitionCell.swift */; };
 		5CBCEFF62555465D0090E74F /* TBLDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */; };
 		5CC006F3256DF37500F83793 /* TestSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC006F2256DF37500F83793 /* TestSettingController.swift */; };
@@ -186,7 +186,7 @@
 		5CB7B0B12564F764007011FE /* AddCateDefinitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateDefinitionCell.swift; sourceTree = "<group>"; };
 		5CB7B0B62564F7BB007011FE /* AddCateNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateNameCell.swift; sourceTree = "<group>"; };
 		5CB7B0BB2564F7CE007011FE /* AddCateLevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateLevelCell.swift; sourceTree = "<group>"; };
-		5CB7B0C0256606AE007011FE /* AddCateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateProtocol.swift; sourceTree = "<group>"; };
+		5CB7B0C0256606AE007011FE /* AddCateProtocol.swiftzzz */ = {isa = PBXFileReference; lastKnownFileType = text; path = AddCateProtocol.swiftzzz; sourceTree = "<group>"; };
 		5CBCEFE52555358B0090E74F /* DefinitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCell.swift; sourceTree = "<group>"; };
 		5CBCEFF52555465D0090E74F /* TBLDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBLDefaultCell.swift; sourceTree = "<group>"; };
 		5CC006F2256DF37500F83793 /* TestSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSettingController.swift; sourceTree = "<group>"; };
@@ -325,7 +325,7 @@
 				5CB7B0B12564F764007011FE /* AddCateDefinitionCell.swift */,
 				5CB7B0B62564F7BB007011FE /* AddCateNameCell.swift */,
 				5CB7B0BB2564F7CE007011FE /* AddCateLevelCell.swift */,
-				5CB7B0C0256606AE007011FE /* AddCateProtocol.swift */,
+				5CB7B0C0256606AE007011FE /* AddCateProtocol.swiftzzz */,
 			);
 			path = AddCategoryTableCell;
 			sourceTree = "<group>";
@@ -834,7 +834,7 @@
 				5C9E834A2542962200A032E6 /* CategoryController.swift in Sources */,
 				0FAF03BD256B245D0002B230 /* SuccessResponse.swift in Sources */,
 				5CB7B09A2564F527007011FE /* AddVocabularyController.swift in Sources */,
-				5CB7B0C1256606AE007011FE /* AddCateProtocol.swift in Sources */,
+				5CB7B0C1256606AE007011FE /* AddCateProtocol.swiftzzz in Sources */,
 				5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */,
 				5C9E4FBD2540273C00948C49 /* UserModel.swift in Sources */,
 				5CDE88782547C93400F8851A /* CategoryResponse.swift in Sources */,

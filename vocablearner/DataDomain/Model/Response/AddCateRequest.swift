@@ -11,8 +11,8 @@ import UIKit
 // = user information
 class AddCateRequest {
     var userId = ""
-    var name = ""
+    var name: String?
     var isDifficult = false
-    var imageURL = URL(string: "")
-    var description = ""
+    var imageURL: URL?
+    var description: String?
 }

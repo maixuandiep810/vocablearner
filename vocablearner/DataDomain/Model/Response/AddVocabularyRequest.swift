@@ -8,10 +8,10 @@
 import UIKit
 
 class AddVocabularyRequest {
-    var word = ""
-    var meaning = ""
-    var sentence = ""
-    var definition = ""
-    var imageURL = URL(string: "")
-    var audioURL = URL(string: "")
+    var word: String?
+    var meaning: String?
+    var sentence: String?
+    var definition: String?
+    var imageURL: URL?
+    var audioURL: URL?
 }
