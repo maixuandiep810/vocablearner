@@ -15,6 +15,7 @@
 		0F2CD78C2577F0D800968554 /* AddVocabDefinitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD78B2577F0D800968554 /* AddVocabDefinitionCell.swift */; };
 		0F2CD78E25792D0400968554 /* CrudVocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD78D25792D0400968554 /* CrudVocabularyCell.swift */; };
 		0F2CD79025792F2000968554 /* AddVocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD78F25792F2000968554 /* AddVocabularyCell.swift */; };
+		0F2CD7922579EEA700968554 /* VocabularyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD7912579EEA700968554 /* VocabularyHeaderCell.swift */; };
 		0FAF03B9256B1F420002B230 /* BaseClient+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */; };
 		0FAF03BB256B1FC40002B230 /* AddFinishRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */; };
 		0FAF03BD256B245D0002B230 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BC256B245D0002B230 /* SuccessResponse.swift */; };
@@ -122,6 +123,7 @@
 		0F2CD78B2577F0D800968554 /* AddVocabDefinitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabDefinitionCell.swift; sourceTree = "<group>"; };
 		0F2CD78D25792D0400968554 /* CrudVocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudVocabularyCell.swift; sourceTree = "<group>"; };
 		0F2CD78F25792F2000968554 /* AddVocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabularyCell.swift; sourceTree = "<group>"; };
+		0F2CD7912579EEA700968554 /* VocabularyHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyHeaderCell.swift; sourceTree = "<group>"; };
 		0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Test.swift"; sourceTree = "<group>"; };
 		0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFinishRequest.swift; sourceTree = "<group>"; };
 		0FAF03BC256B245D0002B230 /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				5C22F5AB2564B13D00577558 /* CategoryHeaderCell.swift */,
 				0F2CD78D25792D0400968554 /* CrudVocabularyCell.swift */,
 				0F2CD78F25792F2000968554 /* AddVocabularyCell.swift */,
+				0F2CD7912579EEA700968554 /* VocabularyHeaderCell.swift */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				5C9E834A2542962200A032E6 /* CategoryController.swift in Sources */,
 				0FAF03BD256B245D0002B230 /* SuccessResponse.swift in Sources */,
 				5CB7B09A2564F527007011FE /* AddVocabularyController.swift in Sources */,
+				0F2CD7922579EEA700968554 /* VocabularyHeaderCell.swift in Sources */,
 				5CB7B0C1256606AE007011FE /* AddCateProtocol.swiftzzz in Sources */,
 				5CBCEFE62555358B0090E74F /* DefinitionCell.swift in Sources */,
 				5C9E4FBD2540273C00948C49 /* UserModel.swift in Sources */,

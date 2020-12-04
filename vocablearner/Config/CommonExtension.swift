@@ -55,6 +55,13 @@ extension UIViewController {
         })
     }
     
+    func configUITabBarItem(title: String) {
+        self.title = title
+        if let tabBarItem = self.tabBarItem {
+            tabBarItem.title
+        }
+    }
+    
     
 }
 

@@ -13,9 +13,8 @@ class AddCategoryController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: Properties
     
     @IBOutlet weak var cateboryTBL: UITableView!
-        
+    
     var levelPK: UIPickerView?
-    var indexPathDict: [String:IndexPath] = Dictionary()
     var cellDict: [String: Any] = Dictionary()
     var imageCell: AddCateImageCell?
     var nameCell: AddCateNameCell?
@@ -33,13 +32,13 @@ class AddCategoryController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        configUIViewDidLoad()
-        self.cateboryTBL.beginUpdates()
-        self.cateboryTBL.endUpdates()
         configKeyBoard()
         configTapTextField()
+        configUIViewDidLoad()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         configUIViewWillAppear()
     }
     
@@ -64,7 +63,7 @@ class AddCategoryController: UIViewController, UITableViewDataSource, UITableVie
 extension AddCategoryController {
     
     
-
+    
     
     
     
@@ -83,26 +82,39 @@ extension AddCategoryController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
-        
+            
         case AddCategoryTableCell_ENUM.ImageCellID.rawValue:
             let cell: AddCateImageCell = self.cateboryTBL.dequeueReusableCell(withIdentifier: AddCategoryTableCell_ENUM.ImageCellID.cellID) as! AddCateImageCell
-            self.indexPathDict[AddCategoryTableCell_ENUM.ImageCellID.cellID] = indexPath
             imageCell = cell
+            
+            if isDetail == true, let data = categoryModel {
+                if(data.imageUrl.count > 0 && data.imageView == nil){
+                    imageCell!.vocabularyImage.sd_setImage(with: URL(string: "\(API.kFileUrl + data.imageUrl)")!, placeholderImage: UIImage(named: "no_image_banner"))
+                }
+            }
+            
             return cell
             
         case AddCategoryTableCell_ENUM.NameCellID.rawValue:
             let cell: AddCateNameCell = self.cateboryTBL.dequeueReusableCell(withIdentifier: AddCategoryTableCell_ENUM.NameCellID.cellID) as! AddCateNameCell
             cell.configViewUI()
-            self.indexPathDict[AddCategoryTableCell_ENUM.NameCellID.cellID] = indexPath
             nameCell = cell
+            
+            if isDetail == true, let data = categoryModel {
+                nameCell!.nameTF.text = data.name
+            }
+            
             return cell
             
         case AddCategoryTableCell_ENUM.LevelCellID.rawValue:
             let cell: AddCateLevelCell = self.cateboryTBL.dequeueReusableCell(withIdentifier: AddCategoryTableCell_ENUM.LevelCellID.cellID) as! AddCateLevelCell
             cell.configViewUI()
-            self.indexPathDict[AddCategoryTableCell_ENUM.LevelCellID.cellID] = indexPath
             levelCell = cell
             configUILevelCell()
+            
+            if isDetail == true, let data = categoryModel {
+                levelCell!.levelTF.text = String(data.isDifficult)
+            }
             return cell
             
         default:
@@ -113,14 +125,14 @@ extension AddCategoryController {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
-        
+            
         case AddCategoryTableCell_ENUM.ImageCellID.rawValue:
             return AddCategoryTableCell_ENUM.ImageCellID.heightCell
             
         case AddCategoryTableCell_ENUM.NameCellID.rawValue:
             return AddCategoryTableCell_ENUM.NameCellID.heightCell
-        //        return CGFloat(200)
-        
+            //        return CGFloat(200)
+            
         case AddCategoryTableCell_ENUM.LevelCellID.rawValue:
             return AddCategoryTableCell_ENUM.LevelCellID.heightCell
             
@@ -132,7 +144,7 @@ extension AddCategoryController {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch indexPath.row {
-        
+            
         case AddCategoryTableCell_ENUM.ImageCellID.rawValue:
             return AddCategoryTableCell_ENUM.ImageCellID.heightCell
         case AddCategoryTableCell_ENUM.NameCellID.rawValue:
@@ -224,10 +236,9 @@ extension AddCategoryController {
     
     
     func configUIViewWillAppear() -> Void {
-                
+        
         if isDetail {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .plain, target: self, action: #selector(updateTapped))
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Category", style: .plain, target: self, action: #selector(returnTapped))
         }
         else {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
@@ -236,10 +247,6 @@ extension AddCategoryController {
     }
     
     func configUIViewDidLoad() {
-        
-        if isDetail {
-            loadUIDetail()
-        }
         
         // Init tap gesture
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
@@ -301,12 +308,12 @@ extension AddCategoryController {
         
         gotoCategoryController()
     }
-
-    @objc func returnTapped() -> Void {
-        
-        gotoCategoryController()
-    }
-
+    
+//    @objc func returnTapped() -> Void {
+//
+//        gotoCategoryController()
+//    }
+    
     
     @objc func addTapped() -> Void {
         
@@ -338,7 +345,7 @@ extension AddCategoryController {
         }
     }
     
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         
         if self.view.frame.origin.y != 0 {
@@ -363,7 +370,7 @@ extension AddCategoryController {
     }
     
     
-
+    
     
     
     
@@ -376,7 +383,7 @@ extension AddCategoryController {
     // MARK: Privates
     
     func gotoCategoryController() -> Void {
-    
+        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -396,7 +403,7 @@ extension AddCategoryController {
             self.addCateRequest.isDifficult = false
         }
         
-
+        
         if self.imageCell!.info == nil || self.imageCell!.info?[UIImagePickerController.InfoKey.imageURL] == nil {
             self.addCateRequest.imageURL = nil
         }
@@ -420,7 +427,7 @@ extension AddCategoryController {
         return true
     }
     
-
+    
     func uploadAddCategory(addCateRequest: AddCateRequest) -> Void {
         BaseClient.shared.addCategory(addCateRequest: addCateRequest)
         { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
@@ -440,4 +447,4 @@ extension AddCategoryController {
         }
     }
 }
-		
+

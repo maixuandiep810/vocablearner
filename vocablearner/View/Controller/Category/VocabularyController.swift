@@ -30,6 +30,13 @@ class VocabularyController: UIViewController, UICollectionViewDelegate, UICollec
         //        self.navigationController?.navigationBar.topItem?.title = categoryModel.name
         loadVocabulary()
     }
+    
+    @IBAction func detailBTN_TUIS(_ sender: Any) {
+        gotoAddCateController(isDetail: true)
+    }
+    
+    @IBAction func chartBTN_TUIS(_ sender: Any) {
+    }
 }
 
 
@@ -38,15 +45,13 @@ extension VocabularyController {
     
     // MARK: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.listVocabularyModel.count + 2
+        return self.listVocabularyModel.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // START ROW = 0
         switch indexPath.row {
-            case 0:
-                let cell: CrudVocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.CrudVocabularyCellID, for: indexPath) as! CrudVocabularyCell
-                return cell
-        case self.listVocabularyModel.count + 1:
+        case self.listVocabularyModel.count:
             let cell: AddVocabularyCell = self.vocabularyClt.dequeueReusableCell(withReuseIdentifier: StoryboardId.AddVocabularyCellID, for: indexPath) as! AddVocabularyCell
             cell.isHidden = !self.categoryModel.isCustomCategory
             return cell
@@ -72,6 +77,20 @@ extension VocabularyController {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if (kind == UICollectionView.elementKindSectionHeader) {
+            let headerView: VocabularyHeaderCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: StoryboardId.VocabularyHeaderCellID, for: indexPath) as! VocabularyHeaderCell
+            return headerView
+        }
+        fatalError()
+    }
+    
+    
+    
+    
+    
+    
+    
     // MARK: Private Methods
     
     func loadVocabulary() {
@@ -85,6 +104,8 @@ extension VocabularyController {
         )
     }
     
+    
+    // GOTO CONTROLLER
     func gotoLearnVocabController(indexPath: IndexPath) -> Void {
         let controller: LearnVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.LearnVocabularyControllerID) as! LearnVocabularyController
         controller.listVocabularyModel = self.listVocabularyModel
@@ -92,8 +113,16 @@ extension VocabularyController {
         controller.categoryModel = self.categoryModel
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
     func gotoAddVocabController() -> Void {
         let controller: AddVocabularyController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.AddVocabularyControllerID) as! AddVocabularyController
+        controller.categoryModel = self.categoryModel
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func gotoAddCateController(isDetail: Bool) -> Void {
+        let controller: AddCategoryController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.AddCategoryControllerID) as! AddCategoryController
+        controller.isDetail = isDetail
         controller.categoryModel = self.categoryModel
         self.navigationController?.pushViewController(controller, animated: true)
     }

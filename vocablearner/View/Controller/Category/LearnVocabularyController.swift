@@ -52,6 +52,7 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configUI()
+        configUIWillAppear()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,11 +61,13 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
     
     
     // MARK: Outlet Actions
+    
     @IBAction func AudioButtonTouchUpInside(_ sender: Any) {
         print("AAAAA")
         self.audioPlayer?.play()
         
     }
+    
     @IBAction func CheckAudioButtonTouchUpInside(_ sender: Any) {
         print("BBBB")
         let checkAudioButton: UIButton! = sender as! UIButton
@@ -78,18 +81,19 @@ class LearnVocabularyController: UIViewController, UICollectionViewDataSource, U
             finishRecording(checkAudioButton: checkAudioButton, success: true)
         }
     }
-    
-    
-    // MARK: ConfigUI
-    
-    func configUI() -> Void {
-    }
-    
 }
 
 
 
+
+
+
+
 extension LearnVocabularyController {
+    
+    
+    
+    
     
     // MARK: UICollectionViewDelegate, UICollectionViewDataSource
     
@@ -119,6 +123,40 @@ extension LearnVocabularyController {
         let nextIndexPath = IndexPath(indexes: [0, self.currentIndex])
         self.vocabularyClt.scrollToItem(at: nextIndexPath, at: self.vocabularyClt.scrollDirectionExt, animated: true)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    // MARK: ConfigUI
+    
+    func configUI() -> Void {
+    }
+    
+    
+    
+    func configUIWillAppear() -> Void {
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Detail", style: .plain, target: self, action: #selector(detailTapped))
+    }
+    
+    
+    
+    
+    // MARK: Target Actions
+    
+    @objc func detailTapped() -> Void {
+        
+    }
+    
+    
+    
+    
+    
+    
     
     // MARK: Private Methods
     func gotoCurrentCellSelected(animated: Bool) -> Void {

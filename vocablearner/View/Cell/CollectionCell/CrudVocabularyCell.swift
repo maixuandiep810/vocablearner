@@ -1,15 +1,15 @@
+////
+////  CrudVocabularyCell.swift
+////  vocablearner
+////
+////  Created by p on 12/3/20.
+////
 //
-//  CrudVocabularyCell.swift
-//  vocablearner
+//import UIKit
 //
-//  Created by p on 12/3/20.
+//class CrudVocabularyCell: UICollectionViewCell {
 //
-
-import UIKit
-
-class CrudVocabularyCell: UICollectionViewCell {
-
-    @IBOutlet weak var detailBTN: UIButton!
-    @IBOutlet weak var chartBTN: UIButton!
-    
-}
+//    @IBOutlet weak var detailBTN: UIButton!
+//    @IBOutlet weak var chartBTN: UIButton!
+//    
+//}

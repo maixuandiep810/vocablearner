@@ -26,7 +26,7 @@ struct StoryboardId {
     static let IpaKeyboardControllerID = "IpaKeyboardControllerID"
 
     
-    //
+    // Sugue
     static let SugueIpaKeyboardController = "SugueIpaKeyboardController"
     
     // Table
@@ -40,6 +40,7 @@ struct StoryboardId {
     static let LearnVocabularyCellID = "LearnVocabularyCellID"
     static let TestCellID = "TestCellID"
     static let AddCustomTopicHeaderID = "AddCustomTopicHeaderID"
+    static let VocabularyHeaderCellID = "VocabularyHeaderCellID"
     static let FinishCellID = "FinishCellID"
     static let KeyBoardCellID = "KeyBoardCellID"
     static let TestSettingCellID = "TestSettingCellID"
