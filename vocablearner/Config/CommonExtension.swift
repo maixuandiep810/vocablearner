@@ -55,13 +55,9 @@ extension UIViewController {
         })
     }
     
-    func configUITabBarItem(title: String) {
-        self.title = title
-        if let tabBarItem = self.tabBarItem {
-            tabBarItem.title
-        }
+    func configUINavigationBar() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemOrange]
     }
-    
     
 }
 

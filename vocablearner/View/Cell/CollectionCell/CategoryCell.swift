@@ -32,7 +32,7 @@ extension CategoryCell {
     
     func configUI() -> Void {
         
-        self.layer.borderColor = UIConfig.categoryCellBorderColor
+        self.layer.borderColor = UIConfig.categoryCellBorderColor        
         self.layer.borderWidth = UIConfig.categoryCellBorderWidth
         
         if data!.isTested == false {

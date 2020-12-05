@@ -16,6 +16,8 @@
 		0F2CD78E25792D0400968554 /* CrudVocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD78D25792D0400968554 /* CrudVocabularyCell.swift */; };
 		0F2CD79025792F2000968554 /* AddVocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD78F25792F2000968554 /* AddVocabularyCell.swift */; };
 		0F2CD7922579EEA700968554 /* VocabularyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD7912579EEA700968554 /* VocabularyHeaderCell.swift */; };
+		0F2CD795257B3D5B00968554 /* ChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CD794257B3D5B00968554 /* ChartController.swift */; };
+		0F59B94B257BE489008199DD /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F59B94A257BE489008199DD /* WordCell.swift */; };
 		0FAF03B9256B1F420002B230 /* BaseClient+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */; };
 		0FAF03BB256B1FC40002B230 /* AddFinishRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */; };
 		0FAF03BD256B245D0002B230 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF03BC256B245D0002B230 /* SuccessResponse.swift */; };
@@ -124,6 +126,8 @@
 		0F2CD78D25792D0400968554 /* CrudVocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudVocabularyCell.swift; sourceTree = "<group>"; };
 		0F2CD78F25792F2000968554 /* AddVocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabularyCell.swift; sourceTree = "<group>"; };
 		0F2CD7912579EEA700968554 /* VocabularyHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyHeaderCell.swift; sourceTree = "<group>"; };
+		0F2CD794257B3D5B00968554 /* ChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartController.swift; sourceTree = "<group>"; };
+		0F59B94A257BE489008199DD /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		0FAF03B8256B1F420002B230 /* BaseClient+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseClient+Test.swift"; sourceTree = "<group>"; };
 		0FAF03BA256B1FC40002B230 /* AddFinishRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFinishRequest.swift; sourceTree = "<group>"; };
 		0FAF03BC256B245D0002B230 /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
@@ -243,6 +247,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2CD793257B3CE800968554 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				0F2CD794257B3D5B00968554 /* ChartController.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
 		1133B8BD9A1CF22C0741ABEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +409,7 @@
 				5C77E9272552549800A86469 /* AudioCell.swift */,
 				5C77E92C255254AD00A86469 /* CheckAudioCell.swift */,
 				5CBCEFE52555358B0090E74F /* DefinitionCell.swift */,
+				0F59B94A257BE489008199DD /* WordCell.swift */,
 			);
 			path = VocabularyTableCell;
 			sourceTree = "<group>";
@@ -452,6 +465,7 @@
 		5C9E4F91254018CC00948C49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0F2CD793257B3CE800968554 /* Chart */,
 				5CC006F1256DF34800F83793 /* User */,
 				5C64BFFB256B71E700294BA3 /* CommonController */,
 				5C9DECF5254A78B400DC182F /* Category */,
@@ -801,6 +815,7 @@
 				5CC00702256DFD4600F83793 /* TestSettingResponse.swift in Sources */,
 				5C2E0157254A9E230000E18B /* VocabularyController.swift in Sources */,
 				5C77E92D255254AD00A86469 /* CheckAudioCell.swift in Sources */,
+				0F59B94B257BE489008199DD /* WordCell.swift in Sources */,
 				5C63C6AE255A3F07007DB2CC /* TestCell.swift in Sources */,
 				0FAF03BB256B1FC40002B230 /* AddFinishRequest.swift in Sources */,
 				0F2CD78A2577F0BE00968554 /* AddVocabIpaCell.swift in Sources */,
@@ -869,6 +884,7 @@
 				0F2CD7882577F09700968554 /* AddVocabAudioCell.swift in Sources */,
 				5CA34CC0254F9A8C009BBE34 /* LearnVocabularyCell.swift in Sources */,
 				5CB7B0A82564F694007011FE /* AddVocabImageCell.swift in Sources */,
+				0F2CD795257B3D5B00968554 /* ChartController.swift in Sources */,
 				5C63C6A9255A3CC9007DB2CC /* OptionView.swift in Sources */,
 				5C9E4FB82540258B00948C49 /* BaseResponse.swift in Sources */,
 				5CC00707256DFECA00F83793 /* BaseClient+TestSetting.swift in Sources */,
@@ -961,6 +977,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1022,6 +1040,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1051,13 +1070,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7C287PQ2KJ;
 				INFOPLIST_FILE = vocablearner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Rocky.vocablearner;
+				PRODUCT_BUNDLE_IDENTIFIER = vocablearner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1071,13 +1091,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7C287PQ2KJ;
 				INFOPLIST_FILE = vocablearner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Rocky.vocablearner;
+				PRODUCT_BUNDLE_IDENTIFIER = vocablearner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

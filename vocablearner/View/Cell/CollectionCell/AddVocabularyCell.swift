@@ -8,5 +8,15 @@
 import UIKit
 
 class AddVocabularyCell: UICollectionViewCell {
+    
+    
+}
+
+extension AddVocabularyCell {
+    
+    func configUI() -> Void {
         
+        self.layer.borderColor = UIConfig.vocabularyCellBorderColor
+        self.layer.borderWidth = UIConfig.vocabularyCellBorderWidth
+    }
 }

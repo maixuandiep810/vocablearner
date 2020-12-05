@@ -26,7 +26,7 @@ class CategoryController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = StoryboardConstVar.CategoryControllerNavTitle
+        configUINavigationBar()
         loadCategory(pickerString: CurrentViewSetting.shared.pickerIdString)
     }
     

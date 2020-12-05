@@ -13,6 +13,11 @@ class UserSettingController: UIViewController {
         
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
 
     @IBAction func testSettingBTN_TUIS(_ sender: Any) {
         

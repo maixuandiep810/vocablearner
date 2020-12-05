@@ -28,6 +28,7 @@ class TestSettingController: UIViewController, UITableViewDataSource, UITableVie
         
         super.viewWillAppear(animated)
         loadTestSetting(userId: String(CurrentUser.shared.user!.id))
+        configUINavigationBar()
     }
 }
 

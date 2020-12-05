@@ -24,8 +24,9 @@ class CircleVocabularyCell: UICollectionViewCell {
                 vocabularyLabel.text = String(format: " \(data.word)")
             }
             
-            self.layer.borderColor = UIConfig.categoryCellBorderColor
-            self.layer.borderWidth = UIConfig.categoryCellBorderWidth
+            self.layer.borderColor = UIConfig.vocabularyCellBorderColor
+            self.layer.borderWidth = UIConfig.vocabularyCellBorderWidth
+            
         }
     }
     

@@ -25,8 +25,8 @@ class UserController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        self.navigationController?.navigationBar.topItem?.title = StoryboardConstVar.UserControllerNavTitle
+        super.viewWillAppear(animated)
+        configUINavigationBar()
         assignData()
         configUI()
     }

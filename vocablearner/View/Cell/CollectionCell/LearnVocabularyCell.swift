@@ -33,7 +33,9 @@ extension LearnVocabularyCell {
         return 5
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         switch indexPath.row {
+            
         case LearnVocabularyTableCell_ENUM.ImageCellID.rawValue:
             let cell: ImageCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.ImageCellID.cellID) as! ImageCell
             cell.vocabularyImage.image = nil
@@ -42,19 +44,28 @@ extension LearnVocabularyCell {
             }
             cell.meaningLB.text = data!.meaning
             return cell
+            
+        case LearnVocabularyTableCell_ENUM.WordCellID.rawValue:
+            let cell: WordCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.WordCellID.cellID) as! WordCell
+            cell.wordLB.text = nil
+            cell.wordLB.text = data!.word
+            return cell
+            
         case LearnVocabularyTableCell_ENUM.AudioCellID.rawValue:
             let cell: AudioCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.AudioCellID.cellID) as! AudioCell
             cell.pronunciationLabel.text = nil
             cell.pronunciationLabel.text = data!.sentence
             return cell
+            
         case LearnVocabularyTableCell_ENUM.CheckAudioCellID.rawValue:
             let cell: CheckAudioCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.CheckAudioCellID.cellID) as! CheckAudioCell
             return cell
+            
         case LearnVocabularyTableCell_ENUM.DefinitionCellID.rawValue:
             let cell: DefinitionCell = self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.DefinitionCellID.cellID) as! DefinitionCell
             cell.definitionLabel.text = data!.definition
             return cell
-    
+            
         default:
             return self.vocabularyTable.dequeueReusableCell(withIdentifier: LearnVocabularyTableCell_ENUM.Default.cellID) as! TBLDefaultCell
         }
@@ -90,7 +101,7 @@ extension LearnVocabularyCell {
         }
     }
     
-
+    
     
     func resetData () -> Void {
         self.data = nil
